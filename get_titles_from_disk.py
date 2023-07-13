@@ -4,8 +4,11 @@ import logging
 import getopt
 import sys
 import os
+import re
 #from film_manager.film_uploader import FilmUploader
 #from network.script_record import ScriptRecordTable
+
+from film_database import FilmDatabase
 
 from file_system import FileSystem
 
@@ -47,7 +50,7 @@ def main(argv):
 
 #   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='/var/log/film_manager/upload_from_files.log', filemode='w', level=logging.DEBUG)
    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filemode='w', level=logging.DEBUG)
-   logging.getLogger("imdbpy").setLevel(logging.ERROR)
+#   logging.getLogger("imdbpy").setLevel(logging.ERROR)
    logging.getLogger("smbprotocol").setLevel(logging.ERROR)
    console = logging.StreamHandler()
 
@@ -56,7 +59,10 @@ def main(argv):
 
    formatter = logging.Formatter('%(levelname)-8s %(message)s')
    console.setFormatter(formatter)
-   logging.getLogger('').addHandler(console)
+#   logging.getLogger('').addHandler(console)
+
+
+
 
    logging.info("Storing titles from File System")
 
@@ -64,10 +70,49 @@ def main(argv):
    smb_server = os.environ["SMB_HOST"]
    smb_password = os.environ["SMB_PASS"]
 
+   mongo_user = os.environ["MONGODB_USER"]
+   mongo_pass = os.environ["MONGODB_PASS"]
+   mongo_server = os.environ["MONGODB_HOST"]
+   mongo_port = os.environ["MONGODB_PORT"]
 
+   db = FilmDatabase(mongo_user, mongo_pass, mongo_server, mongo_port)
    fs = FileSystem(smb_server, smb_user, smb_password)
-   titles = fs.listDir("dir")
-   logging.debug("Titles:" + str(titles))
+   br_dir = "\Films\BluRay"
+   dvds_dir = "\Films\DVDs"
+
+   br_titles = fs.listDir(br_dir)
+   dvd_titles = fs.listDir(dvds_dir)
+
+   #logging.debug("Titles:" + str(titles))
+
+   film_pattern = "(^[^\(]*) \(([^\)]*)"
+
+   for btitle_year in br_titles:
+      logging.debug("CHECK:" + btitle_year)
+      res = re.match(film_pattern, btitle_year)
+      if res:
+         title = res.group(1)
+         year = res.group(2)
+         logging.debug("MATCH TITLE:" + title) 
+         logging.debug("       YEAR:" + year)
+         db.add_bluray(title, year)
+
+   for dtitle_year in dvd_titles:
+      logging.debug("CHECK:" + dtitle_year)
+      res = re.match(film_pattern, dtitle_year)
+      if res:
+         title = res.group(1)
+         year = res.group(2)
+         logging.debug("MATCH TITLE:" + title) 
+         logging.debug("       YEAR:" + year)
+         db.add_dvd(title, year)
+
+
+
+   
+
+
+
 
 #   if max_records:
 #      film_uploader = FilmUploader(num_lookups, max_records)

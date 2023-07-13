@@ -14,18 +14,18 @@ class FileSystem:
       logging.debug("Connecting to "+ self.server+ " with user:" + self.user + " and " + self.password)
       
 
-   def listDir(self, directoryo):
+   def listDir(self, directory):
       """Lists the contents of the give directory"""
 
       titles = []
 
       smbclient.register_session(self.server, username=self.user, password=self.password)
 
-      directory = r"\\" +self.server+ "\Films\BluRay"
-      logging.debug("Listing directory:" + directory)
+      smb_directory = r"\\" +self.server+ directory
+      logging.debug("Listing directory:" + smb_directory)
 
       # List the files/directories inside a dir
-      for filename in smbclient.listdir(directory):
+      for filename in smbclient.listdir(smb_directory):
          logging.debug("Film:" + filename)
          titles.append(filename)
 
