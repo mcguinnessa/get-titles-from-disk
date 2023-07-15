@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python3
 
 import logging
 import getopt
@@ -79,6 +79,9 @@ def main(argv):
    fs = FileSystem(smb_server, smb_user, smb_password)
    br_dir = "\Films\BluRay"
    dvds_dir = "\Films\DVDs"
+
+#   import time
+#   time.sleep(600)
 
    br_titles = fs.listDir(br_dir)
    dvd_titles = fs.listDir(dvds_dir)
