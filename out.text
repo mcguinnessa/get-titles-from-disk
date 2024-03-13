@@ -1,0 +1,3588 @@
+Looking in IMDB for 12 years a slave Year:2013
+Keys:dict_keys(['jaws', 'alan partridge: alpha papa', '12 years a slave'])
+{
+  "resultsSectionOrder": [
+    "TITLE",
+    "NAME"
+  ],
+  "findPageMeta": {
+    "searchTerm": "12 years a slave year",
+    "includeAdult": false,
+    "isExactMatch": false
+  },
+  "keywordResults": {
+    "results": []
+  },
+  "titleResults": {
+    "results": [
+      {
+        "id": "tt2024544",
+        "titleNameText": "12 Years a Slave",
+        "titleReleaseText": "2013",
+        "titleTypeText": "",
+        "titlePosterImageModel": {
+          "url": "https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg",
+          "maxHeight": 755,
+          "maxWidth": 509,
+          "caption": "Chiwetel Ejiofor in 12 Years a Slave (2013)"
+        },
+        "topCredits": [
+          "Chiwetel Ejiofor",
+          "Michael Kenneth Williams"
+        ],
+        "imageType": "movie"
+      },
+      {
+        "id": "tt3599702",
+        "titleNameText": "12 Years a Slave: A Historical Portrait",
+        "titleReleaseText": "2014",
+        "titleTypeText": "Video",
+        "titlePosterImageModel": {
+          "url": "https://m.media-amazon.com/images/M/MV5BODJhZWJlZjQtNjYzMi00NDU2LWE5MGItYTIyOGIzMTRmZGU0XkEyXkFqcGdeQXVyMjA3NzQyMA@@._V1_.jpg",
+          "maxHeight": 656,
+          "maxWidth": 555,
+          "caption": "12 Years a Slave: A Historical Portrait (2014)"
+        },
+        "topCredits": [
+          "Chiwetel Ejiofor",
+          "Steve McQueen"
+        ],
+        "imageType": "video"
+      },
+      {
+        "id": "tt3720046",
+        "titleNameText": "The Reel Story: 12 Years a Slave",
+        "titleReleaseText": "2013",
+        "titleTypeText": "Video",
+        "titlePosterImageModel": {
+          "url": "https://m.media-amazon.com/images/M/MV5BMGYyN2E0ZjMtOWIwMi00MDZjLThlN2ItOTY1ZDYxODIzMmI2XkEyXkFqcGdeQXVyNzE1Njg0MjU@._V1_.jpg",
+          "maxHeight": 600,
+          "maxWidth": 1200,
+          "caption": "The Reel Story: 12 Years a Slave (2013)"
+        },
+        "topCredits": [
+          "Chiwetel Ejiofor",
+          "Steve McQueen"
+        ],
+        "imageType": "video"
+      },
+      {
+        "id": "tt6792282",
+        "titleNameText": "A Twelve-Year Night",
+        "titleReleaseText": "2018",
+        "titleTypeText": "",
+        "titlePosterImageModel": {
+          "url": "https://m.media-amazon.com/images/M/MV5BYjk5ZjFiNWItMTRhMS00NWM2LWExMjItNjM1MzU2ODFmZDhkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+          "maxHeight": 1192,
+          "maxWidth": 824,
+          "caption": "A Twelve-Year Night (2018)"
+        },
+        "topCredits": [
+          "Antonio de la Torre",
+          "Chino Dar\u00edn"
+        ],
+        "imageType": "movie"
+      },
+      {
+        "id": "tt0092130",
+        "titleNameText": "A Man and a Woman: 20 Years Later",
+        "titleReleaseText": "1986",
+        "titleTypeText": "",
+        "titlePosterImageModel": {
+          "url": "https://m.media-amazon.com/images/M/MV5BODg1ZTkwZjctMTc1ZC00NGZmLThkZTgtNzRlMDc4ZGUxMWI3L2ltYWdlXkEyXkFqcGdeQXVyMjU5OTg5NDc@._V1_.jpg",
+          "maxHeight": 1200,
+          "maxWidth": 896,
+          "caption": "Anouk Aim\u00e9e and Jean-Louis Trintignant in A Man and a Woman: 20 Years Later (1986)"
+        },
+        "topCredits": [
+          "Anouk Aim\u00e9e",
+          "Jean-Louis Trintignant"
+        ],
+        "imageType": "movie"
+      }
+    ],
+    "nextCursor": "eyJlc1Rva2VuIjpbIjYwNDM2LjY4NCIsInR0MDA5MjEzMCJdLCJmaWx0ZXIiOiJ7XCJpbmNsdWRlQWR1bHRcIjpmYWxzZSxcImlzRXhhY3RNYXRjaFwiOmZhbHNlLFwic2VhcmNoVGVybVwiOlwiMTIgeWVhcnMgYSBzbGF2ZSB5ZWFyXCIsXCJ0eXBlXCI6W1wiVElUTEVcIl19In0=",
+    "hasExactMatches": false
+  },
+  "nameResults": {
+    "results": [],
+    "hasExactMatches": false
+  },
+  "companyResults": {
+    "results": []
+  }
+}
+Title:12 Years a Slave
+Year:2013
+imdbid:tt2024544
+Year Match!
+Found imdbid:tt2024544
+{
+  "id": "tt2024544",
+  "productionStatus": {
+    "currentProductionStage": {
+      "id": "released",
+      "text": "Released",
+      "__typename": "ProductionStage"
+    },
+    "productionStatusHistory": [
+      {
+        "status": {
+          "id": "script",
+          "text": "Script",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      },
+      {
+        "status": {
+          "id": "pre_production",
+          "text": "Pre-production",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      },
+      {
+        "status": {
+          "id": "pre_production",
+          "text": "Pre-production",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      },
+      {
+        "status": {
+          "id": "filming",
+          "text": "Filming",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      },
+      {
+        "status": {
+          "id": "post_production",
+          "text": "Post-production",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      },
+      {
+        "status": {
+          "id": "released",
+          "text": "Released",
+          "__typename": "ProductionStatus"
+        },
+        "__typename": "ProductionStatusHistory"
+      }
+    ],
+    "restriction": null,
+    "__typename": "ProductionStatusDetails"
+  },
+  "canHaveEpisodes": false,
+  "series": null,
+  "titleText": {
+    "text": "12 Years a Slave",
+    "__typename": "TitleText"
+  },
+  "titleType": {
+    "displayableProperty": {
+      "value": {
+        "plainText": "",
+        "__typename": "Markdown"
+      },
+      "__typename": "DisplayableTitleTypeProperty"
+    },
+    "text": "Movie",
+    "id": "movie",
+    "isSeries": false,
+    "isEpisode": false,
+    "categories": [
+      {
+        "value": "movie",
+        "__typename": "TitleTypeCategory"
+      }
+    ],
+    "canHaveEpisodes": false,
+    "__typename": "TitleType"
+  },
+  "originalTitleText": {
+    "text": "12 Years a Slave",
+    "__typename": "TitleText"
+  },
+  "certificate": {
+    "rating": "R",
+    "__typename": "Certificate"
+  },
+  "releaseYear": {
+    "year": 2013,
+    "endYear": null,
+    "__typename": "YearRange"
+  },
+  "releaseDate": {
+    "day": 8,
+    "month": 11,
+    "year": 2013,
+    "__typename": "ReleaseDate"
+  },
+  "runtime": {
+    "seconds": 8040,
+    "displayableProperty": {
+      "value": {
+        "plainText": "2h 14m",
+        "__typename": "Markdown"
+      },
+      "__typename": "DisplayableTitleRuntimeProperty"
+    },
+    "__typename": "Runtime"
+  },
+  "canRate": {
+    "isRatable": true,
+    "__typename": "CanRate"
+  },
+  "ratingsSummary": {
+    "aggregateRating": 8.1,
+    "voteCount": 738267,
+    "__typename": "RatingsSummary"
+  },
+  "meterRanking": {
+    "currentRank": 688,
+    "rankChange": {
+      "changeDirection": "DOWN",
+      "difference": 129,
+      "__typename": "MeterRankChange"
+    },
+    "__typename": "TitleMeterRanking"
+  },
+  "primaryImage": {
+    "id": "rm3711556096",
+    "width": 509,
+    "height": 755,
+    "url": "https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg",
+    "caption": {
+      "plainText": "Chiwetel Ejiofor in 12 Years a Slave (2013)",
+      "__typename": "Markdown"
+    },
+    "__typename": "Image"
+  },
+  "images": {
+    "total": 202,
+    "edges": [
+      {
+        "node": {
+          "id": "rm3631209472",
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      }
+    ],
+    "__typename": "ImageConnection"
+  },
+  "videos": {
+    "total": 38,
+    "__typename": "TitleRelatedVideosConnection"
+  },
+  "primaryVideos": {
+    "edges": [
+      {
+        "node": {
+          "id": "vi302032921",
+          "createdDate": "2013-12-06T15:14:46Z",
+          "isMature": false,
+          "runtime": {
+            "value": 147,
+            "__typename": "VideoRuntime"
+          },
+          "name": {
+            "value": "UK Trailer",
+            "language": "en",
+            "__typename": "LocalizedString"
+          },
+          "description": {
+            "value": "In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.",
+            "language": "en",
+            "__typename": "LocalizedString"
+          },
+          "timedTextTracks": [],
+          "recommendedTimedTextTrack": null,
+          "thumbnail": {
+            "url": "https://m.media-amazon.com/images/M/MV5BMTQ4MjI1OTI2Nl5BMl5BanBnXkFtZTgwNDMwODQ3MDE@._V1_.jpg",
+            "height": 480,
+            "width": 640,
+            "__typename": "Thumbnail"
+          },
+          "primaryTitle": {
+            "id": "tt2024544",
+            "titleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "originalTitleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "releaseYear": {
+              "year": 2013,
+              "__typename": "YearRange"
+            },
+            "__typename": "Title"
+          },
+          "playbackURLs": [
+            {
+              "displayName": {
+                "value": "480p",
+                "language": "en-US",
+                "__typename": "LocalizedString"
+              },
+              "videoMimeType": "MP4",
+              "videoDefinition": "DEF_480p",
+              "url": "https://imdb-video.media-imdb.com/vi302032921/1434659607842-pgv4ql-1616202536163.mp4?Expires=1710368092&Signature=DLgXqq1tAri3mt9dN9oj68YJ-4ToRchkS1rs-ZXOWY3WY8ozVNuxZDMieVurmocVz8fxpF9QUgIe5mgPBBFDQgc2l50ebpHLqcJdmjmyYODGtJLjH2YkTNqU2lfIv2oBQ3SgeNgEzgpUOeynLXB2xaK4XFueIk0X6VRQ7LWXRteK-jq5M22L6Oeb8QMbGhhQomrHxNPMmAQ4ahh~GkfwLBbb3BpxpViOqDvr5AmiHeQILSEwGsMgYDXHgfkEUAJER1HAfuD4GbJqyXlq58VlKFw2CdFJLfeQiW0a~ls~9ANjTQzfLdjhC2utrv5owlcsQGbl~S0JPaSXRNpH7oTVfQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+              "__typename": "PlaybackURL"
+            },
+            {
+              "displayName": {
+                "value": "SD",
+                "language": "en-US",
+                "__typename": "LocalizedString"
+              },
+              "videoMimeType": "MP4",
+              "videoDefinition": "DEF_SD",
+              "url": "https://imdb-video.media-imdb.com/vi302032921/1434659454657-dx9ykf-1616202536163.mp4?Expires=1710368092&Signature=rMXCmAY4G19VPb5TU8XzIoLbRl91YXIoufOEaTniy~ddnKutd5iKnRwhI4SEEXgpc0k9dwQ8w1RaYi81XFdJbFyj6zoePb5aN00nQGVaBLJZey4ZMaRK~c~CAcVi1neJpyDPOh8o0mBB3760ZMyBIqmnEwREmw1sN6LvWiqHT05VvRrLmq~8ho4qoZVbTeu~6KDjIW2iwh2YAvK70aYRaRX2oc4pLLO-N6dhMprTBYbeycPGZVUUpgr-tUiy411he9G3Jb2eT4MVq65QYMV1gg5ceuadVkY89wpR~6iDNrGJrprKpGxt0s1TPVxDIxXKDRjjucEIZcjG60AN7HiDmA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+              "__typename": "PlaybackURL"
+            }
+          ],
+          "contentType": {
+            "id": "amzn1.imdb.video.contenttype.trailer",
+            "displayName": {
+              "value": "Trailer",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "previewURLs": [
+            {
+              "displayName": {
+                "value": "AUTO",
+                "language": "en-US",
+                "__typename": "LocalizedString"
+              },
+              "videoMimeType": "M3U8",
+              "videoDefinition": "DEF_AUTO",
+              "url": "https://imdb-video.media-imdb.com/vi302032921/hls-preview-0703da3d-872a-43f5-b3c1-05497715a45e.m3u8?Expires=1710368092&Signature=NPU6-ZNPu8McTEEln5rTCzX4JhfYldneaCmMclk3K-jyVge7muics6XpcAc9fC46Jsr89N5htFZD69vRY3mjKdMEqa~lLIL1Uhgsomt62K~~ndCE8h9pibiQjjqTGk9EHPR3NuGzdC6CJZyLtoisqQRiuZfUe6L5cEGbXx7IGKY3dtKnrfLMNp7ePAbk2kgmc6rezHbdKQxDL4o9Lf2pl5EELyaWAOtUMi5bnBJ7FoyG-kbyi5Uw6JWnvQ-awRu~hmTlv0VrZ~Lybm0nqsnhxYgXaEalH-w7HULyzd~oaEDgbWkwNqr1wUEj7pUrf08TnoNpQN83kQgy4ZK8MaCkNg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+              "__typename": "PlaybackURL"
+            }
+          ],
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi1693624601",
+          "createdDate": "2013-07-16T19:56:50Z",
+          "isMature": false,
+          "runtime": {
+            "value": 149,
+            "__typename": "VideoRuntime"
+          },
+          "name": {
+            "value": "Trailer #1",
+            "language": "en",
+            "__typename": "LocalizedString"
+          },
+          "description": {
+            "value": "In the pre-Civil War United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery. ",
+            "language": "en",
+            "__typename": "LocalizedString"
+          },
+          "timedTextTracks": [],
+          "recommendedTimedTextTrack": null,
+          "thumbnail": {
+            "url": "https://m.media-amazon.com/images/M/MV5BMTQzMzE5NzUzNV5BMl5BanBnXkFtZTgwNDIyMDAzMzE@._V1_.jpg",
+            "height": 544,
+            "width": 1280,
+            "__typename": "Thumbnail"
+          },
+          "primaryTitle": {
+            "id": "tt2024544",
+            "titleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "originalTitleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "releaseYear": {
+              "year": 2013,
+              "__typename": "YearRange"
+            },
+            "__typename": "Title"
+          },
+          "playbackURLs": [
+            {
+              "displayName": {
+                "value": "480p",
+                "language": "en-US",
+                "__typename": "LocalizedString"
+              },
+              "videoMimeType": "MP4",
+              "videoDefinition": "DEF_480p",
+              "url": "https://imdb-video.media-imdb.com/vi1693624601/MV5BNmUyN2VkOGUtMjNlMC00N2IzLWEzNzctNjI3MmEzMThiNjQ4XkExMV5BbXA0XkFpbWRiLWV0cy10cmFuc2NvZGU@.mp4?Expires=1710368092&Signature=Z27oNItVojB1VMCQqoUtOjwKyOSfH49U5tfhdDWCyjPmdDTrWsAMTjvhcRpvAK~cGfvvkeOHAI8kVnjnD0XAgwD0HJDJ3GhHrdUS86OBfghNfmL68V7NGqoBWimrqKyGFomdnXmHZsEfM07AjNRAZcsiDZDdAR2Cs2eleJpV1hLjfUtprTTbk6ACdS4qvbmGDJJLW2n~BLb7bnznMCVQQZBNhYhVBtct1hghA7kYEKyxJUU1bZ~95mrpN6B1LonLyi~cCLnwf6OC~~0DBdBX2-kIU0iO62xXrX2bxUMKTVz6t9T8dUYF9bG3UvO3W8Vqn5ojLtSeLwei3qsQb6HavA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+              "__typename": "PlaybackURL"
+            },
+            {
+              "displayName": {
+                "value": "SD",
+                "language": "en-US",
+                "__typename": "LocalizedString"
+              },
+              "videoMimeType": "MP4",
+              "videoDefinition": "DEF_SD",
+              "url": "https://imdb-video.media-imdb.com/vi1693624601/MV5BMWQ0ZDZmNWUtNWMxNi00NTk1LWEwZjQtMDI2NDI2MGZmMzE5XkExMV5BbXA0XkFpbWRiLWV0cy10cmFuc2NvZGU@.mp4?Expires=1710368092&Signature=mKRh7vY08bC6w3JwNxsnOa6deyGGJGwS8RgFgNkHZ0jPJWr7WKhXiGHGMtjQmyTO63Ohy4tCA59k-W8tCtfBpyPPJzOA62fxAMOg7HtYrFtni8JtVzwsLUhrBLi1akgtW5cTAPHh5siyIfV0vRMkYofRtbc8j0Q8LRShxZ6E39KdLQjmbsbSbtQNtHrHpzGo74va8c1jJArh6TiC31UAuDuX2zAFFaZtdligfiE6g22j-eWZF0y7-U2~SETB4~V5JSKMeBJGa~Q3ENy~lssLs7a09a-6D-90I8Pb77-nb2plyIYjc1c3jIHMPWO7gKEJFIyn0RU61VTyvN4jnAatDQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+              "__typename": "PlaybackURL"
+            }
+          ],
+          "contentType": {
+            "id": "amzn1.imdb.video.contenttype.trailer",
+            "displayName": {
+              "value": "Trailer",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "previewURLs": [],
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      }
+    ],
+    "__typename": "VideoConnection"
+  },
+  "externalLinks": {
+    "total": 548,
+    "__typename": "ExternalLinkConnection"
+  },
+  "metacritic": {
+    "metascore": {
+      "score": 96,
+      "__typename": "Metascore"
+    },
+    "__typename": "Metacritic"
+  },
+  "keywords": {
+    "total": 268,
+    "edges": [
+      {
+        "node": {
+          "text": "kidnapping",
+          "__typename": "TitleKeyword"
+        },
+        "__typename": "TitleKeywordEdge"
+      },
+      {
+        "node": {
+          "text": "racism",
+          "__typename": "TitleKeyword"
+        },
+        "__typename": "TitleKeywordEdge"
+      },
+      {
+        "node": {
+          "text": "separation from family",
+          "__typename": "TitleKeyword"
+        },
+        "__typename": "TitleKeywordEdge"
+      },
+      {
+        "node": {
+          "text": "torture",
+          "__typename": "TitleKeyword"
+        },
+        "__typename": "TitleKeywordEdge"
+      },
+      {
+        "node": {
+          "text": "whipping",
+          "__typename": "TitleKeyword"
+        },
+        "__typename": "TitleKeywordEdge"
+      }
+    ],
+    "__typename": "TitleKeywordConnection"
+  },
+  "genres": {
+    "genres": [
+      {
+        "text": "Biography",
+        "id": "Biography",
+        "__typename": "Genre"
+      },
+      {
+        "text": "Drama",
+        "id": "Drama",
+        "__typename": "Genre"
+      },
+      {
+        "text": "History",
+        "id": "History",
+        "__typename": "Genre"
+      }
+    ],
+    "__typename": "Genres"
+  },
+  "plot": {
+    "plotText": {
+      "plainText": "In the antebellum United States, Solomon Northup, a free Black man from upstate New York, is abducted and sold into slavery.",
+      "__typename": "Markdown"
+    },
+    "language": {
+      "id": "en-US",
+      "__typename": "DisplayableLanguage"
+    },
+    "__typename": "Plot"
+  },
+  "plotContributionLink": {
+    "url": "https://contribute.imdb.com/updates?update=tt2024544:outlines.add.1.locale~en-US",
+    "__typename": "ContributionLink"
+  },
+  "credits": {
+    "total": 553,
+    "__typename": "CreditConnection"
+  },
+  "principalCredits": [
+    {
+      "totalCredits": 1,
+      "category": {
+        "text": "Director",
+        "id": "director",
+        "__typename": "CreditCategory"
+      },
+      "credits": [
+        {
+          "name": {
+            "nameText": {
+              "text": "Steve McQueen",
+              "__typename": "NameText"
+            },
+            "id": "nm2588606",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    },
+    {
+      "totalCredits": 2,
+      "category": {
+        "text": "Writers",
+        "id": "writer",
+        "__typename": "CreditCategory"
+      },
+      "credits": [
+        {
+          "name": {
+            "nameText": {
+              "text": "John Ridley",
+              "__typename": "NameText"
+            },
+            "id": "nm0725983",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        },
+        {
+          "name": {
+            "nameText": {
+              "text": "Solomon Northup",
+              "__typename": "NameText"
+            },
+            "id": "nm1185849",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    },
+    {
+      "totalCredits": 99,
+      "category": {
+        "text": "Stars",
+        "id": "cast",
+        "__typename": "CreditCategory"
+      },
+      "credits": [
+        {
+          "name": {
+            "nameText": {
+              "text": "Chiwetel Ejiofor",
+              "__typename": "NameText"
+            },
+            "id": "nm0252230",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Cast"
+        },
+        {
+          "name": {
+            "nameText": {
+              "text": "Michael Kenneth Williams",
+              "__typename": "NameText"
+            },
+            "id": "nm0931324",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Cast"
+        },
+        {
+          "name": {
+            "nameText": {
+              "text": "Michael Fassbender",
+              "__typename": "NameText"
+            },
+            "id": "nm1055413",
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Cast"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    }
+  ],
+  "reviews": {
+    "total": 998,
+    "__typename": "ReviewsConnection"
+  },
+  "criticReviewsTotal": {
+    "total": 467,
+    "__typename": "ExternalLinkConnection"
+  },
+  "triviaTotal": {
+    "total": 55,
+    "__typename": "TriviaConnection"
+  },
+  "engagementStatistics": {
+    "watchlistStatistics": {
+      "displayableCount": {
+        "text": "Added by 794K users",
+        "__typename": "LocalizedDisplayableCount"
+      },
+      "__typename": "WatchlistStatistics"
+    },
+    "__typename": "EngagementStatistics"
+  },
+  "subNavCredits": {
+    "total": 553,
+    "__typename": "CreditConnection"
+  },
+  "subNavReviews": {
+    "total": 998,
+    "__typename": "ReviewsConnection"
+  },
+  "subNavTrivia": {
+    "total": 55,
+    "__typename": "TriviaConnection"
+  },
+  "subNavFaqs": {
+    "total": 11,
+    "__typename": "FaqConnection"
+  },
+  "subNavTopQuestions": {
+    "total": 20,
+    "__typename": "AlexaQuestionConnection"
+  },
+  "titleGenres": {
+    "genres": [
+      {
+        "genre": {
+          "text": "Biography",
+          "__typename": "GenreItem"
+        },
+        "__typename": "TitleGenre"
+      },
+      {
+        "genre": {
+          "text": "Drama",
+          "__typename": "GenreItem"
+        },
+        "__typename": "TitleGenre"
+      },
+      {
+        "genre": {
+          "text": "History",
+          "__typename": "GenreItem"
+        },
+        "__typename": "TitleGenre"
+      }
+    ],
+    "__typename": "TitleGenres"
+  },
+  "meta": {
+    "canonicalId": "tt2024544",
+    "publicationStatus": "PUBLISHED",
+    "__typename": "TitleMeta"
+  },
+  "castPageTitle": {
+    "edges": [
+      {
+        "node": {
+          "name": {
+            "id": "nm0252230",
+            "nameText": {
+              "text": "Chiwetel Ejiofor",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm4833412",
+            "nameText": {
+              "text": "Dwight Henry",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm6003176",
+            "nameText": {
+              "text": "Dickie Gravois",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0061262",
+            "nameText": {
+              "text": "Bryan Batt",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      }
+    ],
+    "__typename": "CreditConnection"
+  },
+  "creatorsPageTitle": [],
+  "directorsPageTitle": [
+    {
+      "credits": [
+        {
+          "name": {
+            "id": "nm2588606",
+            "nameText": {
+              "text": "Steve McQueen",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "__typename": "Crew"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    }
+  ],
+  "countriesOfOrigin": {
+    "countries": [
+      {
+        "id": "GB",
+        "__typename": "CountryOfOrigin"
+      }
+    ],
+    "__typename": "CountriesOfOrigin"
+  },
+  "production": {
+    "edges": [
+      {
+        "node": {
+          "company": {
+            "id": "co0007127",
+            "companyText": {
+              "text": "New Regency Productions",
+              "__typename": "CompanyText"
+            },
+            "__typename": "Company"
+          },
+          "__typename": "CompanyCredit"
+        },
+        "__typename": "CompanyCreditEdge"
+      },
+      {
+        "node": {
+          "company": {
+            "id": "co0120121",
+            "companyText": {
+              "text": "River Road Entertainment",
+              "__typename": "CompanyText"
+            },
+            "__typename": "Company"
+          },
+          "__typename": "CompanyCredit"
+        },
+        "__typename": "CompanyCreditEdge"
+      },
+      {
+        "node": {
+          "company": {
+            "id": "co0136967",
+            "companyText": {
+              "text": "Plan B Entertainment",
+              "__typename": "CompanyText"
+            },
+            "__typename": "Company"
+          },
+          "__typename": "CompanyCredit"
+        },
+        "__typename": "CompanyCreditEdge"
+      }
+    ],
+    "__typename": "CompanyCreditConnection"
+  },
+  "featuredReviews": {
+    "edges": [
+      {
+        "node": {
+          "author": {
+            "nickName": "ferguson-6",
+            "__typename": "UserProfile"
+          },
+          "summary": {
+            "originalText": "Live, not just Survive",
+            "__typename": "ReviewSummary"
+          },
+          "text": {
+            "originalText": {
+              "plainText": "Greetings again from the darkness. Should this be labeled a historical drama? Is it one man's extraordinary tale of strength and survival? Does this fall into the \"art film\" category that so divides the movie-going public? The answer to all is YES, and I would add that it's a masterfully crafted film with exquisite story telling, stunning photography and top notch acting throughout.\n\nThe movie is based on the real life and writings of Solomon Northrup, a free man who was kidnapped and sold into slavery from 1841-53. Northrup's story provides us a look inside the despicable institution of slavery. Needless to say, it's a painful and sad process made even more emotional by the work of director Steve McQueen (Hunger, Shame). McQueen takes a very direct approach. Not much is left to the imagination. Torture, abuse, cruelty and misery take up the full screen. The only subtlety comes from the terrific work of Chiwetel Ejiofor as Northrup. His facial expressions and eyes are more powerful and telling than any lines of dialogue could be.\n\nYou will not find many details from the movie here. This is one to experience for yourself. It lacks the typical Hollywood agenda when it comes to American history. Instead this era is presented through the eyes of a single wronged man and his quest to return to his wife and kids, no matter the inhumane obstacles. We see Paul Giamatti as an emotionless, all-business slave trader. Benedict Cumberbatch is a plantation owner who has a heart, but lacks business savvy. And finally we enter the world of cotton farmer Michael Fassbender, who twists Bible scripture into threats directed at the slaves - his \"property\".\n\nFassbender dives deep into evil to find his character, and along with Ejiofor, Sarah Paulsen (who plays Fassbender's icy wife), and Lupita Nyong'o (who plays slave Patsey, the center of the two most incredible scenes in the film), provide more Oscar worthy performances than any one movie can expect. You will also note Quvenzhane Wallis (as Northrup's daughter) and Dwight Henry (as a slave) in their first appearances since Beasts of the Southern Wild. Other strong support comes from Scoot McNairy, Taran Killam (SNL), Michael K Williams, Alfre Woodward, a nasty Paul Dano, Garret Dillahunt and Adepero Oduye.\n\nSteven Spielberg gave us a taste of the holocaust with Schindler's List, but not since the TV mini-series \"Roots\" has any project come so close to examining the realities of slavery. Northrup's story seems to be from a different universe than the charming slaves of Gone with the Wind. I would argue that what makes this watchable (though very difficult) is the focus on Northrup's story. While tragic, his ending actually deflects from the ongoing plight of those not so fortunate. It's a story of a man who states he doesn't wish to merely survive, he wants to live a life worth living.\n\nMcQueen's direction will certainly be front and center come awards season, as will many of the actors, John Ridley (the screenwriter), Sean Bobbitt (cinematographer) and Hans Zimmer (score). The only question is whether the subject matter is too tough for Oscar voters, who traditionally lean towards projects a bit more mainstream.",
+              "__typename": "Markdown"
+            },
+            "__typename": "ReviewText"
+          },
+          "authorRating": 8,
+          "submissionDate": "2013-10-27",
+          "__typename": "Review"
+        },
+        "__typename": "ReviewEdge"
+      }
+    ],
+    "__typename": "ReviewsConnection"
+  },
+  "__typename": "Title",
+  "wins": {
+    "total": 244,
+    "__typename": "AwardNominationConnection"
+  },
+  "nominations": {
+    "total": 337,
+    "__typename": "AwardNominationConnection"
+  },
+  "prestigiousAwardSummary": {
+    "nominations": 6,
+    "wins": 3,
+    "award": {
+      "text": "Oscar",
+      "id": "aw0000016",
+      "event": {
+        "id": "ev0000003",
+        "__typename": "AwardsEvent"
+      },
+      "__typename": "AwardDetails"
+    },
+    "__typename": "PrestigiousAwardSummary"
+  },
+  "episodes": null,
+  "videoStrip": {
+    "edges": [
+      {
+        "node": {
+          "id": "vi302032921",
+          "contentType": {
+            "displayName": {
+              "value": "Trailer",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "UK Trailer",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 147,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 480,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTQ4MjI1OTI2Nl5BMl5BanBnXkFtZTgwNDMwODQ3MDE@._V1_.jpg",
+            "width": 640,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi1693624601",
+          "contentType": {
+            "displayName": {
+              "value": "Trailer",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "Trailer #1",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 149,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 544,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTQzMzE5NzUzNV5BMl5BanBnXkFtZTgwNDIyMDAzMzE@._V1_.jpg",
+            "width": 1280,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi4267359769",
+          "contentType": {
+            "displayName": {
+              "value": "Trailer",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years a Slave",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 141,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 816,
+            "url": "https://m.media-amazon.com/images/M/MV5BZmJlMjI2NmEtNjJlNi00NGQyLWFmYmQtOTExMjI3MTBhYTM5XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg",
+            "width": 1920,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi3476013849",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "The Rise of Chiwetel Ejiofor",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 249,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 1080,
+            "url": "https://m.media-amazon.com/images/M/MV5BOGJiNTYxYWEtODljYy00YTAyLTk5MDYtNDJiN2FlYjkzOTljXkEyXkFqcGdeQXJoYW5uYWg@._V1_.jpg",
+            "width": 1920,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi2643372057",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years a Slave",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 41,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 360,
+            "url": "https://m.media-amazon.com/images/M/MV5BMjQwMThiODMtNDJiMi00OWUzLWJiYTctMTM5MTg5NWI4N2UwXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_.jpg",
+            "width": 480,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi2073077785",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years a Slave",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 56,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 360,
+            "url": "https://m.media-amazon.com/images/M/MV5BOWJmZmU1MjUtMzBhOC00ZjlhLWE3M2YtNmQ4MTNhNmI3MDY2XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_.jpg",
+            "width": 480,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi3080504345",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: I Did As Instructed",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 47,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 533,
+            "url": "https://m.media-amazon.com/images/M/MV5BMDBjYjI0NmItMGM5MC00OWI2LWExMzctODk0YzlkNTk2Y2QzXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
+            "width": 948,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi3147613209",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: A Lusty Visit In The Night",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 24,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 428,
+            "url": "https://m.media-amazon.com/images/M/MV5BZjhmOTEwMDktMzQ0Ny00MDMyLTg3MzQtMzA0NDQ3ODU2YmE1XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg",
+            "width": 1050,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi3130835993",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: Welcome To Washington",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 69,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 495,
+            "url": "https://m.media-amazon.com/images/M/MV5BZjJkMTllZTAtMjU0Ny00NGE5LWIyM2YtNmIyN2FlMWQyNWZjXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
+            "width": 880,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi2359084057",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: I Want To Live",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 41,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 720,
+            "url": "https://m.media-amazon.com/images/M/MV5BYzczY2UwMjAtYmYwMC00ZTI4LWFhMjctZTI3MDQyYWRjNmY0XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg",
+            "width": 1280,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi2677851161",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: Soap",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 41,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 446,
+            "url": "https://m.media-amazon.com/images/M/MV5BZDM3YzlkMTYtNmQ0NC00ODYxLTljNTEtOWI3MDZlYmM2MjkwXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
+            "width": 793,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      },
+      {
+        "node": {
+          "id": "vi2040316953",
+          "contentType": {
+            "displayName": {
+              "value": "Clip",
+              "__typename": "LocalizedString"
+            },
+            "__typename": "VideoContentType"
+          },
+          "name": {
+            "value": "12 Years A Slave: What'd You Say To Pats?",
+            "__typename": "LocalizedString"
+          },
+          "runtime": {
+            "value": 82,
+            "__typename": "VideoRuntime"
+          },
+          "thumbnail": {
+            "height": 533,
+            "url": "https://m.media-amazon.com/images/M/MV5BNWQ0MzcxNGMtOGI4OC00MzMxLTk4NTUtZWE0NDgyOGQzODc0XkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
+            "width": 948,
+            "__typename": "Thumbnail"
+          },
+          "__typename": "Video"
+        },
+        "__typename": "VideoEdge"
+      }
+    ],
+    "__typename": "VideoConnection"
+  },
+  "titleMainImages": {
+    "total": 202,
+    "edges": [
+      {
+        "node": {
+          "id": "rm3631209472",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTY3NjE5Mzk3NV5BMl5BanBnXkFtZTgwNzQ5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor and Adepero Oduye in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm660659200",
+          "url": "https://m.media-amazon.com/images/M/MV5BMjI1NjYzNTUzM15BMl5BanBnXkFtZTgwODQ5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 2048,
+          "width": 1365,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm643881984",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTM5MTU3MDQ4Ml5BMl5BanBnXkFtZTgwOTQ5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm627104768",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTU5MTUwOTQ3N15BMl5BanBnXkFtZTgwMDU5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Paul Dano and Chiwetel Ejiofor in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm610327552",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTA2Nzk1MTU3NjheQTJeQWpwZ15BbWU4MDE1OTExNDAx._V1_.jpg",
+          "caption": {
+            "plainText": "Lupita Nyong'o in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm593550336",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTQ3OTYyMTYwM15BMl5BanBnXkFtZTgwMjU5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Sarah Paulson and Michael Fassbender in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1362,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm3647986688",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTc4ODExMzk5NV5BMl5BanBnXkFtZTgwNjQ5MTE0MDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Paul Giamatti in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm2307841024",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTkyOTUwNDg1N15BMl5BanBnXkFtZTgwNjczOTkzMDE@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor, Kelsey Scott, Quvenzhan\u00e9 Wallis, and Cameron Zeigler in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 533,
+          "width": 800,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm494249216",
+          "url": "https://m.media-amazon.com/images/M/MV5BOTQwODg5NzI5N15BMl5BanBnXkFtZTcwMDEwMzY3OQ@@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor, Michael Fassbender, and Lupita Nyong'o in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm477472000",
+          "url": "https://m.media-amazon.com/images/M/MV5BMTA1MDg4NjgzMTdeQTJeQWpwZ15BbWU3MDIxMDM2Nzk@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor and Benedict Cumberbatch in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm460694784",
+          "url": "https://m.media-amazon.com/images/M/MV5BMjI1NDUwOTE0MF5BMl5BanBnXkFtZTcwNDEwMzY3OQ@@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm443917568",
+          "url": "https://m.media-amazon.com/images/M/MV5BODE3NzE5NzEyNl5BMl5BanBnXkFtZTcwNTEwMzY3OQ@@._V1_.jpg",
+          "caption": {
+            "plainText": "Sarah Paulson and Lupita Nyong'o in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      },
+      {
+        "node": {
+          "id": "rm427140352",
+          "url": "https://m.media-amazon.com/images/M/MV5BMjEwNjQzNDY1Ml5BMl5BanBnXkFtZTcwNjEwMzY3OQ@@._V1_.jpg",
+          "caption": {
+            "plainText": "Chiwetel Ejiofor and Michael Fassbender in 12 Years a Slave (2013)",
+            "__typename": "Markdown"
+          },
+          "height": 1365,
+          "width": 2048,
+          "__typename": "Image"
+        },
+        "__typename": "ImageEdge"
+      }
+    ],
+    "__typename": "ImageConnection"
+  },
+  "imageUploadLink": {
+    "url": "https://contribute.imdb.com/image/tt2024544/add?bus=imdb&return_url=https%3A%2F%2Fwww.imdb.com%2Fclose_me&site=web",
+    "__typename": "ContributionLink"
+  },
+  "cast": {
+    "edges": [
+      {
+        "node": {
+          "name": {
+            "id": "nm0252230",
+            "nameText": {
+              "text": "Chiwetel Ejiofor",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BNzA5MDEyMTY3Nl5BMl5BanBnXkFtZTgwODQ0MjcxMDE@._V1_.jpg",
+              "width": 1467,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Solomon Northup",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0931324",
+            "nameText": {
+              "text": "Michael Kenneth Williams",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMjE1MTI1NjUxMV5BMl5BanBnXkFtZTgwNTUyODM0MTE@._V1_.jpg",
+              "width": 1365,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Robert",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm1055413",
+            "nameText": {
+              "text": "Michael Fassbender",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTk0NjM2MTE5M15BMl5BanBnXkFtZTcwODIxMzcyNw@@._V1_.jpg",
+              "width": 1365,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Edwin Epps",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0000093",
+            "nameText": {
+              "text": "Brad Pitt",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_.jpg",
+              "width": 1363,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Bass",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm4833412",
+            "nameText": {
+              "text": "Dwight Henry",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMjA2NjI4NTk4OF5BMl5BanBnXkFtZTcwOTc1NDM4Nw@@._V1_.jpg",
+              "width": 1362,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Uncle Abram",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm6003176",
+            "nameText": {
+              "text": "Dickie Gravois",
+              "__typename": "NameText"
+            },
+            "primaryImage": null,
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Overseer",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0061262",
+            "nameText": {
+              "text": "Bryan Batt",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTMwMzU2NDk4NF5BMl5BanBnXkFtZTYwNjkxNTEy._V1_.jpg",
+              "width": 300,
+              "height": 200,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Judge Turner",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm1788122",
+            "nameText": {
+              "text": "Ashley Dyke",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BZTExMWZkNDAtMzc3Ni00ZWZkLWI2MzQtNzk0MWEzNjlmZDNlXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+              "width": 749,
+              "height": 1146,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actress",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Anna",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0779427",
+            "nameText": {
+              "text": "Kelsey Scott",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTQ4ZTk0MzEtZTNlMS00ZjE5LWI5YTQtMzU4M2UyYjg2YjE4XkEyXkFqcGdeQXVyMTAxNjgzNA@@._V1_.jpg",
+              "width": 940,
+              "height": 889,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actress",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Anne Northup",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm4832920",
+            "nameText": {
+              "text": "Quvenzhan\u00e9 Wallis",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTU1ZDQwNDctMDA5OC00ODdmLWJjNWYtNTcxNTFlOWFlYzQ2XkEyXkFqcGdeQXVyMTExNzQzMDE0._V1_.jpg",
+              "width": 1624,
+              "height": 2436,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actress",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Margaret Northup",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm5244012",
+            "nameText": {
+              "text": "Cameron Zeigler",
+              "__typename": "NameText"
+            },
+            "primaryImage": null,
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Alonzo Northup",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm1591232",
+            "nameText": {
+              "text": "Tony Bentley",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTMwMzYzMDI2OF5BMl5BanBnXkFtZTYwNjM3Mzgy._V1_.jpg",
+              "width": 300,
+              "height": 461,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Mr. Moon",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm1058940",
+            "nameText": {
+              "text": "Scoot McNairy",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMzUxYjM1ZjEtYTcwNy00MDkyLWJjZGItMjFmNjZjM2ViMDMwXkEyXkFqcGdeQXVyMjMxOTI4MTk@._V1_.jpg",
+              "width": 871,
+              "height": 641,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Brown",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0453115",
+            "nameText": {
+              "text": "Taran Killam",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMWM5YTFhNzEtMGIyYy00ZTZiLThmYTctNWYyZDQ0MzRlNjVhXkEyXkFqcGdeQXVyMTU5MjkwMw@@._V1_.jpg",
+              "width": 3413,
+              "height": 4818,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Hamilton",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0077512",
+            "nameText": {
+              "text": "Christopher Berry",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BODhlYzgxZDMtY2ZkYy00OTA0LTllNjMtZTk4YmMwOWRmNDVjXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
+              "width": 2640,
+              "height": 1100,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Burch",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm0131966",
+            "nameText": {
+              "text": "Bill Camp",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMTU0MTI1NTMxN15BMl5BanBnXkFtZTgwNTkxMjI2NDM@._V1_.jpg",
+              "width": 1685,
+              "height": 2048,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Radburn",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm6003177",
+            "nameText": {
+              "text": "Mister Mackey Jr.",
+              "__typename": "NameText"
+            },
+            "primaryImage": null,
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Randall",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      },
+      {
+        "node": {
+          "name": {
+            "id": "nm1663252",
+            "nameText": {
+              "text": "Chris Chalk",
+              "__typename": "NameText"
+            },
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BNTc1ZmNlZmMtZmYxZC00NDQ5LTgwNTEtNjgzNjUyNmVjM2M4XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+              "width": 2048,
+              "height": 2560,
+              "__typename": "Image"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "category": {
+            "id": "actor",
+            "__typename": "CreditCategory"
+          },
+          "characters": [
+            {
+              "name": "Clemens",
+              "__typename": "Character"
+            }
+          ],
+          "episodeCredits": {
+            "total": 0,
+            "yearRange": null,
+            "__typename": "EpisodeCastConnection"
+          },
+          "__typename": "Cast"
+        },
+        "__typename": "CreditEdge"
+      }
+    ],
+    "__typename": "CreditConnection"
+  },
+  "creators": [],
+  "directors": [
+    {
+      "totalCredits": 1,
+      "category": {
+        "text": "Director",
+        "__typename": "CreditCategory"
+      },
+      "credits": [
+        {
+          "name": {
+            "id": "nm2588606",
+            "nameText": {
+              "text": "Steve McQueen",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    }
+  ],
+  "writers": [
+    {
+      "totalCredits": 2,
+      "category": {
+        "text": "Writers",
+        "__typename": "CreditCategory"
+      },
+      "credits": [
+        {
+          "name": {
+            "id": "nm0725983",
+            "nameText": {
+              "text": "John Ridley",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        },
+        {
+          "name": {
+            "id": "nm1185849",
+            "nameText": {
+              "text": "Solomon Northup",
+              "__typename": "NameText"
+            },
+            "__typename": "Name"
+          },
+          "attributes": null,
+          "__typename": "Crew"
+        }
+      ],
+      "__typename": "PrincipalCreditsForCategory"
+    }
+  ],
+  "isAdult": false,
+  "moreLikeThisTitles": {
+    "edges": [
+      {
+        "node": {
+          "id": "tt0268978",
+          "titleText": {
+            "text": "A Beautiful Mind",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "A Beautiful Mind",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm3910404352",
+            "width": 1010,
+            "height": 1500,
+            "url": "https://m.media-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+            "caption": {
+              "plainText": "Russell Crowe in A Beautiful Mind (2001)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2001,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.2,
+            "voteCount": 982118,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 8100,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "PG-13",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Mystery",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt0405159",
+          "titleText": {
+            "text": "Million Dollar Baby",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Million Dollar Baby",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm3491335168",
+            "width": 1390,
+            "height": 2048,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_.jpg",
+            "caption": {
+              "plainText": "Clint Eastwood, Morgan Freeman, and Hilary Swank in Million Dollar Baby (2004)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2004,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 718597,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 7920,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "PG-13",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Sport",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt1895587",
+          "titleText": {
+            "text": "Spotlight",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Spotlight",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm899739136",
+            "width": 1893,
+            "height": 2800,
+            "url": "https://m.media-amazon.com/images/M/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
+            "caption": {
+              "plainText": "Michael Keaton, Liev Schreiber, Brian d'Arcy James, Mark Ruffalo, and Rachel McAdams in Spotlight (2015)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2015,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 499692,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 7740,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Crime",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt6966692",
+          "titleText": {
+            "text": "Green Book",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Green Book",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm2461296640",
+            "width": 1000,
+            "height": 1500,
+            "url": "https://m.media-amazon.com/images/M/MV5BYzIzYmJlYTYtNGNiYy00N2EwLTk4ZjItMGYyZTJiOTVkM2RlXkEyXkFqcGdeQXVyODY1NDk1NjE@._V1_.jpg",
+            "caption": {
+              "plainText": "Viggo Mortensen and Mahershala Ali in Green Book (2018)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2018,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.2,
+            "voteCount": 562411,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 7800,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "PG-13",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Comedy",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt0264464",
+          "titleText": {
+            "text": "Catch Me If You Can",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Catch Me If You Can",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm3911489536",
+            "width": 485,
+            "height": 719,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_.jpg",
+            "caption": {
+              "plainText": "Leonardo DiCaprio and Tom Hanks in Catch Me If You Can (2002)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2002,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 1086188,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 8460,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "PG-13",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Crime",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt2267998",
+          "titleText": {
+            "text": "Gone Girl",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Gone Girl",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm2766521344",
+            "width": 1390,
+            "height": 2048,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_.jpg",
+            "caption": {
+              "plainText": "Ben Affleck in Gone Girl (2014)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2014,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 1060398,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 8940,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Mystery",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Thriller",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt1205489",
+          "titleText": {
+            "text": "Gran Torino",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Gran Torino",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm3054015488",
+            "width": 490,
+            "height": 725,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTc5NTk2OTU1Nl5BMl5BanBnXkFtZTcwMDc3NjAwMg@@._V1_.jpg",
+            "caption": {
+              "plainText": "Clint Eastwood in Gran Torino (2008)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2008,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 811710,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 6960,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt0758758",
+          "titleText": {
+            "text": "Into the Wild",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Into the Wild",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm1668027904",
+            "width": 3300,
+            "height": 4869,
+            "url": "https://m.media-amazon.com/images/M/MV5BNjQ0ODlhMWUtNmUwMS00YjExLWI4MjQtNjVmMmE2Y2E0MGRmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+            "caption": {
+              "plainText": "Emile Hirsch in Into the Wild (2007)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2007,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 655356,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 8880,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Adventure",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt3170832",
+          "titleText": {
+            "text": "Room",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Room",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm639690752",
+            "width": 972,
+            "height": 1440,
+            "url": "https://m.media-amazon.com/images/M/MV5BMjE4NzgzNzEwMl5BMl5BanBnXkFtZTgwMTMzMDE0NjE@._V1_.jpg",
+            "caption": {
+              "plainText": "Brie Larson and Jacob Tremblay in Room (2015)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2015,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 447904,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 7080,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Thriller",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt1675434",
+          "titleText": {
+            "text": "The Intouchables",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Intouchables",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm1305720576",
+            "width": 1382,
+            "height": 2048,
+            "url": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_.jpg",
+            "caption": {
+              "plainText": "Fran\u00e7ois Cluzet and Omar Sy in The Intouchables (2011)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2011,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.5,
+            "voteCount": 922545,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 6720,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Comedy",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt2119532",
+          "titleText": {
+            "text": "Hacksaw Ridge",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "Hacksaw Ridge",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm2660241152",
+            "width": 971,
+            "height": 1500,
+            "url": "https://m.media-amazon.com/images/M/MV5BMjQ1NjM3MTUxNV5BMl5BanBnXkFtZTgwMDc5MTY5OTE@._V1_.jpg",
+            "caption": {
+              "plainText": "Andrew Garfield in Hacksaw Ridge (2016)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2016,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 588602,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 8340,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Biography",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Drama",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "History",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      },
+      {
+        "node": {
+          "id": "tt2278388",
+          "titleText": {
+            "text": "The Grand Budapest Hotel",
+            "__typename": "TitleText"
+          },
+          "titleType": {
+            "id": "movie",
+            "text": "Movie",
+            "canHaveEpisodes": false,
+            "displayableProperty": {
+              "value": {
+                "plainText": "",
+                "__typename": "Markdown"
+              },
+              "__typename": "DisplayableTitleTypeProperty"
+            },
+            "__typename": "TitleType"
+          },
+          "originalTitleText": {
+            "text": "The Grand Budapest Hotel",
+            "__typename": "TitleText"
+          },
+          "primaryImage": {
+            "id": "rm1834474496",
+            "width": 1350,
+            "height": 2000,
+            "url": "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_.jpg",
+            "caption": {
+              "plainText": "The Grand Budapest Hotel (2014)",
+              "__typename": "Markdown"
+            },
+            "__typename": "Image"
+          },
+          "releaseYear": {
+            "year": 2014,
+            "endYear": null,
+            "__typename": "YearRange"
+          },
+          "ratingsSummary": {
+            "aggregateRating": 8.1,
+            "voteCount": 881057,
+            "__typename": "RatingsSummary"
+          },
+          "runtime": {
+            "seconds": 5940,
+            "__typename": "Runtime"
+          },
+          "certificate": {
+            "rating": "R",
+            "__typename": "Certificate"
+          },
+          "canRate": {
+            "isRatable": true,
+            "__typename": "CanRate"
+          },
+          "titleGenres": {
+            "genres": [
+              {
+                "genre": {
+                  "text": "Adventure",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Comedy",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              },
+              {
+                "genre": {
+                  "text": "Crime",
+                  "__typename": "GenreItem"
+                },
+                "__typename": "TitleGenre"
+              }
+            ],
+            "__typename": "TitleGenres"
+          },
+          "canHaveEpisodes": false,
+          "__typename": "Title"
+        },
+        "__typename": "MoreLikeThisEdge"
+      }
+    ],
+    "__typename": "MoreLikeThisConnection"
+  },
+  "trivia": {
+    "edges": [
+      {
+        "node": {
+          "text": {
+            "plaidHtml": "The tree where Solomon sees several men being lynched was actually used for lynching, and is surrounded by the graves of murdered slaves.",
+            "__typename": "Markdown"
+          },
+          "trademark": null,
+          "relatedNames": null,
+          "__typename": "TitleTrivia"
+        },
+        "__typename": "TriviaEdge"
+      }
+    ],
+    "__typename": "TriviaConnection"
+  },
+  "goofsTotal": {
+    "total": 14,
+    "__typename": "GoofConnection"
+  },
+  "goofs": {
+    "edges": [
+      {
+        "node": {
+          "text": {
+            "plaidHtml": "When &quot;Platt&quot; is explaining how to bring the logs down the river, the overseer scornfully asks him where he became an expert in engineering and &quot;terraforming.&quot; This a word coined by science fiction author <a class=\"ipc-md-link ipc-md-link--entity\" href=\"/name/nm3065261/?ref_=tt_trv_gf\">Jack Williamson</a> in 1942, almost exactly 100 years after the scene takes place.",
+            "__typename": "Markdown"
+          },
+          "__typename": "Goof"
+        },
+        "__typename": "GoofEdge"
+      }
+    ],
+    "__typename": "GoofConnection"
+  },
+  "quotesTotal": {
+    "total": 42,
+    "__typename": "TitleQuoteConnection"
+  },
+  "quotes": {
+    "edges": [
+      {
+        "node": {
+          "lines": [
+            {
+              "characters": [
+                {
+                  "character": "Solomon Northup",
+                  "name": {
+                    "id": "nm0252230",
+                    "__typename": "Name"
+                  },
+                  "__typename": "TitleQuoteCharacter"
+                }
+              ],
+              "text": "I don't want to survive. I want to live.",
+              "stageDirection": null,
+              "__typename": "TitleQuoteLine"
+            }
+          ],
+          "__typename": "TitleQuote"
+        },
+        "__typename": "TitleQuoteEdge"
+      }
+    ],
+    "__typename": "TitleQuoteConnection"
+  },
+  "crazyCredits": {
+    "edges": [
+      {
+        "node": {
+          "text": {
+            "plaidHtml": "&quot;Solomon brought the men responsible for his abduction to trial. Unable to testify against whites in the nation&#39;s capital, he lost the case against the slave pen owner, James Burch. After lengthy legal proceedings in New York, his kidnappers Hamilton and Brown also avoided prosecution.&quot;",
+            "__typename": "Markdown"
+          },
+          "__typename": "CrazyCredit"
+        },
+        "__typename": "CrazyCreditEdge"
+      }
+    ],
+    "__typename": "CrazyCreditConnection"
+  },
+  "alternateVersions": {
+    "total": 0,
+    "edges": [],
+    "__typename": "AlternateVersionConnection"
+  },
+  "connections": {
+    "edges": [
+      {
+        "node": {
+          "associatedTitle": {
+            "id": "tt6881066",
+            "releaseYear": {
+              "year": 2013,
+              "__typename": "YearRange"
+            },
+            "titleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "originalTitleText": {
+              "text": "12 Years a Slave",
+              "__typename": "TitleText"
+            },
+            "series": {
+              "series": {
+                "titleText": {
+                  "text": "The Onion Film Standard",
+                  "__typename": "TitleText"
+                },
+                "originalTitleText": {
+                  "text": "The Onion Film Standard",
+                  "__typename": "TitleText"
+                },
+                "__typename": "Title"
+              },
+              "__typename": "Series"
+            },
+            "__typename": "Title"
+          },
+          "category": {
+            "text": "Featured in",
+            "__typename": "TitleConnectionCategory"
+          },
+          "__typename": "TitleConnection"
+        },
+        "__typename": "TitleConnectionEdge"
+      }
+    ],
+    "__typename": "TitleConnectionConnection"
+  },
+  "soundtrack": {
+    "edges": [
+      {
+        "node": {
+          "text": "My Lord, Sunshine",
+          "comments": [
+            {
+              "plaidHtml": "Written by <a class=\"ipc-md-link ipc-md-link--entity\" href=\"/name/nm1615109/?ref_=tt_trv_snd\">Nicholas Britell</a>",
+              "__typename": "Markdown"
+            },
+            {
+              "plaidHtml": "Performed by <a class=\"ipc-md-link ipc-md-link--entity\" href=\"/name/nm6199114/?ref_=tt_trv_snd\">Roosevelt Credit</a> and <a class=\"ipc-md-link ipc-md-link--entity\" href=\"/name/nm5826571/?ref_=tt_trv_snd\">David Hughey</a>",
+              "__typename": "Markdown"
+            }
+          ],
+          "__typename": "Track"
+        },
+        "__typename": "SoundtrackEdge"
+      }
+    ],
+    "__typename": "SoundtrackConnection"
+  },
+  "iframeAddReviewLink": {
+    "url": "https://contribute.imdb.com/review/tt2024544/add?bus=imdb&return_url=https%3A%2F%2Fwww.imdb.com%2Fclose_me&site=web",
+    "__typename": "ContributionLink"
+  },
+  "topQuestions": {
+    "total": 20,
+    "edges": [
+      {
+        "node": {
+          "attributeId": "run-time",
+          "question": {
+            "plainText": "How long is 12 Years a Slave?",
+            "__typename": "Markdown"
+          },
+          "__typename": "AlexaQuestion"
+        },
+        "__typename": "AlexaQuestionEdge"
+      }
+    ],
+    "__typename": "AlexaQuestionConnection"
+  },
+  "faqs": {
+    "total": 9,
+    "edges": [
+      {
+        "node": {
+          "id": "fq0044250",
+          "question": {
+            "plainText": "Is '12 Years a Slave' based on a book?",
+            "__typename": "Markdown"
+          },
+          "__typename": "Faq"
+        },
+        "__typename": "FaqEdge"
+      },
+      {
+        "node": {
+          "id": "fq0044248",
+          "question": {
+            "plainText": "Did Solomon really play the violin?",
+            "__typename": "Markdown"
+          },
+          "__typename": "Faq"
+        },
+        "__typename": "FaqEdge"
+      },
+      {
+        "node": {
+          "id": "fq0044240",
+          "question": {
+            "plainText": "Did Solomon's kidnappers really drug him?",
+            "__typename": "Markdown"
+          },
+          "__typename": "Faq"
+        },
+        "__typename": "FaqEdge"
+      }
+    ],
+    "__typename": "FaqConnection"
+  },
+  "detailsExternalLinks": {
+    "edges": [
+      {
+        "node": {
+          "url": "https://www.facebook.com/12YearsASlave",
+          "label": "Official Facebook",
+          "externalLinkRegion": null,
+          "__typename": "ExternalLink"
+        },
+        "__typename": "ExternalLinkEdge"
+      },
+      {
+        "node": {
+          "url": "http://www.foxsearchlight.com/12yearsaslave/",
+          "label": "Official site",
+          "externalLinkRegion": null,
+          "__typename": "ExternalLink"
+        },
+        "__typename": "ExternalLinkEdge"
+      }
+    ],
+    "total": 2,
+    "__typename": "ExternalLinkConnection"
+  },
+  "spokenLanguages": {
+    "spokenLanguages": [
+      {
+        "id": "en",
+        "text": "English",
+        "__typename": "SpokenLanguage"
+      }
+    ],
+    "__typename": "SpokenLanguages"
+  },
+  "akas": {
+    "edges": [
+      {
+        "node": {
+          "text": "Twelve Years a Slave",
+          "__typename": "Aka"
+        },
+        "__typename": "AkaEdge"
+      }
+    ],
+    "__typename": "AkaConnection"
+  },
+  "filmingLocations": {
+    "edges": [
+      {
+        "node": {
+          "text": "Madame John's Legacy, the French Quarter, New Orleans, Louisiana, USA",
+          "location": "Madame John's Legacy, the French Quarter, New Orleans, Louisiana, USA",
+          "attributes": [
+            {
+              "text": "slave pen",
+              "__typename": "DisplayableAttribute"
+            }
+          ],
+          "__typename": "FilmingLocation"
+        },
+        "__typename": "FilmingLocationEdge"
+      }
+    ],
+    "total": 13,
+    "__typename": "FilmingLocationConnection"
+  },
+  "companies": {
+    "total": 149,
+    "__typename": "CompanyCreditConnection"
+  },
+  "productionBudget": {
+    "budget": {
+      "amount": 20000000,
+      "currency": "USD",
+      "__typename": "Money"
+    },
+    "__typename": "ProductionBudget"
+  },
+  "lifetimeGross": {
+    "total": {
+      "amount": 56671993,
+      "currency": "USD",
+      "__typename": "Money"
+    },
+    "__typename": "BoxOfficeGross"
+  },
+  "openingWeekendGross": {
+    "gross": {
+      "total": {
+        "amount": 923715,
+        "currency": "USD",
+        "__typename": "Money"
+      },
+      "__typename": "BoxOfficeGross"
+    },
+    "weekendEndDate": "2013-10-20",
+    "__typename": "OpeningWeekendGross"
+  },
+  "worldwideGross": {
+    "total": {
+      "amount": 187733202,
+      "currency": "USD",
+      "__typename": "Money"
+    },
+    "__typename": "BoxOfficeGross"
+  },
+  "technicalSpecifications": {
+    "soundMixes": {
+      "items": [
+        {
+          "id": "dolby_digital",
+          "text": "Dolby Digital",
+          "attributes": [],
+          "__typename": "SoundMix"
+        },
+        {
+          "id": "sdds",
+          "text": "SDDS",
+          "attributes": [],
+          "__typename": "SoundMix"
+        },
+        {
+          "id": "dolby_surround 7.1",
+          "text": "Dolby Surround 7.1",
+          "attributes": [],
+          "__typename": "SoundMix"
+        }
+      ],
+      "__typename": "SoundMixes"
+    },
+    "aspectRatios": {
+      "items": [
+        {
+          "aspectRatio": "2.35 : 1",
+          "attributes": [],
+          "__typename": "AspectRatio"
+        }
+      ],
+      "__typename": "AspectRatios"
+    },
+    "colorations": {
+      "items": [
+        {
+          "conceptId": "color",
+          "text": "Color",
+          "attributes": [],
+          "__typename": "Coloration"
+        }
+      ],
+      "__typename": "Colorations"
+    },
+    "__typename": "TechnicalSpecifications"
+  },
+  "contributionQuestions": {
+    "contributionLink": {
+      "url": "https://contribute.imdb.com/answers",
+      "__typename": "ContributionQuestionsLink"
+    },
+    "edges": [
+      {
+        "node": {
+          "entity": {
+            "primaryImage": {
+              "url": "https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg",
+              "width": 509,
+              "height": 755,
+              "caption": {
+                "plainText": "Chiwetel Ejiofor in 12 Years a Slave (2013)",
+                "__typename": "Markdown"
+              },
+              "__typename": "Image"
+            },
+            "__typename": "Title"
+          },
+          "questionId": "tt2024544.release_date:streaming.CA",
+          "questionText": {
+            "plainText": "What is the streaming release date of 12 Years a Slave (2013) in Canada?",
+            "__typename": "Markdown"
+          },
+          "contributionLink": {
+            "url": "https://contribute.imdb.com/answers?pinnedQuestion=tt2024544.release_date:streaming.CA",
+            "__typename": "ContributionQuestionsLink"
+          },
+          "__typename": "Question"
+        },
+        "__typename": "QuestionEdge"
+      }
+    ],
+    "__typename": "QuestionConnection"
+  }
+}
+Runtime:8040
+Classification:R
+Rating:8.1
+deets:{'runtime': 8040, 'id': 'tt2024544', 'classification': 'R', 'rating': 8.1}
