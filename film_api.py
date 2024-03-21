@@ -29,6 +29,8 @@ class FilmAPI:
 #   def add_film(self, title, year, imdbid=None, runtime=None, classification=None, rating=None, media_type=None):
    def add_film(self, title, year, media_type, details):
       """Add film to database"""
+
+      print("Adding film, title:" + str(title) + " year:" + str(year) + " media_type:" + str(media_type) + " details:" + str(details))
  
       endpoint = "/api/film"
       jobj = {}
@@ -37,15 +39,12 @@ class FilmAPI:
  
       if "imdbid" in details:
          jobj["imdbid"] = details["imdbid"]
-      #if runtime: 
       if "runtime" in details:
          jobj["runtime"] = details["runtime"]
-      #if classification: 
-      if "classification:" in details:
+      if "classification" in details:
          jobj["classification"] = details["classification"]
-      #if rating: 
-      if "rating:" in details:
-         jobj["rating"] = details["rating"]
+      if "imdb_rating" in details:
+         jobj["imdb_rating"] = details["imdb_rating"]
       if media_type: 
          jobj["media_type"] = media_type
 
@@ -53,9 +52,9 @@ class FilmAPI:
       headers = {"Content-Type": "application/json"}
       logging.debug("obj:" + str(jobj))
 
-      #output = requests.post(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=headers)
+      output = requests.post(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=headers)
       self.film_added += 1
-      #logging.debug("Added Film:" + str(output))
+      logging.debug("Added Film:" + str(output))
 
 
    def get_film(self, film_name, film_year):
@@ -80,9 +79,13 @@ class FilmAPI:
 
       if output.status_code == 200:
          logging.debug("Status:" + str(output.status_code))
-         self.film_found += 1
  
          rc = json.loads(output.content.decode("utf-8"))
+
+         print("rc=" + str(rc))
+         if len(rc) > 0:
+            if "imdbid" in rc[0]:
+               self.film_found += 1
 
       return rc
 
