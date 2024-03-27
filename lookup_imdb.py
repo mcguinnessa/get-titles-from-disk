@@ -60,33 +60,43 @@ class IMDB:
       self.api_calls += 1 
       self.title_searches += 1
       response = requests.get(query_url, headers=headers, params=query_payload)
-      resp_json = response.json()
-      print("IMDB Resp:" + str(resp_json))
 
-      id = None
-      if "titleResults" in resp_json:
-         if "results" in resp_json["titleResults"]:
-            for title in resp_json["titleResults"]["results"]:
-               try:
-                  f_title = title["titleNameText"]
-                  f_year = title["titleReleaseText"]
-                  f_id = title["id"]
-                  print("Title:" + str(f_title))
-                  print("Year:" + str(f_year))
-                  print("imdbid:" + str(f_id))
 
-                  if int(year) == int(f_year):
-                     print("Year Match!")
-                     self.ids_found += 1
-                     id = f_id
-                     break
+      if response.status_code == 504:
+         print("Request Timed out, usually means quota is depleted")
+         return
 
-               except ValueError as e:
-                  print("Error parsing values:" + str(e))
+      if response.status_code == 200:
+         print("Request was successful")
+
+         resp_json = response.json()
+         print("IMDB Resp:" + str(resp_json))
+
+         id = None
+         if "titleResults" in resp_json:
+            if "results" in resp_json["titleResults"]:
+               for title in resp_json["titleResults"]["results"]:
+                  try:
+                     if all(key in title for key in ('titleNameText', 'titleReleaseText', 'id')):
+                        f_title = title["titleNameText"]
+                        f_year = title["titleReleaseText"]
+                        f_id = title["id"]
+                        print("Title:" + str(f_title))
+                        print("Year:" + str(f_year))
+                        print("imdbid:" + str(f_id))
+
+                        if int(year) == int(f_year):
+                           print("Year Match!")
+                           self.ids_found += 1
+                           id = f_id
+                           break
+
+                  except ValueError as e:
+                     print("Error parsing values:" + str(e))
+            else:
+               print("results not in titleResults")
          else:
-            print("results not in titleResults")
-      else:
-         print("titleResults not in response")
+            print("titleResults not in response")
 
 
       return id
@@ -106,6 +116,8 @@ class IMDB:
       self.detail_lookups += 1
       self.api_calls += 1 
       response = requests.get(title_url, headers=headers, params=querypayload)
+      print("Response:" + str(response))
+ 
       resp_json = response.json()
       print(resp_json)
 
