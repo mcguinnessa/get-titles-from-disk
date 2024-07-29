@@ -21,7 +21,7 @@ from film_api import FilmAPI
 from file_system import FileSystem
 
 num_films_processed = 0
-process_max = 1
+process_max = None
 max_imdb_lookups = 0
 
 #########################################################################################
@@ -96,9 +96,10 @@ def main(argv):
    files_titles = fs.listDir(files_dir)
    offline_titles = fs.listDir(offline_dir)
 
-
    parse_films(dvd_titles, "DVDs", api, imdb)
    parse_films(br_titles, "BluRay", api, imdb)
+   parse_films(files_titles, "File", api, imdb)
+   parse_films(offline_titles, "Rip", api, imdb)
 
    api.print_stats()
 
@@ -109,7 +110,7 @@ def parse_films(array_of_films, media_type, local_db, imdb):
 
    film_pattern = "(^[^\(]*) \(([^\)]*)"
    for title_year in array_of_films:
-      if num_films_processed >= process_max:
+      if process_max and num_films_processed >= process_max:
          break
 
       logging.debug("CHECK:" + title_year)
@@ -129,15 +130,18 @@ def parse_films(array_of_films, media_type, local_db, imdb):
          else:
             logging.debug("Not Found in DB")
             
-            if imdb.api_calls < max_imdb_lookups:
+            if imdb.api_calls <= max_imdb_lookups:
                details = imdb.get_details_from_title_year(title, year)
                if len(details):
                   logging.debug("Found in IMDB:" + str(details))
                   local_db.add_film(title, year, media_type, details)
             else:
                logging.debug("Max IMDB limit reached, not looking up")
-       
+               break
+    
          num_films_processed += 1
+
+      logging.debug("Total: " + str(num_films_processed) + " IMDB Lookups:" + str(imdb.api_calls))
 
    imdb.print_stats()
 

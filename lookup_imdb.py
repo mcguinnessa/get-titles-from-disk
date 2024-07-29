@@ -133,14 +133,14 @@ class IMDB:
             rc["imdbid"] = imdbid
             self.details_found += 1
 
-      if "certificate" in resp_json:
-         if "rating" in resp_json["certificate"]:
+      if "certificate" in resp_json and resp_json["certificate"]:
+         if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
             classification = resp_json["certificate"]["rating"]
             print("Classification:" + str(classification))
             rc["classification"] = classification
 
-      if "ratingsSummary" in resp_json:
-         if "aggregateRating" in resp_json["ratingsSummary"]:
+      if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
+         if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
             rating = resp_json["ratingsSummary"]["aggregateRating"]
             print("Rating:" + str(rating))
             rc["imdb_rating"] = rating
