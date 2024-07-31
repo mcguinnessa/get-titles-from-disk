@@ -134,7 +134,7 @@ def parse_films(array_of_films, media_type, local_db, imdb):
                details = imdb.get_details_from_title_year(title, year)
                if len(details):
                   logging.debug("Found in IMDB:" + str(details))
-                  local_db.add_film(title, year, media_type, details)
+                  local_db.add_film(title, year, media_type, False, details)
             else:
                logging.debug("Max IMDB limit reached, not looking up")
                break

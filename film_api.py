@@ -27,7 +27,7 @@ class FilmAPI:
 
 
 #   def add_film(self, title, year, imdbid=None, runtime=None, classification=None, rating=None, media_type=None):
-   def add_film(self, title, year, media_type, details):
+   def add_film(self, title, year, media_type, watched, details):
       """Add film to database"""
 
       print("Adding film, title:" + str(title) + " year:" + str(year) + " media_type:" + str(media_type) + " details:" + str(details))
@@ -36,6 +36,7 @@ class FilmAPI:
       jobj = {}
       jobj["title"] = title
       jobj["year"] = year
+      jobj["watched"] = watched
  
       if "imdbid" in details:
          jobj["imdbid"] = details["imdbid"]
