@@ -2,13 +2,18 @@
 
 import requests
 import json
+import logging
+
+IMDB_HOST = "imdb146.p.rapidapi.com"
 
 API_KEY = "2a254412a8mshcaf8331e7202be5p1da826jsn7466b19a2a63"
 headers = {
    "X-RapidAPI-Key": API_KEY,
-   "X-RapidAPI-Host": "imdb146.p.rapidapi.com"
+   "X-RapidAPI-Host": IMDB_HOST
 }
 
+
+IMDB_URL = "https://"+IMDB_HOST
 
 #title_data = {}
 #search_data = {}
@@ -31,46 +36,62 @@ headers = {
 #title_data["tt1655442"] = {'resultsSectionOrder': ['TITLE', 'NAME'], 'findPageMeta': {'searchTerm': 'the artist', 'includeAdult': False, 'isExactMatch': False}, 'keywordResults': {'results': []}, 'titleResults': {'results': [{'id': 'tt1655442', 'titleNameText': 'The Artist', 'titleReleaseText': '2011', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BNzYxMjBkNzAtY2M2YS00YjRhLTgzOTYtY2FiOGM2OTBlZjdiXkEyXkFqcGdeQXVyMTU3NDU4MDg2._V1_.jpg', 'maxHeight': 2100, 'maxWidth': 1400, 'caption': 'Bérénice Bejo and Jean Dujardin in The Artist (2011)'}, 'topCredits': ['Jean Dujardin', 'Bérénice Bejo'], 'imageType': 'movie'}, {'id': 'tt3521126', 'titleNameText': 'The Disaster Artist', 'titleReleaseText': '2017', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGNkMzliMGMtMDI5Ni00OTZkLTgyMTYtNzk5ZTY1NjVhYjVmXkEyXkFqcGdeQXVyNTAzMTY4MDA@._V1_.jpg', 'maxHeight': 1200, 'maxWidth': 810, 'caption': 'James Franco, Seth Rogen, Zac Efron, and Dave Franco in The Disaster Artist (2017)'}, 'topCredits': ['James Franco', 'Dave Franco'], 'imageType': 'movie'}, {'id': 'tt2649522', 'titleNameText': 'The Escape Artist', 'titleReleaseText': '2013', 'titleTypeText': 'TV Mini Series', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BMTY2MGEzNmItOGRjOC00Njk1LWJjYjctMGUwOGIwNzk3NzBkXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg', 'maxHeight': 2161, 'maxWidth': 1525, 'caption': 'David Tennant in The Escape Artist (2013)'}, 'topCredits': ['David Tennant', 'Toby Kebbell'], 'imageType': 'tvMiniSeries'}, {'id': 'tt1990217', 'titleNameText': 'The Artist and the Model', 'titleReleaseText': '2012', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BYjk5YWU2YTYtZWFmZS00NjM2LWFlMmEtMTliODIwNTllNDk5XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_.jpg', 'maxHeight': 1135, 'maxWidth': 800, 'caption': 'The Artist and the Model (2012)'}, 'topCredits': ['Jean Rochefort', 'Aida Folch'], 'imageType': 'movie'}, {'id': 'tt0093737', 'titleNameText': 'The Pick-up Artist', 'titleReleaseText': '1987', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BZjVmYmFjMWUtYjA2ZC00ODQwLTlhM2EtYjBkNTc2MGIxYWVlXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_.jpg', 'maxHeight': 2260, 'maxWidth': 1485, 'caption': 'The Pick-up Artist (1987)'}, 'topCredits': ['Molly Ringwald', 'Robert Downey Jr.'], 'imageType': 'movie'}], 'nextCursor': 'eyJlc1Rva2VuIjpbIjU3ODA5LjciLCJ0dDAwOTM3MzciXSwiZmlsdGVyIjoie1wiaW5jbHVkZUFkdWx0XCI6ZmFsc2UsXCJpc0V4YWN0TWF0Y2hcIjpmYWxzZSxcInNlYXJjaFRlcm1cIjpcInRoZSBhcnRpc3RcIixcInR5cGVcIjpbXCJUSVRMRVwiXX0ifQ==', 'hasExactMatches': True}, 'nameResults': {'results': [{'id': 'nm0002239', 'displayNameText': 'Prince', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'Under the Cherry Moon', 'knownForTitleYear': '1986', 'akaName': 'The Artist Formerly Known as Prince', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOTMxMjEwNDk2NF5BMl5BanBnXkFtZTcwMDY1MjE2Mw@@._V1_.jpg', 'maxHeight': 400, 'maxWidth': 266, 'caption': 'Prince'}}, {'id': 'nm6462326', 'displayNameText': 'Brittney Ayona Clemons', 'knownForJobCategory': 'Actress', 'knownForTitleText': 'Rap Sh!t', 'knownForTitleYear': '2022–2023', 'akaName': 'Ayona The Artist', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BYWEzNjUwZDktZmEyYS00ZWYwLWFjNjItNDBiYzllYTZlZjkzXkEyXkFqcGdeQXVyNjE2Njc2ODY@._V1_.jpg', 'maxHeight': 2453, 'maxWidth': 1637, 'caption': 'Brittney Ayona Clemons'}}, {'id': 'nm3810001', 'displayNameText': 'Shinsuke Nakamura', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'WWE Smackdown!', 'knownForTitleYear': '1999– ', 'akaName': 'The Artist', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGQ2YjA2OTgtMjNlOC00YjcyLTgzNDUtNmNhMGM5OWE3NWE3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg', 'maxHeight': 1548, 'maxWidth': 680, 'caption': 'Shinsuke Nakamura'}}, {'id': 'nm2347863', 'displayNameText': 'Tamer Hosny', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'The Money', 'knownForTitleYear': '2019', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGM5NDdmYjAtY2JmMS00YmVlLWJkYjEtMjA0NDEwNWM4ZWI3XkEyXkFqcGdeQXVyNTc3MjUzNTI@._V1_.jpg', 'maxHeight': 683, 'maxWidth': 1018, 'caption': 'Tamer Hosny in Kabten hima (2008)'}}, {'id': 'nm2351933', 'displayNameText': 'TT the Artist', 'knownForJobCategory': 'Soundtrack', 'knownForTitleText': 'Logan', 'knownForTitleYear': '2017', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BNTM1NzZhMDctZDBmMy00MTBiLTkyYWQtN2U3ZDA4OWI0MTM0XkEyXkFqcGdeQXVyNjM5ODAyNjQ@._V1_.jpg', 'maxHeight': 853, 'maxWidth': 1280, 'caption': 'TT the Artist'}}], 'nextCursor': 'eyJlc1Rva2VuIjpbIjIxMDgwLjY0NiIsIm5tMjM1MTkzMyJdLCJmaWx0ZXIiOiJ7XCJpbmNsdWRlQWR1bHRcIjpmYWxzZSxcImlzRXhhY3RNYXRjaFwiOmZhbHNlLFwic2VhcmNoVGVybVwiOlwidGhlIGFydGlzdFwiLFwidHlwZVwiOltcIk5BTUVcIl19In0=', 'hasExactMatches': True}, 'companyResults': {'results': []}}
 
 class IMDB:
-   def __init__(self):
-       self.title_searches = 0
-       self.ids_found = 0
-       self.detail_lookups = 0
-       self.details_found = 0
-       self.api_calls = 0
-    
+
+   class MaxCallsExceededException(Exception):
+      pass
+
+   class IMDBAPIException(Exception):
+      pass
+
+   def __init__(self, max_api_calls):
+#       self.ids_found = 0
+
+      self.max_api_calls = 0
+      self.api_calls = 0
+
+      self.title_calls = 0
+      self.title_call_successes = 0
+      self.title_call_found = 0
+      self.title_call_not_found = 0
+
+      self.detail_calls = 0
+      self.detail_call_successes = 0
+      self.detail_call_found = 0
+      self.detail_call_not_found = 0
+
+   ##########################################################################################
+   #
+   # Looks up the film by title and year and cycles through the responses looking for an 
+   # exact match
+   #
+   ##########################################################################################
    def get_titles(self, search_title, year):
-#      global title_searches
-#      global ids_found
-
-
-      search_title = search_title.lower() 
-
-      print("Looking in IMDB for " + search_title + " Year:" + str(year))
-      query_url = "https://imdb146.p.rapidapi.com/v1/find/"
-      query_payload = {"query": search_title}
-
-#   response = {}
-#   print("Keys:" + str(search_data.keys()))
-#   if search_title in search_data:
-#      response = search_data[search_title]
-#   else:
-#      print(search_title + " is not in " + str(search_data.keys()))
-#   print(json.dumps(response, indent=2))
 
       self.api_calls += 1 
-      self.title_searches += 1
+      self.title_calls += 1
+
+      if self.api_calls >= self.max_api_calls:
+         raise IMDB.MaxCallsExceededException
+
+      search_title = search_title.lower() 
+      logging.debug("Looking in IMDB for " + search_title + " Year:" + str(year))
+
+      #query_url = "https://imdb146.p.rapidapi.com/v1/find/"
+      query_url = IMDB_URL + "v1//find/"
+      query_payload = {"query": search_title}
+
       response = requests.get(query_url, headers=headers, params=query_payload)
 
-
       if response.status_code == 504:
-         print("Request Timed out, usually means quota is depleted")
+         logging.debug("Request Timed out, usually means quota is depleted")
          return
 
       if response.status_code == 200:
-         print("Request was successful")
+         logging.debug("Request was successful")
+         self.title_call_successes += 1
 
          resp_json = response.json()
-         print("IMDB Resp:" + str(resp_json))
+         logging.debug("IMDB Resp:" + str(resp_json))
 
          id = None
          if "titleResults" in resp_json:
@@ -81,81 +102,100 @@ class IMDB:
                         f_title = title["titleNameText"]
                         f_year = title["titleReleaseText"]
                         f_id = title["id"]
-                        print("Title:" + str(f_title))
-                        print("Year:" + str(f_year))
-                        print("imdbid:" + str(f_id))
+                        logging.debug("Title:" + str(f_title))
+                        logging.debug("Year:" + str(f_year))
+                        logging.debug("imdbid:" + str(f_id))
 
                         if int(year) == int(f_year):
-                           print("Year Match!")
-                           self.ids_found += 1
+                           logging.debug("Year Match!")
+                           self.title_call_found += 1
                            id = f_id
                            break
 
                   except ValueError as e:
-                     print("Error parsing values:" + str(e))
+                     logging.debug("Error parsing values:" + str(e))
+                     raise IMDB.IMDBAPIException("Error parsing values:" + str(e))
             else:
-               print("results not in titleResults")
+               logging.debug("Format Error: results not in titleResults")
+               raise IMDB.IMDBAPIException("results not in titleResults")
          else:
-            print("titleResults not in response")
+            logging.debug("Format Error: titleResults not in response")
+            raise IMDB.IMDBAPIException("titleResults not in response")
 
-
+      if not id:
+         self.title_call_not_found += 1
+         
       return id
 
+   ##########################################################################################
+   #
+   # Looks up the details by the ID
+   #
+   ##########################################################################################
    def get_data_from_imdbid(self, imdbid):
-#      global detail_lookups
-#      global details_found
 
+      self.detail_calls += 1
+      self.api_calls += 1
+      if self.api_calls >= self.max_api_calls:
+         raise IMDB.MaxCallsExceededException
 
-      #imdbid = "tt0073195"
-      title_url = "https://imdb146.p.rapidapi.com/v1/title/"
       rc = {}
-
+      #imdbid = "tt0073195"
+      title_url = IMDB_URL + "v1//title/"
+      #title_url = "https://imdb146.p.rapidapi.com/v1/title/"
       querypayload = {"id": imdbid}
 
-      #response = {}
-      self.detail_lookups += 1
-      self.api_calls += 1 
+      #self.detail_lookups += 1
+      #self.api_calls += 1 
       response = requests.get(title_url, headers=headers, params=querypayload)
       print("Response:" + str(response))
+      if response.status_code == 200:
+         logging.debug("Request was successful")
+         self.detail_call_successes += 1
  
-      resp_json = response.json()
-      print(resp_json)
+         resp_json = response.json()
+         logging.debug(resp_json)
 
-#   if imdbid in title_data:
-#      response = title_data[imdbid]
-#   print(json.dumps(response, indent=2))
+         if "runtime" in resp_json:
+            if "seconds" in resp_json["runtime"]:
+               runtime = resp_json["runtime"]["seconds"]
+               logging.debug("Runtime:" + str(runtime))
+               rc["runtime"] = runtime
+               rc["imdbid"] = imdbid
+               self.detail_call_found += 1
+         else:
+            logging.debug("Format Exception: runtime not in response")
+            raise IMDB.IMDBAPIException("runtime not in response")
 
-      if "runtime" in resp_json:
-         if "seconds" in resp_json["runtime"]:
-            runtime = resp_json["runtime"]["seconds"]
-            print("Runtime:" + str(runtime))
-            rc["runtime"] = runtime
-            rc["imdbid"] = imdbid
-            self.details_found += 1
+         if "certificate" in resp_json and resp_json["certificate"]:
+            if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
+               classification = resp_json["certificate"]["rating"]
+               logging.debug("Classification:" + str(classification))
+               rc["classification"] = classification
 
-      if "certificate" in resp_json and resp_json["certificate"]:
-         if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
-            classification = resp_json["certificate"]["rating"]
-            print("Classification:" + str(classification))
-            rc["classification"] = classification
+         if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
+            if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
+               rating = resp_json["ratingsSummary"]["aggregateRating"]
+               logging.debug("Rating:" + str(rating))
+               rc["imdb_rating"] = rating
 
-      if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
-         if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
-            rating = resp_json["ratingsSummary"]["aggregateRating"]
-            print("Rating:" + str(rating))
-            rc["imdb_rating"] = rating
+      if not rc:
+         self.detail_call_not_found += 1
 
       return rc
 
+   ##########################################################################################
+   #
+   # Gets the ID from the title then looks up the details
+   #
+   ##########################################################################################
    def get_details_from_title_year(self, title, year):
 
-      rc = {}
-
       imdbid = self.get_titles(title, year)
-      print("Found imdbid:" + str(imdbid))
+      logging.debug("Found imdbid:" + str(imdbid))
       rc = self.get_data_from_imdbid(imdbid)
 
-      print("deets:" + str(rc))
+      logging.debug("deets:" + str(rc))
 
       return rc
 

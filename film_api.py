@@ -14,19 +14,26 @@ class FilmAPI:
 #   port = "8080"
    protocol = "http://"
 
-   film_lookup = 0
-   film_found = 0
-   film_added = 0
 
 
    def __init__(self, server, port):
       """Init"""
       self.server = server
       self.port = port
+
+      self.film_lookup = 0
+      self.film_found = 0
+      self.film_added = 0
 #      logging.debug("Connecting to "+ self.server+ ":" + self.port + " with user:" + self.user + " and " + self.password)
 
 
 #   def add_film(self, title, year, imdbid=None, runtime=None, classification=None, rating=None, media_type=None):
+
+   ###################################################################################
+   #
+   # Adds a Film to the DB
+   #
+   ###################################################################################
    def add_film(self, title, year, media_type, watched, details):
       """Add film to database"""
 
@@ -54,11 +61,20 @@ class FilmAPI:
       logging.debug("obj:" + str(jobj))
 
       output = requests.post(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=headers)
-      self.film_added += 1
-      logging.debug("Added Film:" + str(output))
+      if response.status_code == 200:
+         logging.debug("Request was successful")
+         self.film_added += 1
+         logging.debug("Added Film:" + str(output))
+
+      return response.status_code
 
 
-   def get_film(self, film_name, film_year):
+   ###################################################################################
+   #
+   # Looks up a file on title and year
+   #
+   ###################################################################################
+   def lookup_by_title_year(self, film_name, film_year):
       """Looking for film with name / year """
   
       self.film_lookup += 1
@@ -90,8 +106,21 @@ class FilmAPI:
 
       return rc
 
+   ###################################################################################
+   #
+   # Prints out stats
+   #
+   ###################################################################################
    def print_stats(self):
       print("DB Stats")
-      print("Title Lookups:" + str(self.film_lookup))
-      print("Films Found  :" + str(self.film_found))
-      print("Films Added  :" + str(self.film_added))
+      print("  Title Lookups:" + str(self.film_lookup))
+      print("  Films Found  :" + str(self.film_found))
+      print("  Films Added  :" + str(self.film_added))
+
+   def get_stats(self):
+      return self.film_lookup, self.film_found, self.film_added
+
+   def reset_counts(self):
+      self.film_lookup = 0
+      self.film_found = 0
+      self.film_added = 0

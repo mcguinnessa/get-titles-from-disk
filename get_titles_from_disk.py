@@ -7,6 +7,7 @@ import os
 import re
 #from film_manager.film_uploader import FilmUploader
 #from network.script_record import ScriptRecordTable
+from db_populator import DBPopulator
 
 #from lookup_imdb import get_titles
 #from lookup_imdb import get_details_from_title_year
@@ -31,7 +32,7 @@ max_imdb_lookups = 0
 #########################################################################################
 def usage():
    print("\n")
-   print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_imdb_lookups>] [-m <max_records_to_process>")
+   print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-n <max_records_to_process>")
 
 #########################################################################################
 #
@@ -84,66 +85,60 @@ def main(argv):
    server = "192.168.0.160"
    port = "80"
    api = FilmAPI(server, port)
-   imdb = IMDB()
+   imdb = IMDB(0)
    fs = FileSystem(smb_server, smb_user, smb_password)
    br_dir = "\Films\BluRay"
    dvds_dir = "\Films\DVDs"
    files_dir = "\Films\Files"
    offline_dir = "\Films\Offline"
 
-   br_titles = fs.listDir(br_dir)
    dvd_titles = fs.listDir(dvds_dir)
    files_titles = fs.listDir(files_dir)
+   br_titles = fs.listDir(br_dir)
    offline_titles = fs.listDir(offline_dir)
 
-   parse_films(dvd_titles, "DVDs", api, imdb)
-   parse_films(br_titles, "BluRay", api, imdb)
-   parse_films(files_titles, "File", api, imdb)
-   parse_films(offline_titles, "Rip", api, imdb)
+   populator = DBPopulator(api, imdb)
+   file_format_errors = populator.populate_files(files_titles)
+   file_films_lookup, file_films_found, file_films_added = api.get_stats()
 
-   api.print_stats()
+   api.reset_counts()
+   dvd_format_errors = populator.populate_dvds(dvd_titles)
+   dvd_films_lookup, dvd_films_found, dvd_films_added = api.get_stats()
 
-def parse_films(array_of_films, media_type, local_db, imdb):
-   global num_films_processed
-   global process_max
-   global max_imdb_lookups
+   api.reset_counts()
+   br_format_errors = populator.populate_files(br_titles)
+   br_films_lookup, br_films_found, br_films_added = api.get_stats()
 
-   film_pattern = "(^[^\(]*) \(([^\)]*)"
-   for title_year in array_of_films:
-      if process_max and num_films_processed >= process_max:
-         break
+   api.reset_counts()
+   rip_format_errors = populator.populate_files(offline_titles)
+   rip_films_lookup, rip_films_found, rip_films_added = api.get_stats()
 
-      logging.debug("CHECK:" + title_year)
-      res = re.match(film_pattern, title_year)
-      if res:
-         title = res.group(1)
-         year = res.group(2)
-         logging.debug(" TITLE:" + title) 
-         logging.debug("  YEAR:" + year)
 
-         res = local_db.get_film(title, year)
-         logging.debug("Found in DB:" + str(res))
 
-         if len(res) > 0 and res[0]["imdbid"] != None:
-            logging.debug("First Film in DB [0]:" + str(res[0]))
-            logging.debug("Found film in DB")
-         else:
-            logging.debug("Not Found in DB")
-            
-            if imdb.api_calls <= max_imdb_lookups:
-               details = imdb.get_details_from_title_year(title, year)
-               if len(details):
-                  logging.debug("Found in IMDB:" + str(details))
-                  local_db.add_film(title, year, media_type, False, details)
-            else:
-               logging.debug("Max IMDB limit reached, not looking up")
-               break
-    
-         num_films_processed += 1
 
-      logging.debug("Total: " + str(num_films_processed) + " IMDB Lookups:" + str(imdb.api_calls))
+#   parse_films(dvd_titles, "DVDs", api, imdb)
+#   parse_films(br_titles, "BluRay", api, imdb)
+#   parse_films(files_titles, "File", api, imdb)
+#   parse_films(offline_titles, "Rip", api, imdb)
+#
+#   api.print_stats()
 
-   imdb.print_stats()
+   ############################
+   # Report
+   ############################
+   print("Files  : " + str(len(files_titles)) + " (l:" + str(file_films_lookup) + " f:" + str(file_films_found) + " a:" + str(file_films_added) + ")")
+   if file_format_errors:
+      print("  Format Errors: " + str(file_format_errors))
+   print("DVDs   : " + str(len(dvd_titles)) + " (l:" + str(dvd_films_lookup) + " f:" + str(dvd_films_found) + " a:" + str(dvd_films_added) + ")")
+   if dvd_format_errors:
+      print("  Format Errors: " + str(dvd_format_errors))
+   print("BluRays: " + str(len(br_titles)) + " (l:" + str(br_films_lookup) + " f:" + str(br_films_found) + " a:" + str(br_films_added) + ")")
+   if br_format_errors:
+      print("  Format Errors: " + str(br_format_errors))
+   print("Rips   : " + str(len(offline_titles)) + " (l:" + str(rip_films_lookup) + " f:" + str(rip_films_found) + " a:" + str(rip_films_added) + ")")
+   if rip_format_errors:
+      print("  Format Errors: " + str(rip_format_errors))
+   print("Total  : " + str(len(br_titles) + len(dvd_titles) + len(files_titles) + len(offline_titles)))
 
 
 if __name__ == "__main__":
