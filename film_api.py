@@ -7,14 +7,7 @@ import json
 class FilmAPI:
    """The Film API"""
 
-   #DATABASE_NAME = "FilmDatabase"
-#   url = "http://192.168.0.160"
-#   port = "80"
-#   url = "http://192.168.0.121"
-#   port = "8080"
    protocol = "http://"
-
-
 
    def __init__(self, server, port):
       """Init"""
@@ -24,10 +17,8 @@ class FilmAPI:
       self.film_lookup = 0
       self.film_found = 0
       self.film_added = 0
-#      logging.debug("Connecting to "+ self.server+ ":" + self.port + " with user:" + self.user + " and " + self.password)
-
-
-#   def add_film(self, title, year, imdbid=None, runtime=None, classification=None, rating=None, media_type=None):
+      
+      self.added_to_db = []
 
    ###################################################################################
    #
@@ -37,7 +28,7 @@ class FilmAPI:
    def add_film(self, title, year, media_type, watched, details):
       """Add film to database"""
 
-      print("Adding film, title:" + str(title) + " year:" + str(year) + " media_type:" + str(media_type) + " details:" + str(details))
+      logging.info("Adding film, title:" + str(title) + " year:" + str(year) + " media_type:" + str(media_type) + " details:" + str(details))
  
       endpoint = "/api/film"
       jobj = {}
@@ -61,13 +52,14 @@ class FilmAPI:
       logging.debug("obj:" + str(jobj))
 
       output = requests.post(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=headers)
-      if response.status_code == 200:
-         logging.debug("Request was successful")
+      if output.status_code == 201: #Created
          self.film_added += 1
-         logging.debug("Added Film:" + str(output))
+         logging.debug("Added Film Successfully:" + str(output))
+         self.added_to_db.append(title + " (" + str(year) + ")")
+      else:
+         logging.debug("Failed to add film, reponse::" + str(output.status_code))
 
-      return response.status_code
-
+      return output.status_code
 
    ###################################################################################
    #
@@ -99,7 +91,7 @@ class FilmAPI:
  
          rc = json.loads(output.content.decode("utf-8"))
 
-         print("rc=" + str(rc))
+         logging.debug("rc=" + str(rc))
          if len(rc) > 0:
             if "imdbid" in rc[0]:
                self.film_found += 1
@@ -108,18 +100,17 @@ class FilmAPI:
 
    ###################################################################################
    #
-   # Prints out stats
+   # Returns the stats: lookups, found, added
    #
    ###################################################################################
-   def print_stats(self):
-      print("DB Stats")
-      print("  Title Lookups:" + str(self.film_lookup))
-      print("  Films Found  :" + str(self.film_found))
-      print("  Films Added  :" + str(self.film_added))
-
    def get_stats(self):
       return self.film_lookup, self.film_found, self.film_added
 
+   ###################################################################################
+   #
+   # Resets counters
+   #
+   ###################################################################################
    def reset_counts(self):
       self.film_lookup = 0
       self.film_found = 0

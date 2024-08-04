@@ -13,7 +13,7 @@ class DBPopulator:
 
       self.imdb = imdb
       self.local_db = local_db_api
-      self.not_found_in_imdb = []
+      #self.not_found_in_imdb = []
 
       self.max_titles_to_process = max_titles_to_process
       self.num_films_processed = 0
@@ -33,6 +33,7 @@ class DBPopulator:
    def populate_from_array(self, array_of_films, type):
       pattern_mismatches = []
       num_processed = 0
+      not_found_in_imdb = []
 
       #process_max = 10
       try_imdb = True
@@ -57,29 +58,30 @@ class DBPopulator:
                logging.debug("Found in DB:" + str(res))
    
                if len(res) > 0 and res[0]["imdbid"] != None:
-                  logging.debug("First Film in DB [0]:" + str(res[0]))
-                  logging.debug("Found film in DB")
+                  logging.debug("First Film ("+str(title_year)+") found in DB [0]:" + str(res[0]))
                else:
-                  logging.debug("Not Found in DB")
+                  logging.debug("Not Found in DB: " + str(title_year))
 
                   try:
                      if try_imdb:
                         details = self.imdb.get_details_from_title_year(title, year)
                         if len(details):
-                           logging.debug("Found in IMDB:" + str(details))
+                           logging.debug("Found "+title_year+" in IMDB:" + str(details))
                            self.local_db.add_film(title, year, type, False, details)
                         else:
                            logging.debug("Failed to find in IMDB:" + str(title_year))
-                           self.not_found_in_imdb.append(title_year)
+                           not_found_in_imdb.append(title_year)
                   except IMDB.MaxCallsExceededException as e:
                      logging.debug("Max IMDB limit reached, not looking up")
                      try_imdb = False
-                     #break
+                  except IMDB.IMDBAPIException as e:
+                     logging.debug("Can't access IMDB")
+                     try_imdb = False
 
             else:
                logging.debug("Cannot process due to pattern mismatch:" + title_year)
                pattern_mismatches.append(title_year)
 
       logging.debug("Total: " + str(num_processed) + " IMDB Lookups:" + str(self.imdb.api_calls) + " Format Errors:" + str(len(pattern_mismatches)))
-      return num_processed, pattern_mismatches
+      return num_processed, pattern_mismatches, not_found_in_imdb
 

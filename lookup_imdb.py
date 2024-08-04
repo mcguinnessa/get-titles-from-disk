@@ -5,9 +5,6 @@ import json
 import logging
 
 IMDB_HOST = "imdb146.p.rapidapi.com"
-
-
-
 IMDB_URL = "https://"+IMDB_HOST
 
 #title_data = {}
@@ -39,11 +36,10 @@ class IMDB:
       pass
 
    def __init__(self, api_key, max_api_calls):
-#       self.ids_found = 0
 
       self.api_key = api_key
 
-      self.max_api_calls = 0
+      self.max_api_calls = max_api_calls
       self.api_calls = 0
 
       self.title_calls = 0
@@ -55,7 +51,6 @@ class IMDB:
       self.detail_call_successes = 0
       self.detail_call_found = 0
       self.detail_call_not_found = 0
-
 
       self.headers = {
          "X-RapidAPI-Key": self.api_key,
@@ -70,64 +65,73 @@ class IMDB:
    ##########################################################################################
    def get_titles(self, search_title, year):
 
-      self.api_calls += 1 
-      self.title_calls += 1
-
       if self.api_calls >= self.max_api_calls:
          raise IMDB.MaxCallsExceededException
+
+      self.api_calls += 1 
+      self.title_calls += 1
 
       search_title = search_title.lower() 
       logging.debug("Looking in IMDB for " + search_title + " Year:" + str(year))
 
       #query_url = "https://imdb146.p.rapidapi.com/v1/find/"
-      query_url = IMDB_URL + "v1//find/"
+      query_url = IMDB_URL + "/v1/find/"
       query_payload = {"query": search_title}
 
-      response = requests.get(query_url, headers=self.headers, params=query_payload)
 
-      if response.status_code == 504:
-         logging.debug("Request Timed out, usually means quota is depleted")
-         return
+      logging.debug("url:" + str(query_url))
+      logging.debug("Headers:" + str(self.headers))
+      logging.debug("payload:" + str(query_payload))
 
-      if response.status_code == 200:
-         logging.debug("Request was successful")
-         self.title_call_successes += 1
+      try:
+         response = requests.get(query_url, headers=self.headers, params=query_payload)
 
-         resp_json = response.json()
-         logging.debug("IMDB Resp:" + str(resp_json))
+         if response.status_code == 504:
+            logging.debug("Request Timed out, usually means quota is depleted")
+            return
 
-         id = None
-         if "titleResults" in resp_json:
-            if "results" in resp_json["titleResults"]:
-               for title in resp_json["titleResults"]["results"]:
-                  try:
-                     if all(key in title for key in ('titleNameText', 'titleReleaseText', 'id')):
-                        f_title = title["titleNameText"]
-                        f_year = title["titleReleaseText"]
-                        f_id = title["id"]
-                        logging.debug("Title:" + str(f_title))
-                        logging.debug("Year:" + str(f_year))
-                        logging.debug("imdbid:" + str(f_id))
+         if response.status_code == 200:
+            logging.debug("Request was successful")
+            self.title_call_successes += 1
 
-                        if int(year) == int(f_year):
-                           logging.debug("Year Match!")
-                           self.title_call_found += 1
-                           id = f_id
-                           break
+            resp_json = response.json()
+            logging.debug("IMDB Resp:" + str(resp_json))
+   
+            id = None
+            if "titleResults" in resp_json:
+               if "results" in resp_json["titleResults"]:
+                  for title in resp_json["titleResults"]["results"]:
+                     try:
+                        if all(key in title for key in ('titleNameText', 'titleReleaseText', 'id')):
+                           f_title = title["titleNameText"]
+                           f_year = title["titleReleaseText"]
+                           f_id = title["id"]
+                           logging.debug("Title:" + str(f_title))
+                           logging.debug("Year:" + str(f_year))
+                           logging.debug("imdbid:" + str(f_id))
 
-                  except ValueError as e:
-                     logging.debug("Error parsing values:" + str(e))
-                     raise IMDB.IMDBAPIException("Error parsing values:" + str(e))
+                           if int(year) == int(f_year):
+                              logging.debug("Year Match!")
+                              self.title_call_found += 1
+                              id = f_id
+                              break
+
+                     except ValueError as e:
+                        logging.debug("Error parsing values:" + str(e))
+                        raise IMDB.IMDBAPIException("Error parsing values:" + str(e))
+               else:
+                  logging.debug("Format Error: results not in titleResults")
+                  raise IMDB.IMDBAPIException("results not in titleResults")
             else:
-               logging.debug("Format Error: results not in titleResults")
-               raise IMDB.IMDBAPIException("results not in titleResults")
-         else:
-            logging.debug("Format Error: titleResults not in response")
-            raise IMDB.IMDBAPIException("titleResults not in response")
+               logging.debug("Format Error: titleResults not in response")
+               raise IMDB.IMDBAPIException("titleResults not in response")
+      except Exception as e:
+         logging.debug("Exception: " + str(e))
+         raise IMDB.IMDBAPIException("Error connecting to IMDB API: URL:" + IMDB_URL)
 
       if not id:
          self.title_call_not_found += 1
-         
+
       return id
 
    ##########################################################################################
@@ -137,50 +141,55 @@ class IMDB:
    ##########################################################################################
    def get_data_from_imdbid(self, imdbid):
 
-      self.detail_calls += 1
-      self.api_calls += 1
       if self.api_calls >= self.max_api_calls:
          raise IMDB.MaxCallsExceededException
 
+      self.detail_calls += 1
+      self.api_calls += 1
+
       rc = {}
       #imdbid = "tt0073195"
-      title_url = IMDB_URL + "v1//title/"
+      title_url = IMDB_URL + "/v1/title/"
       #title_url = "https://imdb146.p.rapidapi.com/v1/title/"
       querypayload = {"id": imdbid}
 
       #self.detail_lookups += 1
       #self.api_calls += 1 
-      response = requests.get(title_url, headers=self.headers, params=querypayload)
-      print("Response:" + str(response))
-      if response.status_code == 200:
-         logging.debug("Request was successful")
-         self.detail_call_successes += 1
+      try:
+         response = requests.get(title_url, headers=self.headers, params=querypayload)
+         print("Response:" + str(response))
+         if response.status_code == 200:
+            logging.debug("Request was successful")
+            self.detail_call_successes += 1
  
-         resp_json = response.json()
-         logging.debug(resp_json)
+            resp_json = response.json()
+            logging.debug(resp_json)
 
-         if "runtime" in resp_json:
-            if "seconds" in resp_json["runtime"]:
-               runtime = resp_json["runtime"]["seconds"]
-               logging.debug("Runtime:" + str(runtime))
-               rc["runtime"] = runtime
-               rc["imdbid"] = imdbid
-               self.detail_call_found += 1
-         else:
-            logging.debug("Format Exception: runtime not in response")
-            raise IMDB.IMDBAPIException("runtime not in response")
+            if "runtime" in resp_json:
+               if "seconds" in resp_json["runtime"]:
+                  runtime = resp_json["runtime"]["seconds"]
+                  logging.debug("Runtime:" + str(runtime))
+                  rc["runtime"] = runtime
+                  rc["imdbid"] = imdbid
+                  self.detail_call_found += 1
+            else:
+               logging.debug("Format Exception: runtime not in response")
+               raise IMDB.IMDBAPIException("runtime not in response")
 
-         if "certificate" in resp_json and resp_json["certificate"]:
-            if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
-               classification = resp_json["certificate"]["rating"]
-               logging.debug("Classification:" + str(classification))
-               rc["classification"] = classification
+            if "certificate" in resp_json and resp_json["certificate"]:
+               if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
+                  classification = resp_json["certificate"]["rating"]
+                  logging.debug("Classification:" + str(classification))
+                  rc["classification"] = classification
 
-         if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
-            if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
-               rating = resp_json["ratingsSummary"]["aggregateRating"]
-               logging.debug("Rating:" + str(rating))
-               rc["imdb_rating"] = rating
+            if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
+               if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
+                  rating = resp_json["ratingsSummary"]["aggregateRating"]
+                  logging.debug("Rating:" + str(rating))
+                  rc["imdb_rating"] = rating
+      except Exception as e:
+         logging.debug("Exception: " + str(e))
+         raise IMDB.IMDBAPIException("Error connecting to IMDB API: URL:" + IMDB_URL)
 
       if not rc:
          self.detail_call_not_found += 1
@@ -202,12 +211,11 @@ class IMDB:
 
       return rc
 
-   def print_stats(self):
-      print("IMDB Stats")
-      print("Title Searches:" + str(self.title_searches))
-      print("IDs Found     :" + str(self.ids_found))
-      print("Detail Lookups:" + str(self.detail_lookups))
-      print("Details Found :" + str(self.details_found))
+   ################################################################################
+   # Returns stats as: total calls; title: calls, successes, found, not found; details: calls, successes, found, not found;
+   ################################################################################
+   def get_stats(self):
+      return self.api_calls, self.title_calls, self.title_call_successes, self.title_call_found, self.title_call_not_found, self.detail_calls, self.detail_call_successes, self.detail_call_found, self.detail_call_not_found
 
 ################################################################################
 #
