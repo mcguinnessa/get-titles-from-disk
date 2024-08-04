@@ -6,11 +6,6 @@ import logging
 
 IMDB_HOST = "imdb146.p.rapidapi.com"
 
-API_KEY = "2a254412a8mshcaf8331e7202be5p1da826jsn7466b19a2a63"
-headers = {
-   "X-RapidAPI-Key": API_KEY,
-   "X-RapidAPI-Host": IMDB_HOST
-}
 
 
 IMDB_URL = "https://"+IMDB_HOST
@@ -43,8 +38,10 @@ class IMDB:
    class IMDBAPIException(Exception):
       pass
 
-   def __init__(self, max_api_calls):
+   def __init__(self, api_key, max_api_calls):
 #       self.ids_found = 0
+
+      self.api_key = api_key
 
       self.max_api_calls = 0
       self.api_calls = 0
@@ -58,6 +55,12 @@ class IMDB:
       self.detail_call_successes = 0
       self.detail_call_found = 0
       self.detail_call_not_found = 0
+
+
+      self.headers = {
+         "X-RapidAPI-Key": self.api_key,
+         "X-RapidAPI-Host": IMDB_HOST
+      }
 
    ##########################################################################################
    #
@@ -80,7 +83,7 @@ class IMDB:
       query_url = IMDB_URL + "v1//find/"
       query_payload = {"query": search_title}
 
-      response = requests.get(query_url, headers=headers, params=query_payload)
+      response = requests.get(query_url, headers=self.headers, params=query_payload)
 
       if response.status_code == 504:
          logging.debug("Request Timed out, usually means quota is depleted")
@@ -147,7 +150,7 @@ class IMDB:
 
       #self.detail_lookups += 1
       #self.api_calls += 1 
-      response = requests.get(title_url, headers=headers, params=querypayload)
+      response = requests.get(title_url, headers=self.headers, params=querypayload)
       print("Response:" + str(response))
       if response.status_code == 200:
          logging.debug("Request was successful")
