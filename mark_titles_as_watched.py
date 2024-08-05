@@ -5,27 +5,21 @@ import getopt
 import sys
 import os
 import re
-#from film_manager.film_uploader import FilmUploader
-#from network.script_record import ScriptRecordTable
 
-#from lookup_imdb import get_titles
-#from lookup_imdb import get_details_from_title_year
-#from lookup_imdb import print_stats as print_imdb_stats
 from lookup_imdb import IMDB
+from film_title_tools import FilmTitleTools
 
 from film_api import FilmAPI
 
-#from film_database import FilmDatabase
-#from film_database import FilmDatabase
-
 from file_system import FileSystem
+from film_watched_updater import FilmWatchedUpdater
 
 num_films_processed = 0
-process_max = None
+process_max = sys.maxsize
 max_imdb_lookups = 0
 
 
-FILM_PATTERN = re.compile("([^()]*) \((.*)\)$")
+#FILM_PATTERN = re.compile("([^()]*) \((.*)\)$")
 
 #########################################################################################
 #
@@ -34,10 +28,10 @@ FILM_PATTERN = re.compile("([^()]*) \((.*)\)$")
 #########################################################################################
 def usage():
    print("\n")
-   print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_imdb_lookups>] [-m <max_records_to_process>")
+   print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_records_to_process>")
 
-class FilmFormatException(Exception):
-   pass
+#class FilmFormatException(Exception):
+#   pass
 
 #########################################################################################
 #
@@ -45,10 +39,7 @@ class FilmFormatException(Exception):
 #
 #########################################################################################
 def main(argv):
-#   global process_max
-#   global max_imdb_lookups
-
-
+   global process_max
 
    try:
        opts, args = getopt.getopt(argv, "ln:", ["log="])
@@ -61,10 +52,8 @@ def main(argv):
    for opt, arg in opts:
       if opt in ("-l", "--log"):
          loglevel = arg.upper()
-      elif opt in ("-i"):
-         num_process = int(arg)
-#      elif opt in ("-f"):
-#         process_max = int(arg)
+      elif opt in ("-n"):
+         process_max = int(arg)
 
    numeric_log_level = getattr(logging, loglevel, None)
 
@@ -79,72 +68,54 @@ def main(argv):
 
    formatter = logging.Formatter('%(levelname)-8s %(message)s')
    console.setFormatter(formatter)
-#   logging.getLogger('').addHandler(console)
-
-   filename = "./watched.txt"
 
    logging.info("Marking films as watched")
-   pfilms = read_file(filename)
+   logging.info("Max number of titles to process:" + str(process_max))
 
-   server = "192.168.0.160"
-   port = "80"
-   api = FilmAPI(server, port)
+   db_host = os.environ["DB_HOST"]
+   db_port = os.environ["DB_PORT"]
 
+   api = FilmAPI(db_host, db_port)
+   updater = FilmWatchedUpdater(api, process_max) 
 
-   not_found_in_db = []
-   for film in pfilms:
-      deets = api.get_film(film[0], film[1])
+   films = []
 
-      if deets:
-         print("Details:" + str(deets))
-      else:
-         not_found_in_db.append(f"{film[0]} {film[1]}")
-
-   for nf in not_found_in_db:
-      print("Failed to find in DB:" + str(nf))
-
-
-def read_file(filename):
-
-   # Open the file using 'with' statement to ensure proper resource management
+   filename = "./watched.txt"
    with open(filename, 'r') as file:
-
-      films = []
-      invalid_format = []
-
       for line in file:
-         
-         try:
-            title_year = line.strip()
-            print(title_year)
-            title, year = split_title(title_year)
+         films.append(line.strip())
 
-            print("Title:" + title)
-            print("Year:" + year)
-         
-            films.append([title, year])
-         except FilmFormatException as e:
-            invalid_format.append(title_year)
+   num_processed = updater.set_films_as_watched(films)
+   newly_watched, already_watched, found_in_db, not_found_in_db, invalid_format = updater.get_stats()
+    
+   print("Found in DB:")
+   if found_in_db:
+      for f in found_in_db:
+         print("   " + f)
 
-      print("Invalid Format:" + str(invalid_format))  
-      return films
+   print("Already Watched:")
+   if already_watched:
+      for w in already_watched:
+         print("   " + w)
 
-
-
-def split_title(title_year):
-
-   m = FILM_PATTERN.match(title_year)
-   if m:
-      title = str(m.group(1))
-      year = str(m.group(2))
-#      print("Title:" + title)
-#      print("Year:" + year)
-      return title, year
-   else:
-     raise FilmFormatException
-
-  
-
+   ############################
+   # Report
+   ############################
+   print("\nProcessed            : " + str(num_processed))
+   print("Found in Local DB    : " + str(len(found_in_db)))
+   print("Not Found in Local DB: " + str(len(not_found_in_db)))
+   if not_found_in_db:
+      for nf in not_found_in_db:
+         print("   " + nf)
+   print("Invalid Title Format : " + str(len(invalid_format)))
+   if invalid_format:
+      for inf in invalid_format:
+         print("   " + inf)
+   print("Already Watched      : " + str(len(already_watched)))
+   print("Marked as Watched    : " + str(len(newly_watched)))
+   if newly_watched:
+      for nw in newly_watched:
+         print("   " + nw)
 
 
 if __name__ == "__main__":

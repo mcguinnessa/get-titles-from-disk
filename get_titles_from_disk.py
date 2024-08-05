@@ -32,7 +32,7 @@ def usage():
 #########################################################################################
 def main(argv):
    global process_max
-#   global max_imdb_lookups
+   global max_imdb_lookups
 
    try:
        opts, args = getopt.getopt(argv, "li:f:", ["log="])

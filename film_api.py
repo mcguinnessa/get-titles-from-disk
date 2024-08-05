@@ -8,6 +8,7 @@ class FilmAPI:
    """The Film API"""
 
    protocol = "http://"
+   headers = {"Content-Type": "application/json"}
 
    def __init__(self, server, port):
       """Init"""
@@ -78,9 +79,8 @@ class FilmAPI:
       jobj["year"] = film_year
 
       logging.debug("Looking for Film:" + str(film_name) + " Year:" + str(film_year))
-      headers = {"Content-Type": "application/json"}
       logging.debug("obj:" + str(jobj))
-      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, params=jobj, headers=headers)
+      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, params=jobj, headers=self.headers)
       logging.debug("Returned:" + str(output))
       logging.debug("  Body:" + str(output.content))
 
@@ -88,7 +88,6 @@ class FilmAPI:
 
       if output.status_code == 200:
          logging.debug("Status:" + str(output.status_code))
- 
          rc = json.loads(output.content.decode("utf-8"))
 
          logging.debug("rc=" + str(rc))
@@ -97,6 +96,38 @@ class FilmAPI:
                self.film_found += 1
 
       return rc
+
+
+   ###################################################################################
+   #
+   # Sets film to watched
+   #
+   ###################################################################################
+   def update_watched_for_film(self, film_name, film_year, watched):
+      """Update watched status of film"""
+
+      logging.debug("Looking for film, title:" + str(film_name) + " year:" + str(film_year))
+      endpoint = "/api/film"
+ 
+#      jobj = {}
+#      jobj["title"] = film_name
+#      jobj["year"] = film_year
+#
+#      logging.debug("Looking for Film:" + str(film_name) + " Year:" + str(film_year))
+#      logging.debug("obj:" + str(jobj))
+#      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, params=jobj, headers=self.headers)
+#      logging.debug("Returned:" + str(output))
+#      logging.debug("  Body:" + str(output.content))
+#
+#      if output.status_code == 200:
+#         logging.debug("Status:" + str(output.status_code))
+#         rc = json.loads(output.content.decode("utf-8"))
+#
+#         logging.debug("rc=" + str(rc))
+#         if len(rc) > 0:
+#            if "imdbid" in rc[0]:
+#               self.film_found += 1
+
 
    ###################################################################################
    #
