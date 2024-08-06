@@ -109,7 +109,7 @@ class FilmAPI:
       logging.debug("Looking for imdbid:" + str(imdbid))
       endpoint = "/api/film/" + str(imdbid)
 
-      rc = {} 
+      rc = False
       jobj = {}
       jobj["watched"] = str(watched)
 
@@ -121,15 +121,10 @@ class FilmAPI:
 
       if output.status_code == 200:
          logging.debug("Status:" + str(output.status_code))
-         rc = json.loads(output.content.decode("utf-8"))
+         rc = True
+         #rc = json.loads(output.content.decode("utf-8"))
 
       return rc
-#
-#         logging.debug("rc=" + str(rc))
-#         if len(rc) > 0:
-#            if "imdbid" in rc[0]:
-#               self.film_found += 1
-
 
    ###################################################################################
    #

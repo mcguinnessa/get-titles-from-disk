@@ -5,7 +5,11 @@ import logging
 
 class FilmWatchedUpdater:
 
-
+   ###################################################################################
+   #
+   # Init with local DB
+   #
+   ###################################################################################
    def __init__(self, local_db, process_max):
       self.local_db = local_db
       self.process_max = process_max
@@ -16,10 +20,21 @@ class FilmWatchedUpdater:
       self.already_watched = []
       self.newly_watched = []
 
+   ###################################################################################
+   #
+   # Returns the stats in order:
+   #    newly_watched, already_watched, found_in_db, not_found_in_db, invalid_format
+   #
+   ###################################################################################
    def get_stats(self):
       return self.newly_watched, self.already_watched, self.found_in_db, self.not_found_in_db, self.invalid_format
 
 
+   ###################################################################################
+   #
+   # Sets the films in the array provided as watched
+   #
+   ###################################################################################
    def set_films_as_watched(self, film_list):
       num_processed = 0
 
@@ -41,10 +56,8 @@ class FilmWatchedUpdater:
                self.found_in_db.append(title_year)
                logging.debug("Found Film Details:" + str(deets))
                watched = deets[0]['watched'] 
-               #id = deets[0]['_id'] 
                imdbid = deets[0]['imdbid'] 
-               logging.debug("Watched:" + str(watched))
-               #logging.debug("ID:" + str(id))
+               logging.debug("Current Watched:" + str(watched))
                logging.debug("IMDBID:" + str(imdbid))
 
                if watched:
@@ -53,8 +66,8 @@ class FilmWatchedUpdater:
 
                else:
                   logging.debug(title_year + " newly marked as watched")
-                  self.local_db.update_watched_for_film(imdbid, True)
-                  self.newly_watched.append(title_year)
+                  if self.local_db.update_watched_for_film(imdbid, True):
+                     self.newly_watched.append(title_year)
                    
             else:
                self.not_found_in_db.append(title_year)

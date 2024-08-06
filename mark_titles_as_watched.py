@@ -19,8 +19,6 @@ process_max = sys.maxsize
 max_imdb_lookups = 0
 
 
-#FILM_PATTERN = re.compile("([^()]*) \((.*)\)$")
-
 #########################################################################################
 #
 # Usage
@@ -29,9 +27,6 @@ max_imdb_lookups = 0
 def usage():
    print("\n")
    print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_records_to_process>")
-
-#class FilmFormatException(Exception):
-#   pass
 
 #########################################################################################
 #
@@ -57,10 +52,7 @@ def main(argv):
 
    numeric_log_level = getattr(logging, loglevel, None)
 
-#   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='/var/log/film_manager/upload_from_files.log', filemode='w', level=logging.DEBUG)
    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filemode='w', level=logging.DEBUG)
-#   logging.getLogger("imdbpy").setLevel(logging.ERROR)
-#   logging.getLogger("smbprotocol").setLevel(logging.ERROR)
    console = logging.StreamHandler()
 
    #console.setLevel(logging.INFO)
@@ -117,7 +109,9 @@ def main(argv):
       for nw in newly_watched:
          print("   " + nw)
 
-
+#################################################################################################
+# MAIN
+#################################################################################################
 if __name__ == "__main__":
    main(sys.argv[1:])
 
