@@ -41,8 +41,11 @@ class FilmWatchedUpdater:
                self.found_in_db.append(title_year)
                logging.debug("Found Film Details:" + str(deets))
                watched = deets[0]['watched'] 
+               #id = deets[0]['_id'] 
+               imdbid = deets[0]['imdbid'] 
                logging.debug("Watched:" + str(watched))
-               logging.debug("ID:" + str(id))
+               #logging.debug("ID:" + str(id))
+               logging.debug("IMDBID:" + str(imdbid))
 
                if watched:
                   logging.debug(title_year + " already marked as watched")
@@ -50,7 +53,7 @@ class FilmWatchedUpdater:
 
                else:
                   logging.debug(title_year + " newly marked as watched")
-                  self.local_db.update_watched_for_film(title, year, True)
+                  self.local_db.update_watched_for_film(imdbid, True)
                   self.newly_watched.append(title_year)
                    
             else:
