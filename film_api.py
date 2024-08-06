@@ -115,7 +115,7 @@ class FilmAPI:
 
       logging.debug("Marking for Film:" + str(imdbid))
       logging.debug("obj:" + str(jobj))
-      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
       logging.debug("Returned:" + str(output))
       logging.debug("  Body:" + str(output.content))
 
