@@ -25,8 +25,16 @@ max_imdb_lookups = 0
 #
 #########################################################################################
 def usage():
-   print("\n")
+   #print("\n")
    print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_records_to_process>")
+
+   print("Requires the following Environment Variables:")
+   print("   DB_HOST - The location of the Database")
+   print("   DB_PORT - The Port the Database is listening on")
+   print("   SMB_HOST - The Host of the Samba file system")
+   print("   SMB_USER - The Samba User")
+   print("   SMB_PASS - The Samba Password")
+
 
 #########################################################################################
 #
@@ -50,6 +58,18 @@ def main(argv):
       elif opt in ("-n"):
          process_max = int(arg)
 
+   # Get Environment Variables
+   try:
+      db_host = os.environ["DB_HOST"]
+      db_port = os.environ["DB_PORT"]
+      smb_user = os.environ["SMB_USER"]
+      smb_server = os.environ["SMB_HOST"]
+      smb_password = os.environ["SMB_PASS"]
+   except KeyError as e:
+      logging.debug("Environment Variable not found:" +str(e))
+      usage()
+      sys.exit(2)
+
    numeric_log_level = getattr(logging, loglevel, None)
 
    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filemode='w', level=logging.DEBUG)
@@ -58,24 +78,21 @@ def main(argv):
    #console.setLevel(logging.INFO)
    console.setLevel(logging.DEBUG)
 
+   logging.getLogger("smbprotocol").setLevel(logging.ERROR)
    formatter = logging.Formatter('%(levelname)-8s %(message)s')
    console.setFormatter(formatter)
 
    logging.info("Marking films as watched")
    logging.info("Max number of titles to process:" + str(process_max))
 
-   db_host = os.environ["DB_HOST"]
-   db_port = os.environ["DB_PORT"]
-
+   fs = FileSystem(smb_server, smb_user, smb_password)
    api = FilmAPI(db_host, db_port)
    updater = FilmWatchedUpdater(api, process_max) 
 
    films = []
 
-   filename = "./watched.txt"
-   with open(filename, 'r') as file:
-      for line in file:
-         films.append(line.strip())
+   filename = "/Films/watched.txt"
+   films = fs.readFile(filename)
 
    num_processed = updater.set_films_as_watched(films)
    newly_watched, already_watched, found_in_db, not_found_in_db, invalid_format = updater.get_stats()

@@ -22,8 +22,16 @@ max_imdb_lookups = 0
 #
 #########################################################################################
 def usage():
-   print("\n")
+#   print("\n")
    print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-n <max_records_to_process>")
+
+   print("Requires the following Environment Variables:")
+   print("   DB_HOST - The location of the Database")
+   print("   DB_PORT - The Port the Database is listening on")
+   print("   SMB_HOST - The Host of the Samba file system")
+   print("   SMB_USER - The Samba User")
+   print("   SMB_PASS - The Samba Password")
+   print("   IMDB_API_KEY - The access key for the IMDB API")
 
 #########################################################################################
 #
@@ -50,6 +58,19 @@ def main(argv):
       elif opt in ("-f"):
          process_max = int(arg)
 
+   # Get Environment Variables
+   try:
+      db_host = os.environ["DB_HOST"]
+      db_port = os.environ["DB_PORT"]
+      smb_user = os.environ["SMB_USER"]
+      smb_server = os.environ["SMB_HOST"]
+      smb_password = os.environ["SMB_PASS"]
+      imdb_api_key = os.environ["IMDB_API_KEY"]
+   except KeyError as e:
+      logging.debug("Environment Variable not found:" +str(e))
+      usage()
+      sys.exit(2)
+
    numeric_log_level = getattr(logging, loglevel, None)
 
 #   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='/var/log/film_manager/upload_from_files.log', filemode='w', level=logging.DEBUG)
@@ -67,15 +88,6 @@ def main(argv):
    logging.info("Max number of titles to process:" + str(process_max))
    logging.info("Max number of IMDB Lookups:" + str(max_imdb_lookups))
 
-   smb_user = os.environ["SMB_USER"]
-   smb_server = os.environ["SMB_HOST"]
-   smb_password = os.environ["SMB_PASS"]
-   db_host = os.environ["DB_HOST"]
-   db_port = os.environ["DB_PORT"]
-   imdb_api_key = os.environ["IMDB_API_KEY"]
-
-#   server = "192.168.0.160"
-#   port = "80"
    api = FilmAPI(db_host, db_port)
    imdb = IMDB(imdb_api_key, max_imdb_lookups)
    fs = FileSystem(smb_server, smb_user, smb_password)
@@ -91,13 +103,6 @@ def main(argv):
    offline_titles = fs.listDir(offline_dir)
 
    populator = DBPopulator(api, imdb, process_max)
-
-   #file_format_errors, dvd_format_errors, br_format_errors, rip_format_errors, = [0] * 4
-   #file_films_lookup, file_films_found, file_films_added = [0] * 3
-   #dvd_films_lookup, dvd_films_found, dvd_films_added = [0] * 3
-   #br_films_lookup, br_films_found, br_films_added = [0] * 3
-   #rip_films_lookup, rip_films_found, rip_films_added = [0] * 3
-   #file_processed, dvd_processed, br_processed, rip_processed = [0] * 4
 
    file_processed, file_format_errors, file_not_in_imdb = populator.populate_files(files_titles)
    file_films_lookup, file_films_found, file_films_added = api.get_stats()
@@ -118,8 +123,6 @@ def main(argv):
 
    imdb_calls, t_calls, t_success, t_found, t_missed, d_calls, d_success, d_found, d_missed = imdb.get_stats()
 
-  # added_to_imdb = None
-   
 
    ############################
    # Report
