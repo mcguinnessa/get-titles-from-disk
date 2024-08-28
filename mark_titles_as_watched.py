@@ -6,7 +6,7 @@ import sys
 import os
 import re
 
-from lookup_imdb import IMDB
+#from lookup_imdb import IMDB
 from film_title_tools import FilmTitleTools
 
 from film_api import FilmAPI
@@ -19,6 +19,10 @@ process_max = sys.maxsize
 max_imdb_lookups = 0
 
 
+FILM_DB_SERVER_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_HOST"
+FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
+
+
 #########################################################################################
 #
 # Usage
@@ -29,8 +33,8 @@ def usage():
    print(sys.argv[0]+" <-h> [--log <log level>] [-n <max_records_to_process>")
 
    print("Requires the following Environment Variables:")
-   print("   DB_HOST - The location of the Database")
-   print("   DB_PORT - The Port the Database is listening on")
+   print("   "+str(FILM_DB_SERVER_ENV_NAME)+" - The location of the Database Service")
+   print("   "+str(FILM_DB_PORT_ENV_NAME)+" - The Port the Database Service is listening on")
    print("   SMB_HOST - The Host of the Samba file system")
    print("   SMB_USER - The Samba User")
    print("   SMB_PASS - The Samba Password")
@@ -60,8 +64,8 @@ def main(argv):
 
    # Get Environment Variables
    try:
-      db_host = os.environ["DB_HOST"]
-      db_port = os.environ["DB_PORT"]
+      db_host = os.environ[FILM_DB_SERVER_ENV_NAME]
+      db_port = os.environ[FILM_DB_PORT_ENV_NAME]
       smb_user = os.environ["SMB_USER"]
       smb_server = os.environ["SMB_HOST"]
       smb_password = os.environ["SMB_PASS"]
@@ -84,6 +88,12 @@ def main(argv):
 
    logging.info("Marking films as watched")
    logging.info("Max number of titles to process:" + str(process_max))
+
+   logging.debug(FILM_DB_SERVER_ENV_NAME+":" + str(db_host))
+   logging.debug(FILM_DB_PORT_ENV_NAME+":" + str(db_host))
+   logging.debug("SMB_USER:" + str(smb_user))
+   logging.debug("SMB_HOST:" + str(smb_server))
+   logging.debug("SMB_PASS:" + str(smb_password))
 
    fs = FileSystem(smb_server, smb_user, smb_password)
    api = FilmAPI(db_host, db_port)
