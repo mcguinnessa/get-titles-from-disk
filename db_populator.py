@@ -97,6 +97,9 @@ class DBPopulator:
                      else:
                         logging.debug("Failed to find in IMDB:" + str(title_year))
                         not_found_in_imdb.append(title_year)
+               except IMDB.IMDBResponseException as e:
+                  logging.debug("Error parsing response from IMDB")
+                  not_found_in_imdb.append(title_year)
                except IMDB.MaxCallsExceededException as e:
                   logging.debug("Max IMDB limit reached, not looking up")
                   try_imdb = False

@@ -32,8 +32,12 @@ class IMDB:
    class MaxCallsExceededException(Exception):
       pass
 
+   class IMDBResponseException(Exception):
+      pass
+
    class IMDBAPIException(Exception):
       pass
+
 
    def __init__(self, api_key, max_api_calls):
 
@@ -102,6 +106,7 @@ class IMDB:
                if "results" in resp_json["titleResults"]:
                   for title in resp_json["titleResults"]["results"]:
                      try:
+                        #all() returns true if all are true, so basically, returns true if all exist
                         if all(key in title for key in ('titleNameText', 'titleReleaseText', 'id')):
                            f_title = title["titleNameText"]
                            f_year = title["titleReleaseText"]
@@ -110,21 +115,27 @@ class IMDB:
                            logging.debug("Year:" + str(f_year))
                            logging.debug("imdbid:" + str(f_id))
 
-                           if int(year) == int(f_year):
-                              logging.debug("Year Match!")
-                              self.title_call_found += 1
-                              id = f_id
-                              break
+
+                           if f_year.isdigit() and len(f_year) == 4:  
+                              if int(year) == int(f_year):
+                                 logging.debug("Year Match!")
+                                 self.title_call_found += 1
+                                 id = f_id
+                                 break
+                           else:
+                              logging.debug("Error parsing year:" + str(f_year))
 
                      except ValueError as e:
                         logging.debug("Error parsing values:" + str(e))
-                        raise IMDB.IMDBAPIException("Error parsing values:" + str(e))
+                        raise IMDB.IMDBResponseException("Error parsing values:" + str(e) + " - [" + str(search_title) + " / " + str(year) + "]")
                else:
                   logging.debug("Format Error: results not in titleResults")
                   raise IMDB.IMDBAPIException("results not in titleResults")
             else:
                logging.debug("Format Error: titleResults not in response")
                raise IMDB.IMDBAPIException("titleResults not in response")
+      except IMDB.IMDBResponseException as e:
+         raise e
       except Exception as e:
          logging.debug("Exception: " + str(e))
          raise IMDB.IMDBAPIException("Error connecting to IMDB API: URL:" + IMDB_URL)
