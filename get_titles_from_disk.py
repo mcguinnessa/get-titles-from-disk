@@ -9,6 +9,8 @@ from db_populator import DBPopulator
 from lookup_imdb import IMDB
 from film_api import FilmAPI
 from file_system import FileSystem
+from time_tools import TimeTools
+
 
 IMDB_API_MAX_FILMS_PER_MONTH = 500
 
@@ -77,7 +79,7 @@ def main(argv):
    numeric_log_level = getattr(logging, loglevel, None)
 
 #   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='/var/log/film_manager/upload_from_files.log', filemode='w', level=logging.DEBUG)
-   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filemode='w', level=logging.DEBUG)
+   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='./ptff.log', filemode='w', level=logging.DEBUG)
    logging.getLogger("smbprotocol").setLevel(logging.ERROR)
    console = logging.StreamHandler()
 
@@ -125,6 +127,8 @@ def main(argv):
    not_found_in_imdb = file_not_in_imdb + dvd_not_in_imdb + br_not_in_imdb + rip_not_in_imdb
 
    imdb_calls, t_calls, t_success, t_found, t_missed, d_calls, d_success, d_found, d_missed = imdb.get_stats()
+   imdb_api_limit, imdb_api_remaining, imdb_api_reset = imdb.get_api_stats()
+   reset_string = TimeTools.convert_seconds(imdb_api_reset)
 
 
    ############################
@@ -157,6 +161,7 @@ def main(argv):
    print("  Details   : l:" + str(d_success) + "/" + str(d_calls) + " f:" + str(d_found) + " m:" + str(d_missed))
    if not_found_in_imdb:
       print("Not Found In IMDB: " + str(not_found_in_imdb))
+   print("Calls Remaining : " + str(imdb_api_remaining) + "/" + str(imdb_api_limit) + " - Resets in " + str(imdb_api_reset) + "s. (" + reset_string+")")
 
 #############################################################################################
 # MAIN

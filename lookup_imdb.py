@@ -27,6 +27,13 @@ IMDB_URL = "https://"+IMDB_HOST
 
 #title_data["tt1655442"] = {'resultsSectionOrder': ['TITLE', 'NAME'], 'findPageMeta': {'searchTerm': 'the artist', 'includeAdult': False, 'isExactMatch': False}, 'keywordResults': {'results': []}, 'titleResults': {'results': [{'id': 'tt1655442', 'titleNameText': 'The Artist', 'titleReleaseText': '2011', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BNzYxMjBkNzAtY2M2YS00YjRhLTgzOTYtY2FiOGM2OTBlZjdiXkEyXkFqcGdeQXVyMTU3NDU4MDg2._V1_.jpg', 'maxHeight': 2100, 'maxWidth': 1400, 'caption': 'Bérénice Bejo and Jean Dujardin in The Artist (2011)'}, 'topCredits': ['Jean Dujardin', 'Bérénice Bejo'], 'imageType': 'movie'}, {'id': 'tt3521126', 'titleNameText': 'The Disaster Artist', 'titleReleaseText': '2017', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGNkMzliMGMtMDI5Ni00OTZkLTgyMTYtNzk5ZTY1NjVhYjVmXkEyXkFqcGdeQXVyNTAzMTY4MDA@._V1_.jpg', 'maxHeight': 1200, 'maxWidth': 810, 'caption': 'James Franco, Seth Rogen, Zac Efron, and Dave Franco in The Disaster Artist (2017)'}, 'topCredits': ['James Franco', 'Dave Franco'], 'imageType': 'movie'}, {'id': 'tt2649522', 'titleNameText': 'The Escape Artist', 'titleReleaseText': '2013', 'titleTypeText': 'TV Mini Series', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BMTY2MGEzNmItOGRjOC00Njk1LWJjYjctMGUwOGIwNzk3NzBkXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_.jpg', 'maxHeight': 2161, 'maxWidth': 1525, 'caption': 'David Tennant in The Escape Artist (2013)'}, 'topCredits': ['David Tennant', 'Toby Kebbell'], 'imageType': 'tvMiniSeries'}, {'id': 'tt1990217', 'titleNameText': 'The Artist and the Model', 'titleReleaseText': '2012', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BYjk5YWU2YTYtZWFmZS00NjM2LWFlMmEtMTliODIwNTllNDk5XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_.jpg', 'maxHeight': 1135, 'maxWidth': 800, 'caption': 'The Artist and the Model (2012)'}, 'topCredits': ['Jean Rochefort', 'Aida Folch'], 'imageType': 'movie'}, {'id': 'tt0093737', 'titleNameText': 'The Pick-up Artist', 'titleReleaseText': '1987', 'titleTypeText': '', 'titlePosterImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BZjVmYmFjMWUtYjA2ZC00ODQwLTlhM2EtYjBkNTc2MGIxYWVlXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_.jpg', 'maxHeight': 2260, 'maxWidth': 1485, 'caption': 'The Pick-up Artist (1987)'}, 'topCredits': ['Molly Ringwald', 'Robert Downey Jr.'], 'imageType': 'movie'}], 'nextCursor': 'eyJlc1Rva2VuIjpbIjU3ODA5LjciLCJ0dDAwOTM3MzciXSwiZmlsdGVyIjoie1wiaW5jbHVkZUFkdWx0XCI6ZmFsc2UsXCJpc0V4YWN0TWF0Y2hcIjpmYWxzZSxcInNlYXJjaFRlcm1cIjpcInRoZSBhcnRpc3RcIixcInR5cGVcIjpbXCJUSVRMRVwiXX0ifQ==', 'hasExactMatches': True}, 'nameResults': {'results': [{'id': 'nm0002239', 'displayNameText': 'Prince', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'Under the Cherry Moon', 'knownForTitleYear': '1986', 'akaName': 'The Artist Formerly Known as Prince', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOTMxMjEwNDk2NF5BMl5BanBnXkFtZTcwMDY1MjE2Mw@@._V1_.jpg', 'maxHeight': 400, 'maxWidth': 266, 'caption': 'Prince'}}, {'id': 'nm6462326', 'displayNameText': 'Brittney Ayona Clemons', 'knownForJobCategory': 'Actress', 'knownForTitleText': 'Rap Sh!t', 'knownForTitleYear': '2022–2023', 'akaName': 'Ayona The Artist', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BYWEzNjUwZDktZmEyYS00ZWYwLWFjNjItNDBiYzllYTZlZjkzXkEyXkFqcGdeQXVyNjE2Njc2ODY@._V1_.jpg', 'maxHeight': 2453, 'maxWidth': 1637, 'caption': 'Brittney Ayona Clemons'}}, {'id': 'nm3810001', 'displayNameText': 'Shinsuke Nakamura', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'WWE Smackdown!', 'knownForTitleYear': '1999– ', 'akaName': 'The Artist', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGQ2YjA2OTgtMjNlOC00YjcyLTgzNDUtNmNhMGM5OWE3NWE3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg', 'maxHeight': 1548, 'maxWidth': 680, 'caption': 'Shinsuke Nakamura'}}, {'id': 'nm2347863', 'displayNameText': 'Tamer Hosny', 'knownForJobCategory': 'Actor', 'knownForTitleText': 'The Money', 'knownForTitleYear': '2019', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BOGM5NDdmYjAtY2JmMS00YmVlLWJkYjEtMjA0NDEwNWM4ZWI3XkEyXkFqcGdeQXVyNTc3MjUzNTI@._V1_.jpg', 'maxHeight': 683, 'maxWidth': 1018, 'caption': 'Tamer Hosny in Kabten hima (2008)'}}, {'id': 'nm2351933', 'displayNameText': 'TT the Artist', 'knownForJobCategory': 'Soundtrack', 'knownForTitleText': 'Logan', 'knownForTitleYear': '2017', 'avatarImageModel': {'url': 'https://m.media-amazon.com/images/M/MV5BNTM1NzZhMDctZDBmMy00MTBiLTkyYWQtN2U3ZDA4OWI0MTM0XkEyXkFqcGdeQXVyNjM5ODAyNjQ@._V1_.jpg', 'maxHeight': 853, 'maxWidth': 1280, 'caption': 'TT the Artist'}}], 'nextCursor': 'eyJlc1Rva2VuIjpbIjIxMDgwLjY0NiIsIm5tMjM1MTkzMyJdLCJmaWx0ZXIiOiJ7XCJpbmNsdWRlQWR1bHRcIjpmYWxzZSxcImlzRXhhY3RNYXRjaFwiOmZhbHNlLFwic2VhcmNoVGVybVwiOlwidGhlIGFydGlzdFwiLFwidHlwZVwiOltcIk5BTUVcIl19In0=', 'hasExactMatches': True}, 'companyResults': {'results': []}}
 
+
+
+API_REQUEST_LIMIT_HDR = "X-RateLimit-Requests-Limit"
+API_REQUEST_REMAINING_HDR = "X-RateLimit-Requests-Remaining"
+API_REQUEST_LIMIT_RESET_HDR = "X-RateLimit-Requests-Reset"
+
+
 class IMDB:
 
    class MaxCallsExceededException(Exception):
@@ -56,10 +63,39 @@ class IMDB:
       self.detail_call_found = 0
       self.detail_call_not_found = 0
 
+      self.api_request_limit = 0
+      self.api_request_remaining = 0
+      self.api_limit_reset_s = 0
+
       self.headers = {
          "X-RapidAPI-Key": self.api_key,
          "X-RapidAPI-Host": IMDB_HOST
       }
+
+
+   ###########################################################################################
+   #
+   # Parses the headers in the repsonse and sets API limit variables
+   #
+   ###########################################################################################
+   def parse_response_headers(self, headers):
+      for hdr_key, hdr_value in headers.items():
+         logging.debug("HDR: " + hdr_key + " : " + hdr_value)
+
+         if API_REQUEST_LIMIT_HDR == hdr_key:
+            self.api_request_limit = int(hdr_value)
+
+         if API_REQUEST_REMAINING_HDR == hdr_key:
+            self.api_request_remaining = int(hdr_value)
+
+         if API_REQUEST_LIMIT_RESET_HDR == hdr_key:
+            self.api_limit_reset_s = int(hdr_value)
+
+      logging.debug(API_REQUEST_LIMIT_HDR + ":" + str(self.api_request_limit))
+      logging.debug(API_REQUEST_REMAINING_HDR + ":" + str(self.api_request_remaining))
+      logging.debug(API_REQUEST_LIMIT_RESET_HDR + ":" + str(self.api_limit_reset_s))
+
+
 
    ##########################################################################################
    #
@@ -89,6 +125,8 @@ class IMDB:
 
       try:
          response = requests.get(query_url, headers=self.headers, params=query_payload)
+
+         self.parse_response_headers(response.headers)
 
          if response.status_code == 504:
             logging.debug("Request Timed out, usually means quota is depleted")
@@ -168,7 +206,6 @@ class IMDB:
       #self.api_calls += 1 
       try:
          response = requests.get(title_url, headers=self.headers, params=querypayload)
-         print("Response:" + str(response))
          if response.status_code == 200:
             logging.debug("Request was successful")
             self.detail_call_successes += 1
@@ -227,6 +264,13 @@ class IMDB:
    ################################################################################
    def get_stats(self):
       return self.api_calls, self.title_calls, self.title_call_successes, self.title_call_found, self.title_call_not_found, self.detail_calls, self.detail_call_successes, self.detail_call_found, self.detail_call_not_found
+
+   ################################################################################
+   # Returns API stats as: Request Limit, Requests Remaining, Limit Reset
+   ################################################################################
+   def get_api_stats(self):
+      return self.api_request_limit, self.api_request_remaining, self.api_limit_reset_s
+
 
 ################################################################################
 #
