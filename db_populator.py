@@ -11,14 +11,16 @@ class DBPopulator:
    FILE = "File"
    RIP = "Rip"
 
-   def __init__(self, local_db_api, imdb, max_titles_to_process):
+   def __init__(self, local_db_api, imdb, max_titles_to_add_to_db, max_titles_to_process):
 
       self.imdb = imdb
       self.local_db = local_db_api
       #self.not_found_in_imdb = []
 
+      self.max_titles_to_add_to_db = max_titles_to_add_to_db
       self.max_titles_to_process = max_titles_to_process
       self.num_films_processed = 0
+      self.num_films_added_to_db = 0
 
    def populate_files(self, array_of_films):
       return self.populate_from_array(array_of_films, self.FILE)
@@ -47,11 +49,18 @@ class DBPopulator:
 
       for title_year in array_of_films:
 
+         logging.debug("added:" + str(self.num_films_added_to_db) + "/" + str(self.max_titles_to_add_to_db))
+         if self.num_films_added_to_db >= self.max_titles_to_add_to_db:
+            logging.debug("Max records added:" + str(self.max_titles_to_add_to_db))
+            break
+
+         logging.debug("processed:" + str(self.num_films_processed) + "/" + str(self.max_titles_to_process))
          if self.num_films_processed >= self.max_titles_to_process:
             logging.debug("Max records processed:" + str(self.num_films_processed))
             break
          else:
             num_processed += 1
+            self.num_films_processed += 1
 
          try:             
             title, year = FilmTitleTools.split_title_year(title_year)
@@ -71,7 +80,9 @@ class DBPopulator:
                      if len(details):
                         logging.debug("Found "+title_year+" in IMDB:" + str(details))
                         if self.local_db.add_film(title, year, type, False, details):
-                           self.num_films_processed += 1
+                           self.num_films_added_to_db += 1
+                        else:
+                           logging.debug("Failed to add to DB:" + str(title_year))
                      else:
                         logging.debug("Failed to find in IMDB:" + str(title_year))
                         not_found_in_imdb.append(title_year)

@@ -17,6 +17,7 @@ fs_records_to_upload = sys.maxsize
 max_imdb_lookups = 0
 db_records_to_update = 0
 #max_imdb_lookups = IMDB_API_MAX_FILMS_PER_MONTH
+max_records_to_process = sys.maxsize #For Testing
 
 FILM_DB_SERVER_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_HOST"
 FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
@@ -27,7 +28,7 @@ FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
 #
 #########################################################################################
 def usage():
-   print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-n <max_fs_records_to_upload>] [-u <db_records_to_update>]")
+   print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-a <max_fs_records_to_add_to_db>] [-u <db_records_to_update>] [-n <max_records_to_process>")
 
    print("Requires the following Environment Variables:")
    print("   "+str(FILM_DB_SERVER_ENV_NAME)+" - The location of the Database Service")
@@ -46,9 +47,10 @@ def main(argv):
    global fs_records_to_upload
    global max_imdb_lookups
    global db_records_to_update
+   global max_records_to_process #For testing
 
    try:
-       opts, args = getopt.getopt(argv, "li:n:u:", ["log="])
+       opts, args = getopt.getopt(argv, "li:n:a:u:", ["log="])
    except getopt.GetoptError:
       usage()
       sys.exit(2)
@@ -60,10 +62,12 @@ def main(argv):
          loglevel = arg.upper()
       elif opt in ("-i"):
          max_imdb_lookups = int(arg)
-      elif opt in ("-n"):
-        fs_records_to_upload  = int(arg)
+      elif opt in ("-a"):
+        fs_records_to_add_to_db  = int(arg)
       elif opt in ("-u"):
          db_records_to_update = int(arg)
+      elif opt in ("-n"):
+         max_records_to_process = int(arg)
 
    # Get Environment Variables
    try:
@@ -81,7 +85,8 @@ def main(argv):
    numeric_log_level = getattr(logging, loglevel, None)
 
 #   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='/var/log/film_manager/upload_from_files.log', filemode='w', level=logging.DEBUG)
-   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='./ptff.log', filemode='w', level=logging.DEBUG)
+#   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filename='./ptff.log', filemode='w', level=logging.DEBUG)
+   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', filemode='w', level=logging.DEBUG)
    logging.getLogger("smbprotocol").setLevel(logging.ERROR)
    console = logging.StreamHandler()
 
@@ -92,9 +97,10 @@ def main(argv):
    console.setFormatter(formatter)
 
    logging.info("Storing titles from File System")
-   logging.info("Max number of Filesystem titles to upload:" + str(fs_records_to_upload))
+   logging.info("Max number of Filesystem titles to add to DB:" + str(fs_records_to_add_to_db))
    logging.info("Max number of IMDB Lookups:" + str(max_imdb_lookups))
    logging.info("Number of DB records to update:" + str(db_records_to_update))
+   logging.info("Records to process (for testing):" + str(max_records_to_process))
 
    api = FilmAPI(db_host, db_port)
    imdb = IMDB(imdb_api_key, max_imdb_lookups)
@@ -110,7 +116,7 @@ def main(argv):
    br_titles = fs.listDir(br_dir)
    offline_titles = fs.listDir(offline_dir)
 
-   populator = DBPopulator(api, imdb, fs_records_to_upload)
+   populator = DBPopulator(api, imdb, fs_records_to_add_to_db, max_records_to_process)
 
    file_processed, file_format_errors, file_not_in_imdb = populator.populate_files(files_titles)
    file_films_lookup, file_films_found, file_films_added = api.get_stats()
