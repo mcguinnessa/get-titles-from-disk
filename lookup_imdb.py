@@ -45,7 +45,11 @@ class IMDB:
    class IMDBAPIException(Exception):
       pass
 
-
+   ###########################################################################################
+   #
+   # Init
+   #
+   ###########################################################################################
    def __init__(self, api_key, max_api_calls):
 
       self.api_key = api_key
@@ -95,8 +99,6 @@ class IMDB:
       logging.debug(API_REQUEST_REMAINING_HDR + ":" + str(self.api_request_remaining))
       logging.debug(API_REQUEST_LIMIT_RESET_HDR + ":" + str(self.api_limit_reset_s))
 
-
-
    ##########################################################################################
    #
    # Looks up the film by title and year and cycles through the responses looking for an 
@@ -118,14 +120,12 @@ class IMDB:
       query_url = IMDB_URL + "/v1/find/"
       query_payload = {"query": search_title}
 
-
       logging.debug("url:" + str(query_url))
       logging.debug("Headers:" + str(self.headers))
       logging.debug("payload:" + str(query_payload))
 
       try:
          response = requests.get(query_url, headers=self.headers, params=query_payload)
-
          self.parse_response_headers(response.headers)
 
          if response.status_code == 504:
@@ -140,8 +140,8 @@ class IMDB:
             logging.debug("IMDB Resp:" + str(resp_json))
    
             id = None
-            if "titleResults" in resp_json:
-               if "results" in resp_json["titleResults"]:
+            if "titleResults" in resp_json and resp_json["titleResults"]:
+               if "results" in resp_json["titleResults"] and resp_json["titleResults"]["results"]:
                   for title in resp_json["titleResults"]["results"]:
                      try:
                         #all() returns true if all are true, so basically, returns true if all exist
@@ -152,7 +152,6 @@ class IMDB:
                            logging.debug("Title:" + str(f_title))
                            logging.debug("Year:" + str(f_year))
                            logging.debug("imdbid:" + str(f_id))
-
 
                            if f_year.isdigit() and len(f_year) == 4:  
                               if int(year) == int(f_year):
@@ -196,16 +195,14 @@ class IMDB:
       self.detail_calls += 1
       self.api_calls += 1
 
-      rc = {}
-      #imdbid = "tt0073195"
+      deets = {}
       title_url = IMDB_URL + "/v1/title/"
-      #title_url = "https://imdb146.p.rapidapi.com/v1/title/"
       querypayload = {"id": imdbid}
 
-      #self.detail_lookups += 1
-      #self.api_calls += 1 
       try:
          response = requests.get(title_url, headers=self.headers, params=querypayload)
+         self.parse_response_headers(response.headers)
+
          if response.status_code == 200:
             logging.debug("Request was successful")
             self.detail_call_successes += 1
@@ -213,36 +210,53 @@ class IMDB:
             resp_json = response.json()
             logging.debug(resp_json)
 
-            if "runtime" in resp_json:
-               if "seconds" in resp_json["runtime"]:
+            if "runtime" in resp_json and resp_json["runtime"]:
+               if "seconds" in resp_json["runtime"] and resp_json["runtime"]["seconds"]:
                   runtime = resp_json["runtime"]["seconds"]
                   logging.debug("Runtime:" + str(runtime))
-                  rc["runtime"] = runtime
-                  rc["imdbid"] = imdbid
+                  deets["runtime"] = runtime
+                  deets["imdbid"] = imdbid
                   self.detail_call_found += 1
+               else:
+                  logging.debug("Format Exception: runtime not formatted as expected in response")
+                  raise IMDB.IMDBResponseException("runtime not formatted as expected in response")
             else:
                logging.debug("Format Exception: runtime not in response")
-               raise IMDB.IMDBAPIException("runtime not in response")
+               raise IMDB.IMDBResponseException("runtime not in response")
 
             if "certificate" in resp_json and resp_json["certificate"]:
                if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
                   classification = resp_json["certificate"]["rating"]
                   logging.debug("Classification:" + str(classification))
-                  rc["classification"] = classification
+                  deets["classification"] = classification
+               else:
+                  logging.debug("Format Exception: certificate not formatted as expected in response")
+                  raise IMDB.IMDBResponseException("certificate not formatted as expected in response")
+            else:
+               logging.debug("Format Exception: certificate not in response")
+               raise IMDB.IMDBResponseException("certificate not in response")
 
             if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
                if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
                   rating = resp_json["ratingsSummary"]["aggregateRating"]
                   logging.debug("Rating:" + str(rating))
-                  rc["imdb_rating"] = rating
+                  deets["imdb_rating"] = rating
+               else:
+                  logging.debug("Format Exception: ratings not formatted as expected in response")
+                  raise IMDB.IMDBResponseException("ratings not formatted as expected in response")
+            else:
+               logging.debug("Format Exception: ratings not in response")
+               raise IMDB.IMDBResponseException("ratings not in response")
+      except IMDB.IMDBResponseException as e:
+         raise e
       except Exception as e:
          logging.debug("Exception: " + str(e))
          raise IMDB.IMDBAPIException("Error connecting to IMDB API: URL:" + IMDB_URL)
 
-      if not rc:
+      if not deets:
          self.detail_call_not_found += 1
 
-      return rc
+      return deets
 
    ##########################################################################################
    #
@@ -251,13 +265,15 @@ class IMDB:
    ##########################################################################################
    def get_details_from_title_year(self, title, year):
 
+      deets = {}
       imdbid = self.get_titles(title, year)
       logging.debug("Found imdbid:" + str(imdbid))
-      rc = self.get_data_from_imdbid(imdbid)
 
-      logging.debug("deets:" + str(rc))
+      if imdbid:
+         deets = self.get_data_from_imdbid(imdbid)
 
-      return rc
+      logging.debug("deets:" + str(deets))
+      return deets
 
    ################################################################################
    # Returns stats as: total calls; title: calls, successes, found, not found; details: calls, successes, found, not found;

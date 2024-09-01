@@ -11,11 +11,11 @@ from film_api import FilmAPI
 from file_system import FileSystem
 from time_tools import TimeTools
 
-
 IMDB_API_MAX_FILMS_PER_MONTH = 500
 
-process_max = sys.maxsize
+fs_records_to_upload = sys.maxsize
 max_imdb_lookups = 0
+db_records_to_update = 0
 #max_imdb_lookups = IMDB_API_MAX_FILMS_PER_MONTH
 
 FILM_DB_SERVER_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_HOST"
@@ -27,8 +27,7 @@ FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
 #
 #########################################################################################
 def usage():
-#   print("\n")
-   print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-n <max_records_to_process>")
+   print(sys.argv[0]+" <-h> [--log <log level>] [-i <max_imdb_lookups>] [-n <max_fs_records_to_upload>] [-u <db_records_to_update>]")
 
    print("Requires the following Environment Variables:")
    print("   "+str(FILM_DB_SERVER_ENV_NAME)+" - The location of the Database Service")
@@ -44,11 +43,12 @@ def usage():
 #
 #########################################################################################
 def main(argv):
-   global process_max
+   global fs_records_to_upload
    global max_imdb_lookups
+   global db_records_to_update
 
    try:
-       opts, args = getopt.getopt(argv, "li:f:", ["log="])
+       opts, args = getopt.getopt(argv, "li:n:u:", ["log="])
    except getopt.GetoptError:
       usage()
       sys.exit(2)
@@ -60,8 +60,10 @@ def main(argv):
          loglevel = arg.upper()
       elif opt in ("-i"):
          max_imdb_lookups = int(arg)
-      elif opt in ("-f"):
-         process_max = int(arg)
+      elif opt in ("-n"):
+        fs_records_to_upload  = int(arg)
+      elif opt in ("-u"):
+         db_records_to_update = int(arg)
 
    # Get Environment Variables
    try:
@@ -90,8 +92,9 @@ def main(argv):
    console.setFormatter(formatter)
 
    logging.info("Storing titles from File System")
-   logging.info("Max number of titles to process:" + str(process_max))
+   logging.info("Max number of Filesystem titles to upload:" + str(fs_records_to_upload))
    logging.info("Max number of IMDB Lookups:" + str(max_imdb_lookups))
+   logging.info("Number of DB records to update:" + str(db_records_to_update))
 
    api = FilmAPI(db_host, db_port)
    imdb = IMDB(imdb_api_key, max_imdb_lookups)
@@ -107,7 +110,7 @@ def main(argv):
    br_titles = fs.listDir(br_dir)
    offline_titles = fs.listDir(offline_dir)
 
-   populator = DBPopulator(api, imdb, process_max)
+   populator = DBPopulator(api, imdb, fs_records_to_upload)
 
    file_processed, file_format_errors, file_not_in_imdb = populator.populate_files(files_titles)
    file_films_lookup, file_films_found, file_films_added = api.get_stats()
@@ -128,8 +131,11 @@ def main(argv):
 
    imdb_calls, t_calls, t_success, t_found, t_missed, d_calls, d_success, d_found, d_missed = imdb.get_stats()
    imdb_api_limit, imdb_api_remaining, imdb_api_reset = imdb.get_api_stats()
-   reset_string = TimeTools.convert_seconds(imdb_api_reset)
 
+   failed_to_update = populator.update_oldest_records(db_records_to_update)
+   imdb_api_limit, imdb_api_remaining, imdb_api_reset = imdb.get_api_stats()
+
+   reset_string = TimeTools.convert_seconds(imdb_api_reset)
 
    ############################
    # Report
@@ -160,7 +166,18 @@ def main(argv):
    print("  Title     : l:" + str(t_success) + "/" + str(t_calls) + " f:" + str(t_found) + " m:" + str(t_missed))
    print("  Details   : l:" + str(d_success) + "/" + str(d_calls) + " f:" + str(d_found) + " m:" + str(d_missed))
    if not_found_in_imdb:
-      print("Not Found In IMDB: " + str(not_found_in_imdb))
+      print(str(len(not_found_in_imdb)) + " not Found In IMDB")
+      for t in not_found_in_imdb:
+         print("   " + str(t))
+   if api.updated_in_db:
+      print("Updated " + str(len(api.updated_in_db)) +" from IMDB:")
+      for t in api.updated_in_db:
+         print("   " + str(t))
+   if failed_to_update:
+      print("Failed to update " + str(len(failed_to_update)) + " titles")
+      for t in failed_to_update:
+         print("   " + str(t))
+     
    print("Calls Remaining : " + str(imdb_api_remaining) + "/" + str(imdb_api_limit) + " - Resets in " + str(imdb_api_reset) + "s. (" + reset_string+")")
 
 #############################################################################################

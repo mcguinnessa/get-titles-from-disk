@@ -32,24 +32,11 @@ class DBPopulator:
    def populate_rips(self, array_of_films):
       return self.populate_from_array(array_of_films, self.RIP)
 
-
-
-#   def split_title_year(self, title_year):
-#      logging.debug("CHECK:" + title_year)
-#      film_pattern = "(^[^\(]*) \(([^\)]*)"
+###########################################################################
 #
-#      title = None
-#      year = None
+# Processes a list of records of a given type
 #
-#      res = re.match(film_pattern, title_year)
-#      if res:
-#         title = res.group(1)
-#         year = res.group(2)
-#         logging.debug(" TITLE:" + title)
-#         logging.debug("  YEAR:" + year)
-#
-#      return title, year
-
+###########################################################################
    def populate_from_array(self, array_of_films, type):
       pattern_mismatches = []
       num_processed = 0
@@ -58,23 +45,13 @@ class DBPopulator:
       #process_max = 10
       try_imdb = True
 
-#      film_pattern = "(^[^\(]*) \(([^\)]*)"
       for title_year in array_of_films:
 
-         if self.num_films_processed < self.max_titles_to_process:
-
-            self.num_films_processed += 1
-            num_processed += 1
-         else:
+         if self.num_films_processed >= self.max_titles_to_process:
+            logging.debug("Max records processed:" + str(self.num_films_processed))
             break
-
-#            logging.debug("CHECK:" + title_year)
-#            res = re.match(film_pattern, title_year)
-#            if res:
-#               title = res.group(1)
-#               year = res.group(2)
-#               logging.debug(" TITLE:" + title)
-#               logging.debug("  YEAR:" + year)
+         else:
+            num_processed += 1
 
          try:             
             title, year = FilmTitleTools.split_title_year(title_year)
@@ -93,7 +70,8 @@ class DBPopulator:
                      details = self.imdb.get_details_from_title_year(title, year)
                      if len(details):
                         logging.debug("Found "+title_year+" in IMDB:" + str(details))
-                        self.local_db.add_film(title, year, type, False, details)
+                        if self.local_db.add_film(title, year, type, False, details):
+                           self.num_films_processed += 1
                      else:
                         logging.debug("Failed to find in IMDB:" + str(title_year))
                         not_found_in_imdb.append(title_year)
@@ -110,10 +88,57 @@ class DBPopulator:
             logging.debug("Cannot process due to pattern mismatch:" + title_year)
             pattern_mismatches.append(title_year)
 
-#            else:
-#               logging.debug("Cannot process due to pattern mismatch:" + title_year)
-#               pattern_mismatches.append(title_year)
-
       logging.debug("Total: " + str(num_processed) + " IMDB Lookups:" + str(self.imdb.api_calls) + " Format Errors:" + str(len(pattern_mismatches)))
       return num_processed, pattern_mismatches, not_found_in_imdb
+
+###########################################################################
+#
+# Processes a list of records of a given type
+#
+###########################################################################
+   def update_oldest_records(self, num_records):
+      pattern_mismatches = []
+      num_processed = 0
+      #updated_in_imdb = []
+      failed_to_update = []
+      try_imdb = True
+
+      to_update = self.local_db.get_oldest_records(num_records)
+
+      logging.debug("To Update:" + str(to_update))
+
+      try:
+
+         #for imdbid, title_year in to_update.items():
+         for imdbid, title_year in to_update.items():
+            if try_imdb:
+               details = self.imdb.get_data_from_imdbid(imdbid)
+               if len(details):
+                  logging.debug("Found "+str(title_year)+" in IMDB:" + str(details))
+                      
+                  t = title_year[0]
+                  y = title_year[1]
+                  #self.local_db.add_film(t, y, type, False, details)
+                  if not self.local_db.update_film(imdbid, details):
+                     failed_to_update.append(title_year)
+     
+                  #title_year = f"{t} ({y})" 
+                  #updated_in_imdb.append(title_year)
+               else:
+                  logging.debug("Failed to find in IMDB:" + str(title_year))
+                  #not_found_in_imdb.append(title_year)
+                  failed_to_update.append(title_year)
+
+      except IMDB.IMDBResponseException as e:
+         logging.debug("Error parsing response from IMDB")
+         #not_found_in_imdb.append(title_year)
+      except IMDB.MaxCallsExceededException as e:
+         logging.debug("Max IMDB limit reached, not looking up")
+         try_imdb = False
+      except IMDB.IMDBAPIException as e:
+         logging.debug("Can't access IMDB")
+         try_imdb = False
+
+      return failed_to_update
+
 
