@@ -11,11 +11,15 @@ class DBPopulator:
    FILE = "File"
    RIP = "Rip"
 
-   def __init__(self, local_db_api, imdb, max_titles_to_add_to_db, max_titles_to_process):
+   def __init__(self, local_db_api, imdb, max_titles_to_add_to_db, max_titles_to_process, imdbid_map):
 
       self.imdb = imdb
       self.local_db = local_db_api
       #self.not_found_in_imdb = []
+
+      self.imdbid_map = imdbid_map
+      if not self.imdbid_map:
+         self.imdbid_map = {}
 
       self.max_titles_to_add_to_db = max_titles_to_add_to_db
       self.max_titles_to_process = max_titles_to_process
@@ -74,11 +78,20 @@ class DBPopulator:
             else:
                logging.debug("Not Found in DB: " + str(title_year))
 
+
                try:
                   if try_imdb:
-                     details = self.imdb.get_details_from_title_year(title, year)
+                     if title_year in self.imdbid_map:
+                        imdbid = self.imdbid_map[title_year]
+                        logging.debug(title_year + " is in local override file, not looking in IMDB, using " + str(imdbid))
+                        details = self.imdb.get_data_from_imdbid(imdbid)
+                        logging.debug("Details:" + str(details)) 
+                     else:
+                        details = self.imdb.get_details_from_title_year(title, year)
+
                      if len(details):
                         logging.debug("Found "+title_year+" in IMDB:" + str(details))
+
                         if self.local_db.add_film(title, year, type, False, details):
                            self.num_films_added_to_db += 1
                         else:

@@ -15,9 +15,10 @@ IMDB_API_MAX_FILMS_PER_MONTH = 500
 
 fs_records_to_upload = sys.maxsize
 max_imdb_lookups = 0
-db_records_to_update = 0
+max_db_records_to_update = 0
 #max_imdb_lookups = IMDB_API_MAX_FILMS_PER_MONTH
 max_records_to_process = sys.maxsize #For Testing
+max_fs_records_to_add_to_db = sys.maxsize
 
 FILM_DB_SERVER_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_HOST"
 FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
@@ -44,10 +45,11 @@ def usage():
 #
 #########################################################################################
 def main(argv):
-   global fs_records_to_upload
+   global max_fs_records_to_upload
    global max_imdb_lookups
    global db_records_to_update
    global max_records_to_process #For testing
+   global max_fs_records_to_add_to_db
 
    try:
        opts, args = getopt.getopt(argv, "li:n:a:u:", ["log="])
@@ -63,7 +65,7 @@ def main(argv):
       elif opt in ("-i"):
          max_imdb_lookups = int(arg)
       elif opt in ("-a"):
-        fs_records_to_add_to_db  = int(arg)
+        max_fs_records_to_add_to_db  = int(arg)
       elif opt in ("-u"):
          db_records_to_update = int(arg)
       elif opt in ("-n"):
@@ -97,7 +99,7 @@ def main(argv):
    console.setFormatter(formatter)
 
    logging.info("Storing titles from File System")
-   logging.info("Max number of Filesystem titles to add to DB:" + str(fs_records_to_add_to_db))
+   logging.info("Max number of Filesystem titles to add to DB:" + str(max_fs_records_to_add_to_db))
    logging.info("Max number of IMDB Lookups:" + str(max_imdb_lookups))
    logging.info("Number of DB records to update:" + str(db_records_to_update))
    logging.info("Records to process (for testing):" + str(max_records_to_process))
@@ -116,7 +118,15 @@ def main(argv):
    br_titles = fs.listDir(br_dir)
    offline_titles = fs.listDir(offline_dir)
 
-   populator = DBPopulator(api, imdb, fs_records_to_add_to_db, max_records_to_process)
+   imdbid_map = {}
+   imdbid_mappings_file = fs.readFile("/Films/imdbid_map.txt")
+   for mapping in imdbid_mappings_file:
+      id_title = mapping.split('|', 2)
+      logging.debug("id_title[0]:" + str(id_title[0]))
+      logging.debug("id_title[1]:" + str(id_title[1]))
+      imdbid_map[id_title[1]] = id_title[0]
+
+   populator = DBPopulator(api, imdb, max_fs_records_to_add_to_db, max_records_to_process, imdbid_map)
 
    file_processed, file_format_errors, file_not_in_imdb = populator.populate_files(files_titles)
    file_films_lookup, file_films_found, file_films_added = api.get_stats()
