@@ -9,6 +9,7 @@ __pycache__/
 .command
 
 watched.txt
+*.json
 
 # Distribution / packaging
 .Python

@@ -11,6 +11,12 @@ IMDB_URL = "https://"+IMDB_HOST
 #search_data = {}
 
 
+DEFAULT_RUNTIME = "0"
+DEFAULT_CERTIFICATE = "UNKNOWN"
+DEFAULT_RATING = "0"
+
+
+
 
 #search_data["jaws"] = {"resultsSectionOrder": ["TITLE", "NAME"], "findPageMeta": {"searchTerm": "jaws", "includeAdult": False, "isExactMatch": False}, "keywordResults": {"results": []}, "titleResults": {"results": [{"id": "tt0073195", "titleNameText": "Jaws", "titleReleaseText": "1975", "titleTypeText": "", "titlePosterImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg", "maxHeight": 1535, "maxWidth": 1000, "caption": "Susan Backlinie in Jaws (1975)"}, "topCredits": ["Roy Scheider", "Robert Shaw"], "imageType": "movie"}, {"id": "tt0077766", "titleNameText": "Jaws 2", "titleReleaseText": "1978", "titleTypeText": "", "titlePosterImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BN2U1MWE1NTMtYjQ2ZC00MTFmLWFmYjItODMyNGYxOTAyZmEzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "maxHeight": 1053, "maxWidth": 685, "caption": "Christine Freeman in Jaws 2 (1978)"}, "topCredits": ["Roy Scheider", "Lorraine Gary"], "imageType": "movie"}, {"id": "tt0085750", "titleNameText": "Jaws 3-D", "titleReleaseText": "1983", "titleTypeText": "", "titlePosterImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BMzdlOGU2ODUtODk1YS00M2ZmLWEwNjEtODJhOGE5N2Y4ZTQyXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_.jpg", "maxHeight": 2260, "maxWidth": 1486, "caption": "Jaws 3-D (1983)"}, "topCredits": ["Dennis Quaid", "Bess Armstrong"], "imageType": "movie"}, {"id": "tt0093300", "titleNameText": "Jaws: The Revenge", "titleReleaseText": "1987", "titleTypeText": "", "titlePosterImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BY2UxMWVlNmMtYzM0Zi00YTQzLTk2N2ItM2Y1NmNmMDk4MDFjXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_.jpg", "maxHeight": 2260, "maxWidth": 1487, "caption": "Jaws: The Revenge (1987)"}, "topCredits": ["Lorraine Gary", "Lance Guest"], "imageType": "movie"}, {"id": "tt0112747", "titleNameText": "Cruel Jaws", "titleReleaseText": "1995", "titleTypeText": "Video", "titlePosterImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BYTgxN2I4ZjEtMjAyZS00MzM5LWE0MjAtZmQ4M2UyMjgwODcwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg", "maxHeight": 595, "maxWidth": 416, "caption": "Cruel Jaws (1995)"}, "topCredits": ["David Luther", "George Barnes Jr."], "imageType": "video"}], "nextCursor": "eyJlc1Rva2VuIjpbIjM2ODQ0LjE4NCIsInR0MDExMjc0NyJdLCJmaWx0ZXIiOiJ7XCJpbmNsdWRlQWR1bHRcIjpmYWxzZSxcImlzRXhhY3RNYXRjaFwiOmZhbHNlLFwic2VhcmNoVGVybVwiOlwiamF3c1wiLFwidHlwZVwiOltcIlRJVExFXCJdfSJ9", "hasExactMatches": True}, "nameResults": {"results": [{"id": "nm0420308", "displayNameText": "Myles Jeffrey", "knownForJobCategory": "Actor", "knownForTitleText": "Early Edition", "knownForTitleYear": "1996–2000", "akaName": "Jaws", "avatarImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BNzM4NTU3MzM0NF5BMl5BanBnXkFtZTYwMjY5MTY1._V1_.jpg", "maxHeight": 600, "maxWidth": 400, "caption": "Myles Jeffrey at an event for The Ant Bully (2006)"}}, {"id": "nm0568501", "displayNameText": "John McEnroe", "knownForJobCategory": "Actor", "knownForTitleText": "Mr. Deeds", "knownForTitleYear": "2002", "akaName": "Jaws", "avatarImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BMTk5Nzg3NjY4MV5BMl5BanBnXkFtZTcwNzkxMzEwMw@@._V1_.jpg", "maxHeight": 400, "maxWidth": 294, "caption": "John McEnroe"}}, {"id": "nm12795827", "displayNameText": "Jaws", "knownForJobCategory": "Actor", "knownForTitleText": "The Suicide Squad", "knownForTitleYear": "2021"}, {"id": "nm0930848", "displayNameText": "Jamie Williams", "knownForJobCategory": "Actor", "knownForTitleText": "The Waterboy", "knownForTitleYear": "1998", "akaName": "Jaws", "avatarImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BMTc2MzY0NDU1Ml5BMl5BanBnXkFtZTcwMDk4ODgyMQ@@._V1_.jpg", "maxHeight": 600, "maxWidth": 450, "caption": "Jamie Williams"}}, {"id": "nm1267353", "displayNameText": "Darrell Waltrip", "knownForJobCategory": "Actor", "knownForTitleText": "Cars", "knownForTitleYear": "2006", "akaName": "Jaws", "avatarImageModel": {"url": "https://m.media-amazon.com/images/M/MV5BMzc3Mjc5MDA5NF5BMl5BanBnXkFtZTgwMDE2NzMxOTE@._V1_.jpg", "maxHeight": 800, "maxWidth": 594, "caption": "Darrell Waltrip"}}], "nextCursor": "eyJlc1Rva2VuIjpbIjI3MjY5LjkiLCJubTEyNjczNTMiXSwiZmlsdGVyIjoie1wiaW5jbHVkZUFkdWx0XCI6ZmFsc2UsXCJpc0V4YWN0TWF0Y2hcIjpmYWxzZSxcInNlYXJjaFRlcm1cIjpcImphd3NcIixcInR5cGVcIjpbXCJOQU1FXCJdfSJ9", "hasExactMatches": True}, "companyResults": {"results": []}}
 
@@ -218,11 +224,13 @@ class IMDB:
                   deets["imdbid"] = imdbid
                   self.detail_call_found += 1
                else:
-                  logging.debug("Format Exception: runtime not formatted as expected in response")
-                  raise IMDB.IMDBResponseException("runtime not formatted as expected in response")
+                  logging.debug("Format Exception: runtime not formatted as expected in response, using default" + DEFAULT_RUNTIME)
+                 #raise IMDB.IMDBResponseException("runtime not formatted as expected in response")
             else:
-               logging.debug("Format Exception: runtime not in response")
-               raise IMDB.IMDBResponseException("runtime not in response")
+               logging.debug("Format Exception: runtime not in response, using default:" + DEFAULT_RUNTIME)
+               #raise IMDB.IMDBResponseException("runtime not in response")
+            if "runtime" not in deets:
+               deets["runtime"] = DEFAULT_RUNTIME
 
             if "certificate" in resp_json and resp_json["certificate"]:
                if "rating" in resp_json["certificate"] and resp_json["certificate"]["rating"]:
@@ -230,11 +238,13 @@ class IMDB:
                   logging.debug("Classification:" + str(classification))
                   deets["classification"] = classification
                else:
-                  logging.debug("Format Exception: certificate not formatted as expected in response")
-                  raise IMDB.IMDBResponseException("certificate not formatted as expected in response")
+                  logging.debug("Format Exception: certificate not formatted as expected in response, using default:" + DEFAULT_CERTIFICATE)
+                  #raise IMDB.IMDBResponseException("certificate not formatted as expected in response")
             else:
-               logging.debug("Format Exception: certificate not in response")
-               raise IMDB.IMDBResponseException("certificate not in response")
+               logging.debug("Format Exception: certificate not in response, using default:" + DEFAULT_CERTIFICATE)
+               #raise IMDB.IMDBResponseException("certificate not in response")
+            if "certificate" not in deets:
+               deets["certificate"] = DEFAULT_CERTIFICATE
 
             if "ratingsSummary" in resp_json and resp_json["ratingsSummary"]:
                if "aggregateRating" in resp_json["ratingsSummary"] and resp_json["ratingsSummary"]["aggregateRating"]:
@@ -243,10 +253,13 @@ class IMDB:
                   deets["imdb_rating"] = rating
                else:
                   logging.debug("Format Exception: ratings not formatted as expected in response")
-                  raise IMDB.IMDBResponseException("ratings not formatted as expected in response")
+                  #raise IMDB.IMDBResponseException("ratings not formatted as expected in response")
             else:
-               logging.debug("Format Exception: ratings not in response")
-               raise IMDB.IMDBResponseException("ratings not in response")
+               logging.debug("Format Exception: ratings not in response, using default:" + DEFAULT_RATING)
+               #raise IMDB.IMDBResponseException("ratings not in response, using default:" + DEFAULT_RATING)
+            if "imdb_rating" not in deets:
+               deets["imdb_rating"] = DEFAULT_RATING
+
       except IMDB.IMDBResponseException as e:
          raise e
       except Exception as e:
