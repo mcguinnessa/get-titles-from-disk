@@ -209,6 +209,69 @@ class FilmAPI:
 
    ###################################################################################
    #
+   # Update film
+   #
+   ###################################################################################
+   def update_field_for_film(self, imdbid, key, value):
+      """Update film"""
+
+      logging.debug("Looking for imdbid:" + str(imdbid))
+      endpoint = "/api/film/" + str(imdbid)
+
+      rc = False
+      jobj = {}
+      jobj[key] = str(value)
+
+      logging.debug("Updating Film:" + str(imdbid))
+      logging.debug("obj:" + str(jobj))
+      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+      logging.debug("Returned:" + str(output))
+      logging.debug("  Body:" + str(output.content))
+
+      if output.status_code == 200:
+         logging.debug("Status:" + str(output.status_code))
+         rc = True
+         #rc = json.loads(output.content.decode("utf-8"))
+
+      return rc
+
+   ###################################################################################
+   #
+   # Gets film by ID
+   #
+   ###################################################################################
+   def get_film_by_id(self, imdbid):
+      """Update film"""
+
+      logging.debug("Looking for imdbid:" + str(imdbid))
+      endpoint = "/api/film/" + str(imdbid)
+
+      rc = {}
+
+ #     jobj = {}
+#      jobj[key] = str(value)
+
+      logging.debug("Getting Film:" + str(imdbid))
+      logging.debug("URL:" + str(endpoint))
+#      logging.debug("obj:" + str(jobj))
+      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, headers=self.headers)
+      #logging.debug("Returned:" + str(output))
+      #logging.debug("Returned:" + str(output.content))
+      #logging.debug("  Body:" + str(resp_json))
+
+      if output.status_code == 200:
+         logging.debug("Status:" + str(output.status_code))
+         rc = True
+         #rc = json.loads(output.content.decode("utf-8"))
+         rc = output.json()
+
+      return rc
+
+   ###################################################################################
+   #
+
+   ###################################################################################
+   #
    # Returns the stats: lookups, found, added
    #
    ###################################################################################

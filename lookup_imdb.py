@@ -45,6 +45,9 @@ class IMDB:
    class MaxCallsExceededException(Exception):
       pass
 
+   class MaxAPICallsExceededException(Exception):
+      pass
+
    class IMDBResponseException(Exception):
       pass
 
@@ -130,6 +133,8 @@ class IMDB:
       logging.debug("Headers:" + str(self.headers))
       logging.debug("payload:" + str(query_payload))
 
+      id = None
+
       try:
          response = requests.get(query_url, headers=self.headers, params=query_payload)
          self.parse_response_headers(response.headers)
@@ -185,6 +190,9 @@ class IMDB:
 
       if not id:
          self.title_call_not_found += 1
+
+         if 0 >= self.api_request_remaining:
+            raise IMDB.MaxAPICallsExceededException()
 
       return id
 

@@ -105,6 +105,9 @@ class DBPopulator:
                except IMDB.MaxCallsExceededException as e:
                   logging.debug("Max IMDB limit reached, not looking up")
                   try_imdb = False
+               except IMDB.MaxAPICallsExceededException as e:
+                  logging.debug("Hard Max API limit reached, not looking up")
+                  try_imdb = False
                except IMDB.IMDBAPIException as e:
                   logging.debug("Can't access IMDB")
                   try_imdb = False
