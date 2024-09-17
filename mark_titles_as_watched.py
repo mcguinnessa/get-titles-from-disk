@@ -49,7 +49,7 @@ def main(argv):
    global process_max
 
    try:
-       opts, args = getopt.getopt(argv, "ln:", ["log="])
+       opts, args = getopt.getopt(argv, "l:n:", ["log="])
    except getopt.GetoptError:
       usage()
       sys.exit(2)
