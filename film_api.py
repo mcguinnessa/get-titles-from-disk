@@ -269,6 +269,35 @@ class FilmAPI:
 
    ###################################################################################
    #
+   # Looks up a file on title and year
+   #
+   ###################################################################################
+   def get_all(self):
+      """Gets all films"""
+  
+      endpoint = "/api/films"
+
+#      jobj = {}
+#      jobj["title"] = film_name
+#      jobj["year"] = film_year
+
+      logging.debug("Getting all films")
+      output = requests.get(self.protocol + self.server + ":" +self.port + endpoint, headers=self.headers)
+      logging.debug("Returned:" + str(output))
+      films = {}
+
+      if output.status_code == 200:
+         logging.debug("Status:" + str(output.status_code))
+         films = json.loads(output.content.decode("utf-8"))
+
+#         logging.debug("films=" + str(films))
+#         if len(films) > 0:
+#            if "imdbid" in rc[0]:
+#               self.film_found += 1
+
+      return films
+
+
 
    ###################################################################################
    #
