@@ -19,7 +19,7 @@ class TimeTools:
    #
    #################################################################
    @staticmethod
-   def convert_seconds(seconds):
+   def convert_seconds_to_string(seconds):
 
       days = seconds // SECONDS_IN_DAY
       hours = (seconds % SECONDS_IN_DAY) // SECONDS_IN_HOUR
@@ -38,4 +38,13 @@ class TimeTools:
 
       return ', '.join(result)
 
+
+   #################################################################
+   #
+   #  Gets the number of days from seconds
+   #
+   #################################################################
+   @staticmethod
+   def get_days(seconds):
+      return seconds // SECONDS_IN_DAY
 

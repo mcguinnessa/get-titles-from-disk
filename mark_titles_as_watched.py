@@ -6,7 +6,6 @@ import sys
 import os
 import re
 
-#from lookup_imdb import IMDB
 from film_title_tools import FilmTitleTools
 
 from film_api import FilmAPI

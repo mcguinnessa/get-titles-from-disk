@@ -6,18 +6,10 @@ import sys
 import os
 import re
 
-#from lookup_imdb import IMDB
-#from film_title_tools import FilmTitleTools
-
 from film_api import FilmAPI
 
 from file_system import FileSystem
 from film_watched_updater import FilmWatchedUpdater
-
-#num_films_processed = 0
-#process_max = sys.maxsize
-#max_imdb_lookups = 0
-
 
 FILM_DB_SERVER_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_HOST"
 FILM_DB_PORT_ENV_NAME = "FILM_WEB_BE_SERVICE_SERVICE_PORT"
@@ -39,10 +31,6 @@ def usage():
    print("Requires the following Environment Variables:")
    print("   "+str(FILM_DB_SERVER_ENV_NAME)+" - The location of the Database Service")
    print("   "+str(FILM_DB_PORT_ENV_NAME)+" - The Port the Database Service is listening on")
-#   print("   SMB_HOST - The Host of the Samba file system")
-#   print("   SMB_USER - The Samba User")
-#   print("   SMB_PASS - The Samba Password")
-
 
 #########################################################################################
 #
@@ -164,26 +152,6 @@ def main(argv):
             print("SUCCESSFULLY UPDATED")
          else:
             print("FAILED TO UPDATE")
-
-
-   ############################
-   # Report
-   ############################
-#   print("\nProcessed            : " + str(num_processed))
-#   print("Found in Local DB    : " + str(len(found_in_db)))
-#   print("Not Found in Local DB: " + str(len(not_found_in_db)))
-#   if not_found_in_db:
-#      for nf in not_found_in_db:
-#         print("   " + nf)
-#   print("Invalid Title Format : " + str(len(invalid_format)))
-#   if invalid_format:
-#      for inf in invalid_format:
-#         print("   " + inf)
-#   print("Already Watched      : " + str(len(already_watched)))
-#   print("Marked as Watched    : " + str(len(newly_watched)))
-#   if newly_watched:
-#      for nw in newly_watched:
-#         print("   " + nw)
 
 #################################################################################################
 # MAIN

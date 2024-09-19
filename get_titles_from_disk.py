@@ -151,7 +151,10 @@ def main(argv):
    failed_to_update = populator.update_oldest_records(db_records_to_update)
    imdb_api_limit, imdb_api_remaining, imdb_api_reset = imdb.get_api_stats()
 
-   reset_string = TimeTools.convert_seconds(imdb_api_reset)
+   reset_string = TimeTools.convert_seconds_to_string(imdb_api_reset)
+   num_days = TimeTools.get_days(imdb_api_reset)
+
+   calls_per_day = imdb_api_remaining / num_days
 
    ############################
    # Report
@@ -194,7 +197,7 @@ def main(argv):
       for t in failed_to_update:
          print("   " + str(t))
      
-   print("Calls Remaining : " + str(imdb_api_remaining) + "/" + str(imdb_api_limit) + " - Resets in " + str(imdb_api_reset) + "s. (" + reset_string+")")
+   print("Calls Remaining : " + str(imdb_api_remaining) + "/" + str(imdb_api_limit) + " - Resets in " + str(imdb_api_reset) + "s. (" + reset_string+") - " + str(calls_per_day) + " calls per day left")
 
 #############################################################################################
 # MAIN
