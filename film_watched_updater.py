@@ -19,6 +19,7 @@ class FilmWatchedUpdater:
       self.found_in_db = []
       self.already_watched = []
       self.newly_watched = []
+      self.failed_to_update = []
 
    ###################################################################################
    #
@@ -27,7 +28,7 @@ class FilmWatchedUpdater:
    #
    ###################################################################################
    def get_stats(self):
-      return self.newly_watched, self.already_watched, self.found_in_db, self.not_found_in_db, self.invalid_format
+      return self.newly_watched, self.already_watched, self.found_in_db, self.not_found_in_db, self.invalid_format, self.failed_to_update
 
 
    ###################################################################################
@@ -55,6 +56,8 @@ class FilmWatchedUpdater:
             if deets:
                self.found_in_db.append(title_year)
                logging.debug("Found Film Details:" + str(deets))
+ 
+               details = deets[0]
                watched = deets[0]['watched'] 
                imdbid = deets[0]['imdbid'] 
                logging.debug("Current Watched:" + str(watched))
@@ -65,9 +68,17 @@ class FilmWatchedUpdater:
                   self.already_watched.append(title_year)
 
                else:
-                  logging.debug(title_year + " newly marked as watched")
-                  if self.local_db.update_watched_for_film(imdbid, True):
+                  #logging.debug(title_year + " newly marked as watched")
+                  #if self.local_db.update_watched_for_film(imdbid, True):
+                  #details = {}
+                  #details["watched"] = True
+                  details["watched"] = True
+                  if self.local_db.update_film(imdbid, details):
+                     logging.debug(title_year + " newly marked as watched")
                      self.newly_watched.append(title_year)
+                  else:
+                     logging.debug(title_year + " failed to mark as watched")
+                     self.failed_to_update.append(title_year)
                    
             else:
                self.not_found_in_db.append(title_year)

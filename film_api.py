@@ -36,27 +36,29 @@ class FilmAPI:
       endpoint = "/api/film/" + str(imdbid)
       rc = False
 
-      jobj = {}
-      jobj["imdbid"] = imdbid
-      #jobj["watched"] = watched
- 
-      if "runtime" in details:
-         jobj["runtime"] = details["runtime"]
-      if "classification" in details:
-         jobj["classification"] = details["classification"]
-      if "imdb_rating" in details:
-         jobj["imdb_rating"] = details["imdb_rating"]
+#      jobj = {}
+#      jobj["imdbid"] = imdbid
+#      #jobj["watched"] = watched
+# 
+#      if "runtime" in details:
+#         jobj["runtime"] = details["runtime"]
+#      if "classification" in details:
+#         jobj["classification"] = details["classification"]
+#      if "imdb_rating" in details:
+#         jobj["imdb_rating"] = details["imdb_rating"]
 
-      logging.debug("Updating Film:" + str(jobj))
-      logging.debug("obj:" + str(jobj))
+      logging.debug("Updating Film:" + str(details))
+      logging.debug("obj:" + str(details))
 
-      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+      #output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+      output = requests.put(self.protocol + self.server + ":" +self.port + endpoint, json=details, headers=self.headers)
       logging.debug("Code:" + str(output.status_code)) 
       logging.debug("  Body:" + str(output.content))
-      resp_json = output.json()
-      logging.debug("  Body:" + str(resp_json))
       #if output.status_code == 201: #Created
       if output.status_code == 200:
+         resp_json = output.json()
+         logging.debug("  Body:" + str(resp_json))
+
          rc = True
          self.film_updated += 1
          logging.debug("Updated Film Successfully:" + str(output))
@@ -184,56 +186,56 @@ class FilmAPI:
    # Sets film to watched
    #
    ###################################################################################
-   def update_watched_for_film(self, imdbid, watched):
-      """Update watched status of film"""
-
-      logging.debug("Looking for imdbid:" + str(imdbid))
-      endpoint = "/api/film/" + str(imdbid)
-
-      rc = False
-      jobj = {}
-      jobj["watched"] = str(watched)
-
-      logging.debug("Marking for Film:" + str(imdbid))
-      logging.debug("obj:" + str(jobj))
-      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
-      logging.debug("Returned:" + str(output))
-      logging.debug("  Body:" + str(output.content))
-
-      if output.status_code == 200:
-         logging.debug("Status:" + str(output.status_code))
-         rc = True
-         #rc = json.loads(output.content.decode("utf-8"))
-
-      return rc
+#   def update_watched_for_film(self, imdbid, watched):
+#      """Update watched status of film"""
+#
+#      logging.debug("Looking for imdbid:" + str(imdbid))
+#      endpoint = "/api/film/" + str(imdbid)
+#
+#      rc = False
+#      jobj = {}
+#      jobj["watched"] = str(watched)
+#
+#      logging.debug("Marking for Film:" + str(imdbid))
+#      logging.debug("obj:" + str(jobj))
+#      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+#      logging.debug("Returned:" + str(output))
+#      logging.debug("  Body:" + str(output.content))
+#
+#      if output.status_code == 200:
+#         logging.debug("Status:" + str(output.status_code))
+#         rc = True
+#         #rc = json.loads(output.content.decode("utf-8"))
+#
+#      return rc
 
    ###################################################################################
    #
    # Update film
    #
    ###################################################################################
-   def update_field_for_film(self, imdbid, key, value):
-      """Update film"""
-
-      logging.debug("Looking for imdbid:" + str(imdbid))
-      endpoint = "/api/film/" + str(imdbid)
-
-      rc = False
-      jobj = {}
-      jobj[key] = str(value)
-
-      logging.debug("Updating Film:" + str(imdbid))
-      logging.debug("obj:" + str(jobj))
-      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
-      logging.debug("Returned:" + str(output))
-      logging.debug("  Body:" + str(output.content))
-
-      if output.status_code == 200:
-         logging.debug("Status:" + str(output.status_code))
-         rc = True
-         #rc = json.loads(output.content.decode("utf-8"))
-
-      return rc
+#   def update_field_for_film(self, imdbid, key, value):
+#      """Update film"""
+#
+#      logging.debug("Looking for imdbid:" + str(imdbid))
+#      endpoint = "/api/film/" + str(imdbid)
+#
+#      rc = False
+#      jobj = {}
+#      jobj[key] = str(value)
+#
+#      logging.debug("Updating Film:" + str(imdbid))
+#      logging.debug("obj:" + str(jobj))
+#      output = requests.patch(self.protocol + self.server + ":" +self.port + endpoint, json=jobj, headers=self.headers)
+#      logging.debug("Returned:" + str(output))
+#      logging.debug("  Body:" + str(output.content))
+#
+#      if output.status_code == 200:
+#         logging.debug("Status:" + str(output.status_code))
+#         rc = True
+#         #rc = json.loads(output.content.decode("utf-8"))
+#
+#      return rc
 
    ###################################################################################
    #

@@ -104,7 +104,7 @@ def main(argv):
    films = fs.readFile(filename)
 
    num_processed = updater.set_films_as_watched(films)
-   newly_watched, already_watched, found_in_db, not_found_in_db, invalid_format = updater.get_stats()
+   newly_watched, already_watched, found_in_db, not_found_in_db, invalid_format, failed_to_update = updater.get_stats()
     
    print("Found in DB:")
    if found_in_db:
@@ -129,6 +129,10 @@ def main(argv):
    if invalid_format:
       for inf in invalid_format:
          print("   " + inf)
+   print("Failed To Update     : " + str(len(failed_to_update)))
+   if failed_to_update:
+      for ftu in failed_to_update:
+         print("   " + ftu)
    print("Already Watched      : " + str(len(already_watched)))
    print("Marked as Watched    : " + str(len(newly_watched)))
    if newly_watched:
