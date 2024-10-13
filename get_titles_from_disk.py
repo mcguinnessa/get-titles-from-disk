@@ -154,7 +154,10 @@ def main(argv):
    reset_string = TimeTools.convert_seconds_to_string(imdb_api_reset)
    num_days = TimeTools.get_days(imdb_api_reset)
 
-   calls_per_day = imdb_api_remaining / num_days
+   if num_days > 0:
+      calls_per_day = imdb_api_remaining / num_days
+   else:
+      calls_per_day = imdb_api_remaining
 
    ############################
    # Report

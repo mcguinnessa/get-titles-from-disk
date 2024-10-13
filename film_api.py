@@ -47,6 +47,8 @@ class FilmAPI:
 #      if "imdb_rating" in details:
 #         jobj["imdb_rating"] = details["imdb_rating"]
 
+      details["imdbid"] = imdbid
+
       logging.debug("Updating Film:" + str(details))
       logging.debug("obj:" + str(details))
 
@@ -62,6 +64,8 @@ class FilmAPI:
          rc = True
          self.film_updated += 1
          logging.debug("Updated Film Successfully:" + str(output))
+         #self.updated_in_db.append(resp_json["title"] + " (" + str(resp_json["year"]) + ")")
+         logging.debug("UPDATED:" + str(resp_json))
          self.updated_in_db.append(resp_json["title"] + " (" + str(resp_json["year"]) + ")")
       else:
          logging.debug("Failed to update film, reponse::" + str(output.status_code))

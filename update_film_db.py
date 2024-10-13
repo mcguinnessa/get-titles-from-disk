@@ -26,7 +26,7 @@ OP_ADD = "add"
 #########################################################################################
 def usage():
    #print("\n")
-   print(sys.argv[0]+" <-h> -o get|set|add -i <imdbid> -r <rating> -s <runtime> -c <classification> -t <title> -y <year>")
+   print(sys.argv[0]+" <-h> -o get|set|add -i <imdbid> -r <rating> -s <runtime> -c <classification> -t <title> -y <year> -w <watched>")
 
    print("Requires the following Environment Variables:")
    print("   "+str(FILM_DB_SERVER_ENV_NAME)+" - The location of the Database Service")
@@ -40,7 +40,7 @@ def usage():
 def main(argv):
 
    try:
-       opts, args = getopt.getopt(argv, "o:l:i:r:c:t:y:s:", ["log=", "imdbid=", "op=", "runtime_in_seconds=", "cert=", "rating=", "year=", "title="])
+       opts, args = getopt.getopt(argv, "o:l:i:r:c:t:y:s:w:", ["log=", "imdbid=", "op=", "runtime_in_seconds=", "cert=", "rating=", "year=", "title=", "watched="])
    except getopt.GetoptError:
       usage()
       sys.exit(2)
@@ -54,6 +54,7 @@ def main(argv):
    year = None
    title = None
    op = None
+   watched = None
    for opt, arg in opts:
       if opt in ("-l", "--log"):
          loglevel = arg.upper()
@@ -75,6 +76,9 @@ def main(argv):
       elif opt in ("-y", "--year"):
         year  = arg
         print("YEAR:" + str(year))
+      elif opt in ("-w", "--watched"):
+        watched  = arg
+        print("WATCHED:" + str(watched))
       elif opt in ("-o", "--op"):
         op  = arg
 
@@ -147,6 +151,8 @@ def main(argv):
             details["title"] = title
          if year:
             details["year"] = year
+         if watched:
+            details["watched"] = watched
 
          if(api.update_film(imdbid, details)):
             print("SUCCESSFULLY UPDATED")
