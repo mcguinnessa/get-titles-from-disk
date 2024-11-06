@@ -128,22 +128,23 @@ def main(argv):
 
    populator = DBPopulator(api, imdb, max_fs_records_to_add_to_db, max_records_to_process, imdbid_map)
 
-   file_processed, file_format_errors, file_not_in_imdb = populator.populate_files(files_titles)
+   file_processed, file_format_errors, file_not_in_imdb, file_failed_to_add_to_imdb = populator.populate_files(files_titles)
    file_films_lookup, file_films_found, file_films_added = api.get_stats()
 
    api.reset_counts()
-   dvd_processed, dvd_format_errors, dvd_not_in_imdb = populator.populate_dvds(dvd_titles)
+   dvd_processed, dvd_format_errors, dvd_not_in_imdb, dvd_failed_to_add_to_imdb = populator.populate_dvds(dvd_titles)
    dvd_films_lookup, dvd_films_found, dvd_films_added = api.get_stats()
 
    api.reset_counts()
-   br_processed, br_format_errors, br_not_in_imdb = populator.populate_files(br_titles)
+   br_processed, br_format_errors, br_not_in_imdb, br_failed_to_add_to_imdb = populator.populate_files(br_titles)
    br_films_lookup, br_films_found, br_films_added = api.get_stats()
 
    api.reset_counts()
-   rip_processed, rip_format_errors, rip_not_in_imdb  = populator.populate_files(offline_titles)
+   rip_processed, rip_format_errors, rip_not_in_imdb, rip_failed_to_add_to_imdb  = populator.populate_files(offline_titles)
    rip_films_lookup, rip_films_found, rip_films_added = api.get_stats()
 
    not_found_in_imdb = file_not_in_imdb + dvd_not_in_imdb + br_not_in_imdb + rip_not_in_imdb
+   failed_to_add_to_imdb = file_failed_to_add_to_imdb + dvd_failed_to_add_to_imdb + br_failed_to_add_to_imdb + rip_failed_to_add_to_imdb
 
    imdb_calls, t_calls, t_success, t_found, t_missed, d_calls, d_success, d_found, d_missed = imdb.get_stats()
    imdb_api_limit, imdb_api_remaining, imdb_api_reset = imdb.get_api_stats()
@@ -190,6 +191,10 @@ def main(argv):
    if not_found_in_imdb:
       print(str(len(not_found_in_imdb)) + " not Found In IMDB")
       for t in not_found_in_imdb:
+         print("   " + str(t))
+   if failed_to_add_to_imdb:
+      print(str(len(failed_to_add_to_imdb)) + " Failed to add to IMDB")
+      for t in failed_to_add_to_imdb:
          print("   " + str(t))
    if api.updated_in_db:
       print("Updated " + str(len(api.updated_in_db)) +" from IMDB:")

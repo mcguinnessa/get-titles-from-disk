@@ -47,6 +47,7 @@ class DBPopulator:
       pattern_mismatches = []
       num_processed = 0
       not_found_in_imdb = []
+      failed_to_add_to_imdb = []
 
       #process_max = 10
       try_imdb = True
@@ -96,6 +97,8 @@ class DBPopulator:
                            self.num_films_added_to_db += 1
                         else:
                            logging.debug("Failed to add to DB:" + str(title_year))
+                           failed_to_add_to_imdb.append(title_year)
+
                      else:
                         logging.debug("Failed to find in IMDB:" + str(title_year))
                         not_found_in_imdb.append(title_year)
@@ -116,7 +119,7 @@ class DBPopulator:
             pattern_mismatches.append(title_year)
 
       logging.debug("Total: " + str(num_processed) + " IMDB Lookups:" + str(self.imdb.api_calls) + " Format Errors:" + str(len(pattern_mismatches)))
-      return num_processed, pattern_mismatches, not_found_in_imdb
+      return num_processed, pattern_mismatches, not_found_in_imdb, failed_to_add_to_imdb
 
 ###########################################################################
 #
