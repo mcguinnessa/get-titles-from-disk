@@ -121,6 +121,8 @@ def main(argv):
    imdbid_map = {}
    imdbid_mappings_file = fs.readFile("/Films/imdbid_map.txt")
    for mapping in imdbid_mappings_file:
+      if len(mapping) <= 0:
+         continue
       id_title = mapping.split('|', 2)
       logging.debug("id_title[0]:" + str(id_title[0]))
       logging.debug("id_title[1]:" + str(id_title[1]))
