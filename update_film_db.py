@@ -86,6 +86,10 @@ def main(argv):
       print("Operation needs to be supplied")
       usage()
       sys.exit(2)
+   elif op not in [ OP_GET, OP_SET, OP_ADD ]:
+      print("Unknown Operation:" + op)
+      usage()
+      sys.exit(2)
 
    # Get Environment Variables
    try:
@@ -138,7 +142,6 @@ def main(argv):
 
    elif op.lower() == OP_SET:
       if imdbid:
-         print("Updating")
 
          details = {}
          if runtime:
@@ -152,7 +155,10 @@ def main(argv):
          if year:
             details["year"] = year
          if watched:
+            print("WAtched is non None")
             details["watched"] = watched
+
+         print("Updating:" + str(details))
 
          if(api.update_film(imdbid, details)):
             print("SUCCESSFULLY UPDATED")
