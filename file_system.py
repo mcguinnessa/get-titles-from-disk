@@ -56,6 +56,27 @@ class FileSystem:
       # List the files/directories inside a dir
       for filename in smbclient.listdir(smb_directory):
          logging.debug("Film:" + filename)
+         # DO NOT DELETE COMMENT
+         #logging.debug([ord(char) for char in filename])
+
+
+         if "" in filename:
+            filename = filename.replace("",':')
+            logging.debug("Film[corrected]:" + filename)
+
+         #filename2 = filename.replace("\u61474", ":")
+         #logging.debug("Film[editted]:" + filename2)
+         ##logging.debug([ord(char) for char in filename2])
+
+         #import re 
+         #filename3 = re.sub(r'[^\x00-\x7F]+',' ', filename)
+         #filename3 = re.sub("\U00061474",':', filename)
+         #filename3 = filename.replace("\U00061474",':')
+         filename3 = filename.replace("",':')
+         #filename3 = re.sub(r'\xF022',':', filename)
+         #logging.debug("Film[editted2]:" + filename3)
+         #logging.debug([ord(char) for char in filename3])
+         
          titles.append(filename)
 
       return titles
